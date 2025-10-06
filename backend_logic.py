@@ -13,12 +13,11 @@ except KeyError:
 
 class ConsultorInteligente:
     def __init__(self):
-        # --- A CORREÇÃO ESTÁ AQUI ---
-        # A forma de ativar a busca do Google mudou na biblioteca.
-        # Esta é a nova sintaxe correta que o Render exige.
+        # --- CORREÇÃO DE ARQUITETURA ---
+        # Nós removemos a configuração de ferramentas da inicialização do modelo.
+        # Isso impede que o servidor trave no deploy e é uma prática mais robusta.
         self.model = genai.GenerativeModel(
-            'gemini-1.5-flash-latest',
-            tool_config={"google_search_retrieval": {}}
+            'gemini-1.5-flash-latest'
         )
         print("Modelo ConsultorInteligente inicializado com sucesso.")
 
@@ -57,7 +56,12 @@ class ConsultorInteligente:
         Retorne APENAS a lista de objetos JSON.
         """
         print("\n--- 2. Buscando Produtos com Base na Intenção ---")
-        response = self.model.generate_content(prompt)
+        
+        # --- A CORREÇÃO ESTÁ AQUI ---
+        # Ativamos a ferramenta de busca do Google apenas nesta chamada específica.
+        tool_config = {"google_search_retrieval": {}}
+        response = self.model.generate_content(prompt, tool_config=tool_config)
+
         print("Produtos encontrados (JSON):", response.text)
         return self._extrair_json_da_resposta(response.text) or []
 
