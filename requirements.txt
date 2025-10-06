@@ -1,6 +1,4 @@
-Arquivo para listar as bibliotecas Python necessárias para o projeto.
-Para instalar todas, use o comando no terminal: pip install -r requirements.txt
 fastapi
-uvicorn[standard]
+uvicorn
 google-generativeai
-pydantic
+python-dotenv
