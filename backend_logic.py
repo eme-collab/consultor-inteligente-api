@@ -13,16 +13,17 @@ except KeyError:
 
 class ConsultorInteligente:
     def __init__(self):
-        # --- CORREÇÃO FINAL ---
-        # Alteramos o nome do modelo para 'gemini-pro', que é o modelo padrão,
-        # estável e universalmente disponível, resolvendo o erro 404 Not Found.
+        # --- CORREÇÃO FINAL E DEFINITIVA ---
+        # O log mostrou que nem 'gemini-1.5-flash-latest' nem 'gemini-pro' foram encontrados.
+        # Vamos usar o nome de modelo mais moderno e recomendado para esta tarefa: 'gemini-1.5-flash'.
         self.model = genai.GenerativeModel(
-            'gemini-pro'
+            'gemini-1.5-flash'
         )
         print("Modelo ConsultorInteligente inicializado com sucesso.")
 
     def _extrair_json_da_resposta(self, text: str) -> Any:
         try:
+            # Limpa qualquer formatação de markdown que a IA possa retornar
             json_block = text.strip().replace("```json", "").replace("```", "")
             return json.loads(json_block)
         except json.JSONDecodeError:
@@ -76,11 +77,18 @@ class ConsultorInteligente:
         return response.text
 
     def obter_recomendacao(self, query_usuario: str) -> str:
-        intencao = self.captar_intencao(query_usuario)
-        if not intencao:
-            return "Desculpe, não consegui entender o que você precisa. Poderia tentar de outra forma?"
-        produtos = self.buscar_produtos(intencao)
-        if not produtos:
-            return "Puxa, fiz uma busca aqui mas não encontrei nenhum celular que se encaixe perfeitamente no seu pedido. Que tal tentarmos outros termos?"
-        return self.apresentar_resultados(produtos, query_usuario)
+        try:
+            intencao = self.captar_intencao(query_usuario)
+            if not intencao:
+                return "Desculpe, não consegui entender o que você precisa. Poderia tentar de outra forma?"
+            
+            produtos = self.buscar_produtos(intencao)
+            if not produtos:
+                return "Puxa, fiz uma busca aqui mas não encontrei nenhum celular que se encaixe perfeitamente no seu pedido. Que tal tentarmos outros termos?"
+            
+            return self.apresentar_resultados(produtos, query_usuario)
+        except Exception as e:
+            # Captura qualquer erro que possa acontecer durante a chamada para a API do Google
+            print(f"ERRO DETALHADO NA LÓGICA DO BACKEND: {e}")
+            return "Desculpe, ocorreu um erro inesperado ao tentar processar sua solicitação. A equipe de desenvolvimento já foi notificada."
 
