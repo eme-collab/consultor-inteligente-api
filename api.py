@@ -24,7 +24,7 @@ app = FastAPI(
 
 # --- Configuração de CORS ---
 # Essencial para permitir que o seu site (front-end) possa fazer requisições para esta API.
-origins = ["[https://consultor-inteligente-api.onrender.com/](https://consultor-inteligente-api.onrender.com/)"]
+origins = ["[https://consultor-inteligente-frontend.onrender.com](https://consultor-inteligente-frontend.onrender.com)"]
 
 app.add_middleware(
     CORSMiddleware,
