@@ -6,20 +6,19 @@ import google.generativeai as genai
 from typing import Dict, Any, List
 
 # --- Configuração da API ---
-# A chave da API agora é lida e configurada aqui.
-# Se a chave não for encontrada, um erro claro será lançado,
-# que será capturado pela nossa nova lógica de depuração no api.py
 try:
     genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 except KeyError:
-    # Em vez de fechar o programa, lançamos um erro que pode ser registrado.
     raise RuntimeError("A variável de ambiente 'GEMINI_API_KEY' não foi definida ou não está acessível no servidor do Render.")
 
 class ConsultorInteligente:
     def __init__(self):
+        # --- A CORREÇÃO ESTÁ AQUI ---
+        # A forma de ativar a busca do Google mudou na biblioteca.
+        # Esta é a nova sintaxe correta que o Render exige.
         self.model = genai.GenerativeModel(
             'gemini-1.5-flash-latest',
-            tools=['google_search']
+            tool_config={"google_search_retrieval": {}}
         )
         print("Modelo ConsultorInteligente inicializado com sucesso.")
 
