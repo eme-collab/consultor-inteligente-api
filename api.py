@@ -4,8 +4,9 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from backend_logic import ConsultorInteligente
+import traceback # Importamos a biblioteca para formatar o erro
 
-# --- Modelos de Dados (para validação) ---
+# --- Modelos de Dados ---
 class UserQuery(BaseModel):
     query: str
 
@@ -19,8 +20,7 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# --- Configuração de CORS (VERSÃO CORRIGIDA) ---
-# Esta é a configuração correta e explícita para permitir a comunicação.
+# --- Configuração de CORS ---
 origins = [
     "https://consultor-inteligente-frontend.onrender.com",
 ]
@@ -34,11 +34,7 @@ app.add_middleware(
 )
 
 # --- Carregamento do Modelo de IA ---
-try:
-    consultor = ConsultorInteligente()
-except Exception as e:
-    print(f"Erro Crítico ao inicializar o ConsultorInteligente: {e}")
-    consultor = None
+consultor = ConsultorInteligente()
 
 # --- Endpoints da API ---
 @app.get("/")
@@ -47,12 +43,26 @@ def read_root():
 
 @app.post("/consultar", response_model=ApiResponse)
 async def consultar_celular(user_query: UserQuery):
-    if not consultor:
-        raise HTTPException(status_code=500, detail="Erro interno do servidor: O modelo de IA não foi carregado corretamente.")
-
     print(f"Recebida consulta via API: \"{user_query.query}\"")
     
-    recomendacao = consultor.obter_recomendacao(user_query.query)
+    try:
+        # TENTAMOS EXECUTAR A LÓGICA PRINCIPAL
+        recomendacao = consultor.obter_recomendacao(user_query.query)
+        return {"response": recomendacao}
     
-    return {"response": recomendacao}
+    except Exception as e:
+        # SE QUALQUER ERRO ACONTECER, NÓS O CAPTURAMOS AQUI
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        print("!!!      UM ERRO INESPERADO OCORREU       !!!")
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        
+        # Imprimimos o relatório completo do erro no log do Render
+        error_traceback = traceback.format_exc()
+        print(error_traceback)
+        
+        # Levantamos uma exceção HTTP 500 com a mensagem de erro exata
+        raise HTTPException(
+            status_code=500, 
+            detail=f"Erro interno no servidor: {str(e)}"
+        )
 
