@@ -14,10 +14,10 @@ except KeyError:
 class ConsultorInteligente:
     def __init__(self):
         # --- CORREÇÃO FINAL E DEFINITIVA ---
-        # Os logs mostraram que os modelos mais recentes não foram encontrados.
-        # Vamos usar o modelo 'gemini-1.0-pro', o mais estável e universalmente compatível, como nossa última e mais segura opção.
+        # O log de erro e a documentação confirmam que a API v1beta espera o caminho completo do modelo.
+        # Estamos agora usando o caminho explícito "models/..." para garantir a compatibilidade.
         self.model = genai.GenerativeModel(
-            'gemini-1.0-pro'
+            'models/gemini-1.5-flash' 
         )
         print("Modelo ConsultorInteligente inicializado com sucesso.")
 
