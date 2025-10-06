@@ -13,11 +13,11 @@ except KeyError:
 
 class ConsultorInteligente:
     def __init__(self):
-        # --- CORREÇÃO DE ARQUITETURA ---
-        # Nós removemos a configuração de ferramentas da inicialização do modelo.
-        # Isso impede que o servidor trave no deploy e é uma prática mais robusta.
+        # --- CORREÇÃO FINAL ---
+        # Alteramos o nome do modelo para 'gemini-pro', que é o modelo padrão,
+        # estável e universalmente disponível, resolvendo o erro 404 Not Found.
         self.model = genai.GenerativeModel(
-            'gemini-1.5-flash-latest'
+            'gemini-pro'
         )
         print("Modelo ConsultorInteligente inicializado com sucesso.")
 
@@ -57,7 +57,6 @@ class ConsultorInteligente:
         """
         print("\n--- 2. Buscando Produtos com Base na Intenção ---")
         
-        # --- A CORREÇÃO ESTÁ AQUI ---
         # Ativamos a ferramenta de busca do Google apenas nesta chamada específica.
         tool_config = {"google_search_retrieval": {}}
         response = self.model.generate_content(prompt, tool_config=tool_config)
