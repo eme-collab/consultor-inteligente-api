@@ -14,10 +14,10 @@ except KeyError:
 class ConsultorInteligente:
     def __init__(self):
         # --- CORREÇÃO FINAL E DEFINITIVA ---
-        # O log mostrou que nem 'gemini-1.5-flash-latest' nem 'gemini-pro' foram encontrados.
-        # Vamos usar o nome de modelo mais moderno e recomendado para esta tarefa: 'gemini-1.5-flash'.
+        # Os logs mostraram que os modelos mais recentes não foram encontrados.
+        # Vamos usar o modelo 'gemini-1.0-pro', o mais estável e universalmente compatível, como nossa última e mais segura opção.
         self.model = genai.GenerativeModel(
-            'gemini-1.5-flash'
+            'gemini-1.0-pro'
         )
         print("Modelo ConsultorInteligente inicializado com sucesso.")
 
@@ -90,5 +90,6 @@ class ConsultorInteligente:
         except Exception as e:
             # Captura qualquer erro que possa acontecer durante a chamada para a API do Google
             print(f"ERRO DETALHADO NA LÓGICA DO BACKEND: {e}")
-            return "Desculpe, ocorreu um erro inesperado ao tentar processar sua solicitação. A equipe de desenvolvimento já foi notificada."
+            # Retorna a mensagem de erro específica para depuração no front-end
+            return f"Erro no servidor: {str(e)}"
 
