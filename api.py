@@ -29,6 +29,7 @@ app.add_middleware(
     allow_origins=["*"],  # Em produção, restrinja para o domínio do seu site.
     allow_credentials=True,
     allow_methods=["POST", "GET"],
+    origins = ["[https://consultor-inteligente-frontend.onrender.com](https://consultor-inteligente-frontend.onrender.com)"],
     allow_headers=["*"],
 )
 
