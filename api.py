@@ -24,13 +24,14 @@ app = FastAPI(
 
 # --- Configuração de CORS ---
 # Essencial para permitir que o seu site (front-end) possa fazer requisições para esta API.
+origins = ["[https://consultor-inteligente-frontend.onrender.com](https://consultor-inteligente-frontend.onrender.com)"]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Em produção, restrinja para o domínio do seu site.
+    allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["POST", "GET"],
-    origins = ["[https://consultor-inteligente-frontend.onrender.com](https://consultor-inteligente-frontend.onrender.com)"],
-    allow_headers=["*"],
+    allow_methods=["*"], # Permitir todos os métodos
+    allow_headers=["*"], # Permitir todos os cabeçalhos
 )
 
 # --- Carregamento do Modelo de IA ---
