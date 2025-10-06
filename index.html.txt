@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultor Inteligente</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f0c29;
+            background-image: linear-gradient(to top right, #0f0c29, #302b63, #24243e);
+        }
+        #chat-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        #chat-container::-webkit-scrollbar-track {
+            background: #302b63;
+        }
+        #chat-container::-webkit-scrollbar-thumb {
+            background-color: #4c468a;
+            border-radius: 20px;
+        }
+        .message-bubble-user {
+            background-color: #005c4b;
+        }
+        .message-bubble-assistant {
+            background-color: #2a2a46;
+        }
+        .typing-indicator span {
+            height: 8px;
+            width: 8px;
+            float: left;
+            margin: 0 1px;
+            background-color: #9E9E9E;
+            display: block;
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: 1s blink infinite .3333s;
+        }
+        .typing-indicator span:nth-child(2) {
+            animation-delay: .6666s;
+        }
+        .typing-indicator span:nth-child(3) {
+            animation-delay: .9999s;
+        }
+        @keyframes blink {
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+    <div class="w-full max-w-2xl h-[90vh] md:h-[80vh] bg-[#1e1e3a] rounded-2xl shadow-2xl flex flex-col p-4 mx-4">
+        
+        <!-- Cabeçalho -->
+        <header class="flex items-center p-3 border-b border-gray-700/50">
+            <div class="relative w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-tr from-blue-500 to-purple-600">
+                <!-- Avatar SVG -->
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span class="absolute bottom-0 right-0 block h-3 w-3 rounded-full bg-green-400 border-2 border-[#1e1e3a]"></span>
+            </div>
+            <div class="ml-4">
+                <h1 class="text-lg font-bold text-white">O Cara da TI</h1>
+                <p class="text-sm text-green-400">Online</p>
+            </div>
+        </header>
+
+        <!-- Container do Chat -->
+        <main id="chat-container" class="flex-1 overflow-y-auto p-4 space-y-4">
+            <!-- Mensagem inicial do assistente -->
+            <div class="flex items-start gap-3">
+                <div class="w-8 h-8 flex-shrink-0 flex items-center justify-center rounded-full bg-gradient-to-tr from-blue-500 to-purple-600">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <div class="message-bubble-assistant text-white p-3 rounded-lg rounded-tl-none max-w-md">
+                    <p>Olá! Sou o Consultor Inteligente. Precisa de ajuda para escolher um celular? Me diga o que você procura (ex: "um celular bom para fotos e com bateria que dura o dia todo") e eu te ajudo a encontrar as melhores opções!</p>
+                </div>
+            </div>
+            <!-- Outras mensagens serão adicionadas aqui via JavaScript -->
+        </main>
+
+        <!-- Input de Mensagem -->
+        <footer class="p-2 border-t border-gray-700/50">
+            <form id="chat-form" class="flex items-center gap-2">
+                <input type="text" id="message-input" placeholder="Digite sua mensagem aqui..." class="flex-1 bg-[#2a2a46] border border-gray-600/50 rounded-full px-5 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                <button type="submit" class="bg-gradient-to-tr from-blue-500 to-purple-600 text-white rounded-full p-3 hover:opacity-90 transition-opacity">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                </button>
+            </form>
+        </footer>
+    </div>
+
+<script>
+    const chatForm = document.getElementById('chat-form');
+    const messageInput = document.getElementById('message-input');
+    const chatContainer = document.getElementById('chat-container');
+
+    // !!! IMPORTANTE !!!
+    // Substitua esta URL pela URL da sua API no Render.com
+    const apiUrl = 'https://consultor-inteligente-api.onrender.com/';
+
+    chatForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const userMessage = messageInput.value.trim();
+
+        if (!userMessage) return;
+
+        // 1. Exibir a mensagem do usuário na tela
+        appendMessage(userMessage, 'user');
+        messageInput.value = '';
+
+        // 2. Mostrar o indicador de "digitando"
+        showTypingIndicator();
+
+        try {
+            // 3. Enviar a mensagem para a API
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ prompt: userMessage })
+            });
+            
+            // 4. Lidar com a resposta
+            removeTypingIndicator();
+            if (!response.ok) {
+                throw new Error(`Erro na API: ${response.statusText}`);
+            }
+            const data = await response.json();
+            appendMessage(data.resposta, 'assistant');
+
+        } catch (error) {
+            console.error(error);
+            removeTypingIndicator();
+            appendMessage('Desculpe, algo deu errado ao tentar me conectar com o servidor. Tente novamente mais tarde.', 'assistant');
+        }
+    });
+
+    function appendMessage(message, sender) {
+        const isUser = sender === 'user';
+        
+        // Formata quebras de linha vindas da API
+        const formattedMessage = message.replace(/\n/g, '<br>');
+
+        const messageWrapper = document.createElement('div');
+        messageWrapper.className = `flex items-start gap-3 ${isUser ? 'justify-end' : ''}`;
+        
+        const bubbleClass = isUser ? 'message-bubble-user' : 'message-bubble-assistant';
+        const bubbleRadius = isUser ? 'rounded-tr-none' : 'rounded-tl-none';
+        
+        const assistantAvatar = `
+            <div class="w-8 h-8 flex-shrink-0 flex items-center justify-center rounded-full bg-gradient-to-tr from-blue-500 to-purple-600">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+        `;
+
+        messageWrapper.innerHTML = `
+            ${!isUser ? assistantAvatar : ''}
+            <div class="${bubbleClass} text-white p-3 rounded-lg ${bubbleRadius} max-w-md">
+                <p>${formattedMessage}</p>
+            </div>
+        `;
+        
+        chatContainer.appendChild(messageWrapper);
+        scrollToBottom();
+    }
+
+    function showTypingIndicator() {
+        const indicator = document.createElement('div');
+        indicator.id = 'typing-indicator';
+        indicator.className = 'flex items-start gap-3';
+        indicator.innerHTML = `
+            <div class="w-8 h-8 flex-shrink-0 flex items-center justify-center rounded-full bg-gradient-to-tr from-blue-500 to-purple-600">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <div class="message-bubble-assistant text-white p-3 rounded-lg rounded-tl-none">
+                <div class="typing-indicator">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        `;
+        chatContainer.appendChild(indicator);
+        scrollToBottom();
+    }
+
+    function removeTypingIndicator() {
+        const indicator = document.getElementById('typing-indicator');
+        if (indicator) {
+            indicator.remove();
+        }
+    }
+
+    function scrollToBottom() {
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+</script>
+</body>
+</html>
