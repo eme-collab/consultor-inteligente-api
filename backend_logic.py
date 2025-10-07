@@ -66,13 +66,13 @@ class ConsultorInteligente:
         produto_slug = produto.replace(" ", "+").lower()
 
         if "amazon" in loja:
-            return f"https://amzn.to/?tag=SEU_TAG_DE_AFILIADO&q={produto_slug}"
+            return f"https://www.amazon.com.br/q={produto_slug}&tag=bomdemarca007-20"
         elif "magazine" in loja:
-            return f"https://www.magazineluiza.com.br/busca/{produto_slug}/?partner_id=SEU_ID_AFILIADO"
+            return f"https://www.magazinevoce.com.br/magazinerefrigerador/busca/{produto_slug}"
         elif "mercado" in loja:
-            return f"https://mercadolivre.com.br/ofertas?keywords={produto_slug}&mktid=SEU_ID_AFILIADO"
+            return f"https://mercadolivre.com/sec/1NiRmMA?keywords={produto_slug}"
         elif "casas" in loja:
-            return f"https://www.casasbahia.com.br/{produto_slug}?utm_source=SEU_AFILIADO"
+            return f"https://www.casasbahia.com.br/{produto_slug}"
         else:
             return "#"
 
