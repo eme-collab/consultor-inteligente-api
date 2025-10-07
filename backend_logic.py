@@ -67,7 +67,7 @@ class ConsultorInteligente:
         print("Produtos encontrados (JSON):", response.text)
         return self._extrair_json_da_resposta(response.text) or []
 
-    def gerar_link_afiliado(loja: str, produto: str) -> str:
+    def gerar_link_afiliado(self, loja: str, produto: str) -> str:
         """
         Gera link de afiliado com base na loja e no nome do produto.
         """
@@ -104,7 +104,7 @@ class ConsultorInteligente:
             for loja in p.get("precos_referencia", []):
                 nome_loja = loja.get("loja", "")
                 preco = loja.get("preco", "")
-                link_afiliado = gerar_link_afiliado(nome_loja, marca_modelo)
+                link_afiliado = self.gerar_link_afiliado(nome_loja, marca_modelo)
                 precos += f"""
                     <a href="{link_afiliado}" target="_blank" class="block bg-blue-600/20 hover:bg-blue-600/40 rounded-lg px-3 py-2 my-1 transition">
                         🛒 <strong>{nome_loja}</strong>: {preco}
