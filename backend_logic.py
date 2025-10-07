@@ -4,6 +4,7 @@ import os
 import json
 import google.generativeai as genai
 from typing import Dict, Any, List
+from google.generativeai.types import Tool, FunctionDeclaration, HarmCategory, HarmBlockThreshold
 
 # --- Configuração da API ---
 try:
@@ -17,7 +18,7 @@ class ConsultorInteligente:
         # O log de erro e a documentação confirmam que a API v1beta espera o caminho completo do modelo.
         # Estamos agora usando o caminho explícito "models/..." para garantir a compatibilidade.
         self.model = genai.GenerativeModel(
-            'models/gemini-2.5-pro' 
+            'models/gemini-1.5-pro' 
         )
         print("Modelo ConsultorInteligente inicializado com sucesso.")
 
@@ -58,9 +59,10 @@ class ConsultorInteligente:
         """
         print("\n--- 2. Buscando Produtos com Base na Intenção ---")
         
-        # Ativamos a ferramenta de busca do Google apenas nesta chamada específica.
-        tool_config = {"google_search_retrieval": {}}
-        response = self.model.generate_content(prompt, tool_config=tool_config)
+        # Ativamos a ferramenta de busca do Google com a sintaxe correta
+        from google.generativeai.types import Tool, FunctionDeclaration, HarmCategory, HarmBlockThreshold
+        tools = [Tool(google_search_retrieval={})]
+        response = self.model.generate_content(prompt, tools=tools)
 
         print("Produtos encontrados (JSON):", response.text)
         return self._extrair_json_da_resposta(response.text) or []
