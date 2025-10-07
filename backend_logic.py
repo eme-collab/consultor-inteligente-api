@@ -68,39 +68,39 @@ class ConsultorInteligente:
         return self._extrair_json_da_resposta(response.text) or []
 
         def apresentar_resultados(self, produtos: list[dict], query_original: str) -> str:
-        """
-        Gera uma resposta em HTML com cards comparativos.
-        """
-        print("\n--- 3. Formatando a Apresentação Final (HTML) ---")
+            """
+            Gera uma resposta em HTML com cards comparativos.
+            """
+            print("\n--- 3. Formatando a Apresentação Final (HTML) ---")
 
-        html = "<div class='grid grid-cols-1 md:grid-cols-3 gap-4'>"
+            html = "<div class='grid grid-cols-1 md:grid-cols-3 gap-4'>"
 
-        for p in produtos:
-            marca_modelo = p.get("marca_modelo", "Modelo desconhecido")
-            beneficios = "".join([f"<li>✅ {b}</li>" for b in p.get("beneficios", [])])
+            for p in produtos:
+                marca_modelo = p.get("marca_modelo", "Modelo desconhecido")
+                beneficios = "".join([f"<li>✅ {b}</li>" for b in p.get("beneficios", [])])
 
-            precos = ""
-            for loja in p.get("precos_referencia", []):
-                nome_loja = loja.get("loja", "")
-                preco = loja.get("preco", "")
-                link_afiliado = gerar_link_afiliado(nome_loja, marca_modelo)
-                precos += f"""
-                    <a href="{link_afiliado}" target="_blank" class="block bg-blue-600/20 hover:bg-blue-600/40 rounded-lg px-3 py-2 my-1 transition">
-                        🛒 <strong>{nome_loja}</strong>: {preco}
-                    </a>
+                precos = ""
+                for loja in p.get("precos_referencia", []):
+                    nome_loja = loja.get("loja", "")
+                    preco = loja.get("preco", "")
+                    link_afiliado = gerar_link_afiliado(nome_loja, marca_modelo)
+                    precos += f"""
+                        <a href="{link_afiliado}" target="_blank" class="block bg-blue-600/20 hover:bg-blue-600/40 rounded-lg px-3 py-2 my-1 transition">
+                            🛒 <strong>{nome_loja}</strong>: {preco}
+                        </a>
+                    """
+
+                html += f"""
+                <div class="bg-[#2a2a46] text-white p-4 rounded-xl shadow-md border border-gray-700/50">
+                    <h3 class="text-lg font-semibold mb-2 text-blue-400">{marca_modelo}</h3>
+                    <ul class="text-sm space-y-1 mb-3">{beneficios}</ul>
+                    <div>{precos}</div>
+                </div>
                 """
 
-            html += f"""
-            <div class="bg-[#2a2a46] text-white p-4 rounded-xl shadow-md border border-gray-700/50">
-                <h3 class="text-lg font-semibold mb-2 text-blue-400">{marca_modelo}</h3>
-                <ul class="text-sm space-y-1 mb-3">{beneficios}</ul>
-                <div>{precos}</div>
-            </div>
-            """
-
-        html += "</div>"
-        html += "<p class='text-sm text-gray-400 mt-3'>Os preços são aproximados e podem variar conforme disponibilidade.</p>"
-        return html
+            html += "</div>"
+            html += "<p class='text-sm text-gray-400 mt-3'>Os preços são aproximados e podem variar conforme disponibilidade.</p>"
+            return html
 
 
     def gerar_link_afiliado(loja: str, produto: str) -> str:
