@@ -15,7 +15,7 @@ except KeyError:
 class ConsultorInteligente:
     def __init__(self):
         self.model = genai.GenerativeModel(
-            'models/gemini-1.5-pro-latest'
+            'models/gemini-2.5-pro'
         )
         print("Modelo ConsultorInteligente inicializado com sucesso.")
 
