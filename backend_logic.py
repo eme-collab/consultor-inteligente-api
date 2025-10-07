@@ -18,7 +18,7 @@ class ConsultorInteligente:
         # O log de erro e a documentação confirmam que a API v1beta espera o caminho completo do modelo.
         # Estamos agora usando o caminho explícito "models/..." para garantir a compatibilidade.
         self.model = genai.GenerativeModel(
-            'models/gemini-pro' 
+            'models/gemini-2.5-pro' 
         )
         print("Modelo ConsultorInteligente inicializado com sucesso.")
 
