@@ -16,7 +16,7 @@ class ConsultorInteligente:
     def __init__(self):
         # Usando o nome exato do modelo que funciona, sem o sufixo '-latest'.
         self.model = genai.GenerativeModel(
-            'gemini-1.5-flash'
+            'gemini-2.5-flash'
         )
         print("Modelo ConsultorInteligente inicializado com gemini-1.5-flash.")
 
