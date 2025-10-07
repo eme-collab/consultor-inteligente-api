@@ -67,6 +67,27 @@ class ConsultorInteligente:
         print("Produtos encontrados (JSON):", response.text)
         return self._extrair_json_da_resposta(response.text) or []
 
+    def gerar_link_afiliado(loja: str, produto: str) -> str:
+        """
+        Gera link de afiliado com base na loja e no nome do produto.
+        """
+        loja = loja.lower()
+        produto_slug = produto.replace(" ", "+").lower()
+
+        if "amazon" in loja:
+            return f"https://amzn.to/?tag=SEU_TAG_DE_AFILIADO&q={produto_slug}"
+        elif "magazine" in loja:
+            return f"https://www.magazineluiza.com.br/busca/{produto_slug}/?partner_id=SEU_ID_AFILIADO"
+        elif "mercado" in loja:
+            return f"https://mercadolivre.com.br/ofertas?keywords={produto_slug}&mktid=SEU_ID_AFILIADO"
+        elif "casas" in loja:
+            return f"https://www.casasbahia.com.br/{produto_slug}?utm_source=SEU_AFILIADO"
+        else:
+            return "#"
+
+
+
+
     def apresentar_resultados(self, produtos: list[dict], query_original: str) -> str:
         """
         Gera uma resposta em HTML com cards comparativos.
@@ -101,25 +122,6 @@ class ConsultorInteligente:
         html += "</div>"
         html += "<p class='text-sm text-gray-400 mt-3'>Os preços são aproximados e podem variar conforme disponibilidade.</p>"
         return html
-
-
-    def gerar_link_afiliado(loja: str, produto: str) -> str:
-        """
-        Gera link de afiliado com base na loja e no nome do produto.
-        """
-        loja = loja.lower()
-        produto_slug = produto.replace(" ", "+").lower()
-
-        if "amazon" in loja:
-            return f"https://amzn.to/?tag=SEU_TAG_DE_AFILIADO&q={produto_slug}"
-        elif "magazine" in loja:
-            return f"https://www.magazineluiza.com.br/busca/{produto_slug}/?partner_id=SEU_ID_AFILIADO"
-        elif "mercado" in loja:
-            return f"https://mercadolivre.com.br/ofertas?keywords={produto_slug}&mktid=SEU_ID_AFILIADO"
-        elif "casas" in loja:
-            return f"https://www.casasbahia.com.br/{produto_slug}?utm_source=SEU_AFILIADO"
-        else:
-            return "#"
 
 
     def obter_recomendacao(self, query_usuario: str) -> str:
