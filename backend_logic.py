@@ -14,10 +14,11 @@ except KeyError:
 
 class ConsultorInteligente:
     def __init__(self):
+        # Usando o nome exato do modelo que funciona, sem o sufixo '-latest'.
         self.model = genai.GenerativeModel(
-            'models/gemini-2.5-pro'
+            'gemini-1.5-flash'
         )
-        print("Modelo ConsultorInteligente inicializado com sucesso.")
+        print("Modelo ConsultorInteligente inicializado com gemini-1.5-flash.")
 
     def _extrair_json_da_resposta(self, text: str) -> Any:
         try:
@@ -78,42 +79,71 @@ class ConsultorInteligente:
 
     def apresentar_resultados(self, produtos: list[dict], query_original: str) -> str:
         """
-        Gera uma resposta em HTML com cards comparativos em um carrossel horizontal.
+        Gera uma resposta HTML com múltiplas visualizações (Carrossel e Acordeão).
         """
         print("\n--- 3. Formatando a Apresentação Final (HTML) ---")
 
-        # Container do carrossel: flex, rolagem horizontal, com "snap"
-        # A classe 'card-carousel' será usada no CSS do index.html para customização
-        html = "<div class='card-carousel flex overflow-x-auto snap-x snap-mandatory space-x-4 py-2'>"
+        # 1. Botões de alternância de visualização
+        toggle_buttons_html = """
+        <div class="flex items-center justify-center gap-2 mb-3">
+            <button data-view="carousel" class="view-toggle-button active-view-button text-xs px-3 py-1 rounded-full">Carrossel</button>
+            <button data-view="accordion" class="view-toggle-button inactive-view-button text-xs px-3 py-1 rounded-full">Lista</button>
+        </div>
+        """
 
+        # 2. Visualização em Carrossel
+        carousel_html = "<div id='view-carousel' class='card-carousel flex overflow-x-auto snap-x snap-mandatory space-x-4 py-2'>"
         for p in produtos:
             marca_modelo = p.get("marca_modelo", "Modelo desconhecido")
             beneficios = "".join([f"<li>✅ {b}</li>" for b in p.get("beneficios", [])])
-
             precos = ""
             for loja in p.get("precos_referencia", []):
                 nome_loja = loja.get("loja", "")
                 preco = loja.get("preco", "")
                 link_afiliado = self.gerar_link_afiliado(nome_loja, marca_modelo)
-                precos += f"""
-                    <a href="{link_afiliado}" target="_blank" class="block bg-blue-600/20 hover:bg-blue-600/40 rounded-lg px-3 py-2 my-1 transition">
-                        🛒 <strong>{nome_loja}</strong>: {preco}
-                    </a>
-                """
-            
-            # Card individual: não encolhe, ocupa 91% da largura (w-11/12), e centraliza no snap
-            html += f"""
+                precos += f"""<a href="{link_afiliado}" target="_blank" class="block bg-blue-600/20 hover:bg-blue-600/40 rounded-lg px-3 py-2 my-1 transition">🛒 <strong>{nome_loja}</strong>: {preco}</a>"""
+            carousel_html += f"""
             <div class="flex-shrink-0 w-11/12 snap-center bg-[#2a2a46] text-white p-4 rounded-xl shadow-md border border-gray-700/50">
                 <h3 class="text-lg font-semibold mb-2 text-blue-400">{marca_modelo}</h3>
                 <ul class="text-sm space-y-1 mb-3">{beneficios}</ul>
                 <div>{precos}</div>
-            </div>
-            """
+            </div>"""
+        carousel_html += "</div>"
+        carousel_html += "<p class='text-xs text-gray-400 mt-1 text-center md:hidden'> arraste para o lado para ver mais opções.</p>"
 
-        html += "</div>"
-        html += "<p class='text-xs text-gray-400 mt-3 text-center'> arraste para o lado para ver mais opções.</p>"
-        return html
+        # 3. Visualização em Acordeão (Lista)
+        accordion_html = "<div id='view-accordion' class='hidden space-y-2'>"
+        for p in produtos:
+            marca_modelo = p.get("marca_modelo", "Modelo desconhecido")
+            beneficios = "".join([f"<li>✅ {b}</li>" for b in p.get("beneficios", [])])
+            precos = ""
+            for loja in p.get("precos_referencia", []):
+                nome_loja = loja.get("loja", "")
+                preco = loja.get("preco", "")
+                link_afiliado = self.gerar_link_afiliado(nome_loja, marca_modelo)
+                precos += f"""<a href="{link_afiliado}" target="_blank" class="block bg-blue-600/20 hover:bg-blue-600/40 rounded-lg px-3 py-2 my-1 transition">🛒 <strong>{nome_loja}</strong>: {preco}</a>"""
+            accordion_html += f"""
+            <div class="bg-[#2a2a46] rounded-lg border border-gray-700/50 overflow-hidden">
+                <button class="accordion-toggle w-full text-left p-3 flex justify-between items-center transition hover:bg-gray-700/30">
+                    <span class="font-semibold text-blue-400">{marca_modelo}</span>
+                    <svg class="accordion-icon w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content hidden p-3 pt-0 border-t border-gray-700/50">
+                    <ul class="text-sm space-y-1 my-3">{beneficios}</ul>
+                    <div>{precos}</div>
+                </div>
+            </div>"""
+        accordion_html += "</div>"
 
+        # 4. Combina tudo em um container principal
+        final_html = f"""
+        <div class="interactive-results">
+            {toggle_buttons_html}
+            {carousel_html}
+            {accordion_html}
+        </div>
+        """
+        return final_html
 
     def obter_recomendacao(self, query_usuario: str) -> str:
         try:
@@ -129,3 +159,4 @@ class ConsultorInteligente:
         except Exception as e:
             print(f"ERRO DETALHADO NA LÓGICA DO BACKEND: {e}")
             return f"Erro no servidor: {str(e)}"
+
