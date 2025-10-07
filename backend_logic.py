@@ -66,7 +66,7 @@ class ConsultorInteligente:
         produto_slug = produto.replace(" ", "+").lower()
 
         if "amazon" in loja:
-            return f"https://www.amazon.com.br/q={produto_slug}&tag=bomdemarca007-20"
+            return f"https://www.amazon.com.br/s?k={produto_slug}&tag=bomdemarca007-20"
         elif "magazine" in loja:
             return f"https://www.magazinevoce.com.br/magazinerefrigerador/busca/{produto_slug}"
         elif "mercado" in loja:
