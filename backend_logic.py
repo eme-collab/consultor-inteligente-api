@@ -14,17 +14,13 @@ except KeyError:
 
 class ConsultorInteligente:
     def __init__(self):
-        # --- CORREÇÃO FINAL E DEFINITIVA ---
-        # O log de erro e a documentação confirmam que a API v1beta espera o caminho completo do modelo.
-        # Estamos agora usando o caminho explícito "models/..." para garantir a compatibilidade.
         self.model = genai.GenerativeModel(
-            'models/gemini-2.5-pro' 
+            'models/gemini-1.5-pro-latest'
         )
         print("Modelo ConsultorInteligente inicializado com sucesso.")
 
     def _extrair_json_da_resposta(self, text: str) -> Any:
         try:
-            # Limpa qualquer formatação de markdown que a IA possa retornar
             json_block = text.strip().replace("```json", "").replace("```", "")
             return json.loads(json_block)
         except json.JSONDecodeError:
@@ -58,12 +54,7 @@ class ConsultorInteligente:
         Retorne APENAS a lista de objetos JSON.
         """
         print("\n--- 2. Buscando Produtos com Base na Intenção ---")
-        
-        # Ativamos a ferramenta de busca do Google com a sintaxe correta
-        from google.generativeai.types import Tool, FunctionDeclaration, HarmCategory, HarmBlockThreshold
-        # tools = [Tool(google_search_retrieval={})]
         response = self.model.generate_content(prompt)
-
         print("Produtos encontrados (JSON):", response.text)
         return self._extrair_json_da_resposta(response.text) or []
 
@@ -85,16 +76,15 @@ class ConsultorInteligente:
         else:
             return "#"
 
-
-
-
     def apresentar_resultados(self, produtos: list[dict], query_original: str) -> str:
         """
-        Gera uma resposta em HTML com cards comparativos.
+        Gera uma resposta em HTML com cards comparativos em um carrossel horizontal.
         """
         print("\n--- 3. Formatando a Apresentação Final (HTML) ---")
 
-        html = "<div class='grid grid-cols-1 md:grid-cols-3 gap-4'>"
+        # Container do carrossel: flex, rolagem horizontal, com "snap"
+        # A classe 'card-carousel' será usada no CSS do index.html para customização
+        html = "<div class='card-carousel flex overflow-x-auto snap-x snap-mandatory space-x-4 py-2'>"
 
         for p in produtos:
             marca_modelo = p.get("marca_modelo", "Modelo desconhecido")
@@ -110,9 +100,10 @@ class ConsultorInteligente:
                         🛒 <strong>{nome_loja}</strong>: {preco}
                     </a>
                 """
-
+            
+            # Card individual: não encolhe, ocupa 91% da largura (w-11/12), e centraliza no snap
             html += f"""
-            <div class="bg-[#2a2a46] text-white p-4 rounded-xl shadow-md border border-gray-700/50">
+            <div class="flex-shrink-0 w-11/12 snap-center bg-[#2a2a46] text-white p-4 rounded-xl shadow-md border border-gray-700/50">
                 <h3 class="text-lg font-semibold mb-2 text-blue-400">{marca_modelo}</h3>
                 <ul class="text-sm space-y-1 mb-3">{beneficios}</ul>
                 <div>{precos}</div>
@@ -120,7 +111,7 @@ class ConsultorInteligente:
             """
 
         html += "</div>"
-        html += "<p class='text-sm text-gray-400 mt-3'>Os preços são aproximados e podem variar conforme disponibilidade.</p>"
+        html += "<p class='text-xs text-gray-400 mt-3 text-center'> arraste para o lado para ver mais opções.</p>"
         return html
 
 
@@ -136,8 +127,5 @@ class ConsultorInteligente:
             
             return self.apresentar_resultados(produtos, query_usuario)
         except Exception as e:
-            # Captura qualquer erro que possa acontecer durante a chamada para a API do Google
             print(f"ERRO DETALHADO NA LÓGICA DO BACKEND: {e}")
-            # Retorna a mensagem de erro específica para depuração no front-end
             return f"Erro no servidor: {str(e)}"
-
