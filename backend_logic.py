@@ -61,7 +61,7 @@ class ConsultorInteligente:
         
         # Ativamos a ferramenta de busca do Google com a sintaxe correta
         from google.generativeai.types import Tool, FunctionDeclaration, HarmCategory, HarmBlockThreshold
-        tools = [Tool(google_search_retrieval={})]
+        # tools = [Tool(google_search_retrieval={})]
         response = self.model.generate_content(prompt, tools=tools)
 
         print("Produtos encontrados (JSON):", response.text)
