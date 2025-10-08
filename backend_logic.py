@@ -146,17 +146,45 @@ class ConsultorInteligente:
         return final_html
 
     def obter_recomendacao(self, query_usuario: str) -> str:
+
+        # Inicia um cronômetro para o processo total do backend
+        start_time_total = time.perf_counter()
+
         try:
+            # Medindo o Passo 1: Captar Intenção
+            start_time_intencao = time.perf_counter()
             intencao = self.captar_intencao(query_usuario)
+            end_time_intencao = time.perf_counter()
+            tempo_intencao = (end_time_intencao - start_time_intencao) * 1000  # em milissegundos
+            logging.info(f"Tempo para 'captar_intencao': {tempo_intencao:.2f} ms")
+
             if not intencao:
                 return "Desculpe, não consegui entender o que você precisa. Poderia tentar de outra forma?"
             
+            # Medindo o Passo 2: Buscar Produtos
+            start_time_produtos = time.perf_counter()
             produtos = self.buscar_produtos(intencao)
+            end_time_produtos = time.perf_counter()
+            tempo_produtos = (end_time_produtos - start_time_produtos) * 1000 # em milissegundos
+            logging.info(f"Tempo para 'buscar_produtos': {tempo_produtos:.2f} ms")
+
             if not produtos:
                 return "Puxa, fiz uma busca aqui mas não encontrei nenhum celular que se encaixe perfeitamente no seu pedido. Que tal tentarmos outros termos?"
             
-            return self.apresentar_resultados(produtos, query_usuario)
-        except Exception as e:
-            print(f"ERRO DETALHADO NA LÓGICA DO BACKEND: {e}")
-            return f"Erro no servidor: {str(e)}"
+            # Medindo o Passo 3: Apresentar Resultados (gerar HTML)
+            start_time_formatacao = time.perf_counter()
+            resultado_html = self.apresentar_resultados(produtos, query_usuario)
+            end_time_formatacao = time.perf_counter()
+            tempo_formatacao = (end_time_formatacao - start_time_formatacao) * 1000 # em milissegundos
+            logging.info(f"Tempo para 'apresentar_resultados': {tempo_formatacao:.2f} ms")
 
+            return resultado_html
+            
+        except Exception as e:
+            logging.error(f"ERRO DETALHADO NA LÓGICA DO BACKEND: {e}", exc_info=True)
+            return f"Erro no servidor: {str(e)}"
+        finally:
+            # Mede e loga o tempo total do backend, aconteça o que acontecer
+            end_time_total = time.perf_counter()
+            tempo_total_backend = (end_time_total - start_time_total) * 1000 # em milissegundos
+            logging.info(f"--- Tempo TOTAL de processamento no backend: {tempo_total_backend:.2f} ms ---")
