@@ -2,6 +2,8 @@
 
 import os
 import json
+import time  # <--- ADICIONE ESTA LINHA
+import logging # <--- E ESTA LINHA TAMBÉM
 import google.generativeai as genai
 from typing import Dict, Any, List
 from google.generativeai.types import Tool, FunctionDeclaration, HarmCategory, HarmBlockThreshold
