@@ -17,7 +17,7 @@ except KeyError:
 class ConsultorInteligente:
     def __init__(self):
         # Carrega o modelo Gemini Pro
-        self.model = genai.GenerativeModel('gemini-1.5-pro-latest')
+        self.model = genai.GenerativeModel('gemini-1.5-pro')
         
         # Carrega as novas credenciais da Search API a partir das variáveis de ambiente
         try:
