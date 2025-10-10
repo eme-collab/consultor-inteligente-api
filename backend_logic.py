@@ -2,64 +2,152 @@
 
 import os
 import json
-import time  # <--- ADICIONE ESTA LINHA
-import logging # <--- E ESTA LINHA TAMBÉM
+import time
+import logging
+import requests  # <-- NOVO IMPORT
 import google.generativeai as genai
 from typing import Dict, Any, List
-from google.generativeai.types import Tool, FunctionDeclaration, HarmCategory, HarmBlockThreshold
 
 # --- Configuração da API ---
 try:
     genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 except KeyError:
-    raise RuntimeError("A variável de ambiente 'GEMINI_API_KEY' não foi definida ou não está acessível no servidor do Render.")
+    raise RuntimeError("A variável de ambiente 'GEMINI_API_KEY' não foi definida.")
 
 class ConsultorInteligente:
     def __init__(self):
-        # Usando o nome exato do modelo que funciona, sem o sufixo '-latest'.
-        self.model = genai.GenerativeModel(
-            'gemini-2.5-pro'
-        )
-        print("Modelo ConsultorInteligente inicializado com gemini-1.5-flash.")
+        # Carrega o modelo Gemini Pro
+        self.model = genai.GenerativeModel('gemini-1.5-pro-latest')
+        
+        # Carrega as novas credenciais da Search API a partir das variáveis de ambiente
+        try:
+            self.search_api_key = os.environ["GOOGLE_SEARCH_API_KEY"]
+            self.search_cx = os.environ["GOOGLE_SEARCH_CX"]
+        except KeyError as e:
+            raise RuntimeError(f"Variável de ambiente não encontrada: {e}. Certifique-se de que GOOGLE_SEARCH_API_KEY e GOOGLE_SEARCH_CX estão configuradas no Render.")
+        
+        logging.info("ConsultorInteligente inicializado com Gemini Pro e Google Search API.")
 
     def _extrair_json_da_resposta(self, text: str) -> Any:
         try:
             json_block = text.strip().replace("```json", "").replace("```", "")
             return json.loads(json_block)
         except json.JSONDecodeError:
-            print(f"Alerta: Não foi possível decodificar o JSON da resposta: {text}")
+            logging.warning(f"Não foi possível decodificar o JSON da resposta: {text}")
             return None
 
+    # ====================================================================
+    # ETAPA 1: Captar a intenção do usuário (NENHUMA MUDANÇA AQUI)
+    # ====================================================================
     def captar_intencao(self, query_usuario: str) -> Dict[str, Any]:
         prompt = f"""
         Você é um sistema especialista em análise de intenção de busca para um comparador de celulares.
-        Analise a seguinte consulta de um usuário: "{query_usuario}"
-        Extraia as seguintes informações em um formato JSON:
-        1.  "uso_principal": Qual o principal objetivo do usuário com o celular? (Ex: 'fotos', 'jogos', 'trabalho', 'uso_geral', 'bateria').
-        2.  "caracteristicas_chave": Uma lista de características específicas mencionadas. (Ex: ['câmera boa', 'bateria duradoura', 'tela grande', 'barato']).
-        3.  "faixa_preco": Qual a faixa de preço implícita? (Ex: 'básico', 'intermediário', 'top de linha', 'custo-benefício').
+        Analise a seguinte consulta: "{query_usuario}"
+        Extraia as informações em um formato JSON com os campos "uso_principal", "caracteristicas_chave" (lista) e "faixa_preco".
         Retorne APENAS o objeto JSON.
         """
-        print("--- 1. Captando Intenção do Usuário ---")
         response = self.model.generate_content(prompt)
-        print("Intenção extraída (JSON):", response.text)
         return self._extrair_json_da_resposta(response.text) or {}
 
-    def buscar_produtos(self, intencao: Dict[str, Any]) -> List[Dict[str, Any]]:
+    # ====================================================================
+    # ETAPA 2 (NOVA): Buscar dados brutos usando a Google Search API
+    # ====================================================================
+    def realizar_busca_google(self, intencao: Dict[str, Any]) -> str:
+        # Constrói uma query de busca a partir da intenção
+        termos_busca = intencao.get('caracteristicas_chave', [])
+        uso_principal = intencao.get('uso_principal', '')
+        query = f"{uso_principal} {' '.join(termos_busca)} celular review"
+        
+        logging.info(f"Realizando busca no Google com a query: '{query}'")
+        
+        url = "https://www.googleapis.com/customsearch/v1"
+        params = {
+            'key': self.search_api_key,
+            'cx': self.search_cx,
+            'q': query,
+            'num': 5  # Pedimos 5 resultados para ter mais contexto
+        }
+        
+        try:
+            response = requests.get(url, params=params)
+            response.raise_for_status()  # Lança um erro para respostas ruins (4xx ou 5xx)
+            search_results = response.json()
+            
+            # Formata os resultados como um texto simples para o Gemini
+            contexto = ""
+            for item in search_results.get('items', []):
+                contexto += f"Título: {item.get('title')}\n"
+                contexto += f"Snippet: {item.get('snippet')}\n---\n"
+            return contexto
+        except requests.exceptions.RequestException as e:
+            logging.error(f"Erro ao chamar a Google Search API: {e}")
+            return "" # Retorna string vazia em caso de erro
+
+    # ====================================================================
+    # ETAPA 3 (NOVA): Sintetizar os resultados da busca com o Gemini
+    # ====================================================================
+    def sintetizar_resultados(self, contexto_busca: str, intencao: Dict[str, Any]) -> List[Dict[str, Any]]:
+        if not contexto_busca:
+            logging.warning("Contexto da busca está vazio. Pulando a síntese.")
+            return []
+
         prompt = f"""
-        Você é um especialista em tecnologia que ajuda usuários a encontrar o celular ideal.
-        Com base nos seguintes critérios de busca: {json.dumps(intencao, ensure_ascii=False)}
-        Use a busca em tempo real para encontrar os 3 melhores modelos de celular disponíveis no mercado brasileiro que atendam a esses critérios.
-        Para cada modelo, forneça as seguintes informações em um formato de lista de objetos JSON:
-        - "marca_modelo": A marca e o nome do modelo (Ex: "Samsung Galaxy S24").
-        - "beneficios": Uma lista de 3 a 4 strings curtas que traduzem especificações técnicas em benefícios claros para o usuário.
-        - "precos_referencia": Uma lista de 2 a 3 objetos com a "loja" e o "preco".
+        Você é um especialista em tecnologia. Sua tarefa é analisar os seguintes resultados de busca e a intenção de um usuário para recomendar 3 celulares.
+
+        Intenção do usuário: {json.dumps(intencao, ensure_ascii=False)}
+
+        Resultados da busca:
+        ---
+        {contexto_busca}
+        ---
+
+        Com base nos resultados da busca e na intenção, selecione os 3 melhores modelos.
+        Para cada modelo, forneça as informações em uma lista de objetos JSON com os campos:
+        - "marca_modelo": A marca e o nome do modelo.
+        - "beneficios": Uma lista de 3 a 4 strings curtas com os principais benefícios.
+        - "precos_referencia": Uma lista de 2 objetos com "loja" e "preco".
         Retorne APENAS a lista de objetos JSON.
         """
-        print("\n--- 2. Buscando Produtos com Base na Intenção ---")
         response = self.model.generate_content(prompt)
-        print("Produtos encontrados (JSON):", response.text)
         return self._extrair_json_da_resposta(response.text) or []
+
+    # ====================================================================
+    # ORQUESTRADOR PRINCIPAL (MODIFICADO)
+    # ====================================================================
+    def obter_recomendacao(self, query_usuario: str) -> str:
+        start_time_total = time.perf_counter()
+        
+        # Etapa 1: Captar Intenção
+        start_time_intencao = time.perf_counter()
+        intencao = self.captar_intencao(query_usuario)
+        end_time_intencao = time.perf_counter()
+        logging.info(f"Tempo para 'captar_intencao': {(end_time_intencao - start_time_intencao) * 1000:.2f} ms")
+
+        if not intencao:
+            return "Desculpe, não consegui entender o que você precisa."
+
+        # Etapa 2: Realizar Busca
+        start_time_busca = time.perf_counter()
+        contexto_busca = self.realizar_busca_google(intencao)
+        end_time_busca = time.perf_counter()
+        logging.info(f"Tempo para 'realizar_busca_google': {(end_time_busca - start_time_busca) * 1000:.2f} ms")
+        
+        # Etapa 3: Sintetizar Resultados
+        start_time_sintese = time.perf_counter()
+        produtos = self.sintetizar_resultados(contexto_busca, intencao)
+        end_time_sintese = time.perf_counter()
+        logging.info(f"Tempo para 'sintetizar_resultados': {(end_time_sintese - start_time_sintese) * 1000:.2f} ms")
+
+        if not produtos:
+            return "Puxa, fiz uma busca mas não encontrei celulares com essas especificações."
+
+        # Etapa 4: Apresentar Resultados (HTML)
+        resultado_html = self.apresentar_resultados(produtos, query_usuario)
+        
+        end_time_total = time.perf_counter()
+        logging.info(f"--- Tempo TOTAL de processamento no backend: {(end_time_total - start_time_total) * 1000:.2f} ms ---")
+
+        return resultado_html
 
     def gerar_link_afiliado(self, loja: str, produto: str) -> str:
         """
@@ -146,47 +234,3 @@ class ConsultorInteligente:
         </div>
         """
         return final_html
-
-    def obter_recomendacao(self, query_usuario: str) -> str:
-
-        # Inicia um cronômetro para o processo total do backend
-        start_time_total = time.perf_counter()
-
-        try:
-            # Medindo o Passo 1: Captar Intenção
-            start_time_intencao = time.perf_counter()
-            intencao = self.captar_intencao(query_usuario)
-            end_time_intencao = time.perf_counter()
-            tempo_intencao = (end_time_intencao - start_time_intencao) * 1000  # em milissegundos
-            logging.info(f"Tempo para 'captar_intencao': {tempo_intencao:.2f} ms")
-
-            if not intencao:
-                return "Desculpe, não consegui entender o que você precisa. Poderia tentar de outra forma?"
-            
-            # Medindo o Passo 2: Buscar Produtos
-            start_time_produtos = time.perf_counter()
-            produtos = self.buscar_produtos(intencao)
-            end_time_produtos = time.perf_counter()
-            tempo_produtos = (end_time_produtos - start_time_produtos) * 1000 # em milissegundos
-            logging.info(f"Tempo para 'buscar_produtos': {tempo_produtos:.2f} ms")
-
-            if not produtos:
-                return "Puxa, fiz uma busca aqui mas não encontrei nenhum celular que se encaixe perfeitamente no seu pedido. Que tal tentarmos outros termos?"
-            
-            # Medindo o Passo 3: Apresentar Resultados (gerar HTML)
-            start_time_formatacao = time.perf_counter()
-            resultado_html = self.apresentar_resultados(produtos, query_usuario)
-            end_time_formatacao = time.perf_counter()
-            tempo_formatacao = (end_time_formatacao - start_time_formatacao) * 1000 # em milissegundos
-            logging.info(f"Tempo para 'apresentar_resultados': {tempo_formatacao:.2f} ms")
-
-            return resultado_html
-            
-        except Exception as e:
-            logging.error(f"ERRO DETALHADO NA LÓGICA DO BACKEND: {e}", exc_info=True)
-            return f"Erro no servidor: {str(e)}"
-        finally:
-            # Mede e loga o tempo total do backend, aconteça o que acontecer
-            end_time_total = time.perf_counter()
-            tempo_total_backend = (end_time_total - start_time_total) * 1000 # em milissegundos
-            logging.info(f"--- Tempo TOTAL de processamento no backend: {tempo_total_backend:.2f} ms ---")
