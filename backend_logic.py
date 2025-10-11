@@ -24,7 +24,7 @@ class ConsultorInteligente:
     """
     def __init__(self):
         """Inicializa o modelo de IA e as chaves de API para os serviços do Google."""
-        self.model = genai.GenerativeModel('gemini-1.5-pro')
+        self.model = genai.GenerativeModel('gemini-2.5-pro')
         try:
             self.search_api_key = os.environ["GOOGLE_SEARCH_API_KEY"]
             self.search_cx = os.environ["GOOGLE_SEARCH_CX"]
