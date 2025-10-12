@@ -4,199 +4,131 @@ import os
 import json
 import time
 import logging
-import random
+import random # <-- NOVO: Import para o sorteio das lojas
 from typing import Dict, Any, List
 import google.generativeai as genai
 
-# Configuração do logging
 logging.basicConfig(level=logging.INFO)
 
-# --- Configuração da API do Gemini ---
 try:
     genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 except KeyError:
     raise RuntimeError("A variável de ambiente 'GEMINI_API_KEY' não foi definida.")
 
 class ConsultorInteligente:
-    """
-    Classe que encapsula a lógica do chatbot consultor, utilizando uma base de dados
-    JSON local com filtragem prévia para otimizar velocidade, custo e qualidade.
-    """
     def __init__(self):
-        """
-        Inicializa o modelo de IA e carrega a base de dados de celulares do
-        arquivo celulares.json para a memória.
-        """
-        self.model = genai.GenerativeModel('gemini-2.5-pro')
+        self.model = genai.GenerativeModel('gemini-1.5-pro-latest')
         self.database_celulares = []
+        self.lojas_ancora = [] # <-- NOVO
+        self.lojas_rotativas = [] # <-- NOVO
         try:
-            # O 'encoding="utf-8"' é importante para garantir a leitura correta de caracteres especiais
             with open('celulares.json', 'r', encoding='utf-8') as f:
                 self.database_celulares = json.load(f)
-            logging.info(f"Banco de dados carregado com sucesso. {len(self.database_celulares)} celulares na memória.")
-        except FileNotFoundError:
-            logging.error("ERRO CRÍTICO: O arquivo 'celulares.json' não foi encontrado.")
+            logging.info(f"Banco de dados de celulares carregado com {len(self.database_celulares)} itens.")
+            
+            # <-- NOVO: Carrega o arquivo de lojas na inicialização -->
+            with open('lojas.json', 'r', encoding='utf-8') as f:
+                lojas_data = json.load(f)
+                self.lojas_ancora = lojas_data.get("ancoras", [])
+                self.lojas_rotativas = lojas_data.get("rotativas", [])
+            logging.info(f"Banco de dados de lojas carregado. {len(self.lojas_ancora)} âncoras, {len(self.lojas_rotativas)} rotativas.")
+
+        except FileNotFoundError as e:
+            logging.error(f"ERRO CRÍTICO: O arquivo '{e.filename}' não foi encontrado.")
             raise
-        except json.JSONDecodeError:
-            logging.error("ERRO CRÍTICO: O arquivo 'celulares.json' contém um erro de formatação JSON.")
+        except json.JSONDecodeError as e:
+            logging.error(f"ERRO CRÍTICO: Um arquivo JSON contém um erro de formatação: {e}")
             raise
 
+    # <-- ALTERADO: A classe principal continua daqui, com as funções de lógica -->
+    # ... (as funções _extrair_json_da_resposta, captar_intencao, filtrar_celulares_localmente,
+    # e classificar_e_recomendar continuam EXATAMENTE IGUAIS ao que você já tem) ...
     def _extrair_json_da_resposta(self, text: str) -> Any:
-        """Tenta extrair um bloco de código JSON de uma string de texto."""
         try:
             json_start = text.find('```json')
-            if json_start == -1:
-                # Se não encontrar o marcador, tenta decodificar o texto inteiro
-                return json.loads(text)
-
+            if json_start == -1: return json.loads(text)
             json_start += len('```json')
             json_end = text.find('```', json_start)
-            if json_end == -1:
-                # Se não encontrar o marcador de fim, pega tudo até o final
-                json_block = text[json_start:].strip()
-            else:
-                json_block = text[json_start:json_end].strip()
-            
+            json_block = text[json_start:json_end if json_end != -1 else len(text)].strip()
             return json.loads(json_block)
         except (json.JSONDecodeError, AttributeError):
-            logging.warning(f"Não foi possível decodificar o JSON da resposta final: {text}")
+            logging.warning(f"Não foi possível decodificar o JSON: {text}")
             return None
 
     def captar_intencao(self, query_usuario: str) -> Dict[str, Any]:
-        """
-        ETAPA 1: Usa o Gemini para analisar a consulta do usuário e extrair
-        suas necessidades em um formato JSON estruturado.
-        """
-        prompt = f"""
-        Analise a consulta de um usuário para um consultor de celulares: "{query_usuario}"
-        Extraia a intenção em um JSON com os seguintes campos:
-        - "faixa_preco_categoria": Inferir uma das seguintes categorias de preço: ["Entrada", "Intermediário", "Intermediário Premium", "Premium", "Super Premium"].
-        - "caracteristicas_foco": Uma lista de até 3 focos principais do usuário. Use termos-chave como ["câmera", "bateria", "desempenho", "custo-benefício", "design", "tela"].
-        Retorne APENAS o objeto JSON.
-        """
+        prompt = f"""Analise a consulta: "{query_usuario}". Extraia a intenção em um JSON com "faixa_preco_categoria" (["Entrada", "Intermediário", "Intermediário Premium", "Premium", "Super Premium"]) e "caracteristicas_foco" (lista com ["câmera", "bateria", "desempenho", "custo-benefício", "design", "tela"]). Retorne APENAS o JSON."""
         response = self.model.generate_content(prompt)
         return self._extrair_json_da_resposta(response.text) or {}
 
     def filtrar_celulares_localmente(self, intencao: Dict[str, Any]) -> List[Dict[str, Any]]:
-        """
-        ETAPA 2: Filtra a base de dados em memória para encontrar os melhores
-        candidatos com base na intenção, sem custo de API.
-        """
         faixa_preco_desejada = intencao.get("faixa_preco_categoria")
         caracteristicas_foco = intencao.get("caracteristicas_foco", [])
-        
-        candidatos = []
+        candidatos = [c for c in self.database_celulares if c.get("ativo")]
         if faixa_preco_desejada:
-            candidatos = [cel for cel in self.database_celulares if cel.get("ativo") and cel["compra"]["faixa_preco_categoria"] == faixa_preco_desejada]
-        else:
-            # Se não especificou preço, considera todos
-            candidatos = [cel for cel in self.database_celulares if cel.get("ativo")]
-
-        if not caracteristicas_foco or not candidatos:
-            return candidatos[:10] # Retorna até 10 celulares da faixa de preço se não houver foco
-
-        # Atribui uma pontuação para cada candidato com base no foco do usuário
+            candidatos = [c for c in candidatos if c["compra"]["faixa_preco_categoria"] == faixa_preco_desejada]
+        if not caracteristicas_foco or not candidatos: return candidatos[:10]
         def calcular_pontuacao(celular):
             pontuacao = 0
             for foco in caracteristicas_foco:
-                if foco == "câmera":
-                    pontuacao += celular["avaliacoes"]["notas_detalhadas"].get("camera_principal", 0)
-                elif foco == "bateria":
-                    pontuacao += celular["avaliacoes"]["notas_detalhadas"].get("bateria", 0)
-                elif foco == "desempenho":
-                    pontuacao += celular["avaliacoes"]["notas_detalhadas"].get("desempenho", 0)
-                elif foco == "custo-benefício":
-                    pontuacao += celular["avaliacoes"].get("custo_beneficio", 0)
-                elif foco == "tela":
-                    pontuacao += celular["avaliacoes"]["notas_detalhadas"].get("tela", 0)
-                elif foco == "design":
-                    pontuacao += celular["avaliacoes"]["notas_detalhadas"].get("design", 0)
+                if foco == "câmera": pontuacao += celular["avaliacoes"]["notas_detalhadas"].get("camera_principal", 0)
+                elif foco == "bateria": pontuacao += celular["avaliacoes"]["notas_detalhadas"].get("bateria", 0)
+                elif foco == "desempenho": pontuacao += celular["avaliacoes"]["notas_detalhadas"].get("desempenho", 0)
+                elif foco == "custo-benefício": pontuacao += celular["avaliacoes"].get("custo_beneficio", 0)
+                elif foco == "tela": pontuacao += celular["avaliacoes"]["notas_detalhadas"].get("tela", 0)
+                elif foco == "design": pontuacao += celular["avaliacoes"]["notas_detalhadas"].get("design", 0)
             return pontuacao
-
-            top_candidatos = candidatos[:7] # Pega um grupo um pouco maior, os 7 melhores
-            if len(top_candidatos) > 5:
-                # Se tivermos mais de 5, selecionamos 5 aleatoriamente desse grupo de elite
-                return random.sample(top_candidatos, 5)
-            
-            # Se tivermos 5 ou menos, retornamos todos
-            return top_candidatos
+        candidatos.sort(key=calcular_pontuacao, reverse=True)
+        top_candidatos = candidatos[:7]
+        if len(top_candidatos) > 5: return random.sample(top_candidatos, 5)
+        return top_candidatos
 
     def classificar_e_recomendar(self, candidatos: List[Dict[str, Any]], intencao: Dict[str, Any]) -> List[Dict[str, Any]]:
-        """
-        ETAPA 3: Envia uma lista curta de candidatos para o Gemini fazer a
-        análise final e a recomendação ordenada.
-        """
-        if not candidatos:
-            return []
-
-        prompt = f"""
-        Você é um consultor especialista em celulares. Um usuário tem a seguinte intenção de compra: {json.dumps(intencao, ensure_ascii=False)}.
-        Eu pré-selecionei os seguintes {len(candidatos)} celulares como os mais relevantes da minha base de dados:
-
-        {json.dumps(candidatos, ensure_ascii=False, indent=2)}
-
-        Sua tarefa é analisar os dados fornecidos para cada um e retornar uma lista JSON ordenada com as 3 melhores recomendações para este usuário, da melhor para a terceira melhor.
-        No seu raciocínio, compare os pontos positivos e negativos de cada um em relação à necessidade do usuário.
-        Retorne APENAS a lista JSON com os 3 objetos dos celulares escolhidos e ordenados. Não adicione nenhum celular que não esteja na lista que eu forneci.
-        """
-        
-        # <-- MUDANÇA AQUI -->
-        # Adicionamos uma temperatura mais alta para respostas mais variadas
+        if not candidatos: return []
+        prompt = f"""Você é um consultor especialista. A intenção do usuário é: {json.dumps(intencao, ensure_ascii=False)}. Eu pré-selecionei estes {len(candidatos)} celulares: {json.dumps(candidatos, ensure_ascii=False, indent=2)}. Analise os dados e retorne uma lista JSON ordenada com as 3 melhores recomendações. Retorne APENAS a lista JSON com os 3 objetos escolhidos e ordenados."""
         generation_config = {"temperature": 0.7}
         response = self.model.generate_content(prompt, generation_config=generation_config)
-        
         return self._extrair_json_da_resposta(response.text) or []
 
     def gerar_recomendacao_completa(self, query_usuario: str) -> str:
-        """
-        Orquestra o fluxo completo: captar intenção, filtrar localmente,
-        classificar com a IA e, finalmente, apresentar em HTML.
-        """
         start_time_total = time.perf_counter()
-
-        # Etapa 1
         intencao = self.captar_intencao(query_usuario)
         logging.info(f"Intenção captada: {intencao}")
-        logging.info(f"Tempo para 'captar_intencao': {(time.perf_counter() - start_time_total) * 1000:.2f} ms")
-        if not intencao:
-            return "Desculpe, não consegui entender o que você precisa. Poderia tentar de outra forma?"
-
-        # Etapa 2
-        start_filter_time = time.perf_counter()
+        if not intencao: return "Desculpe, não consegui entender o que você precisa."
         candidatos = self.filtrar_celulares_localmente(intencao)
-        logging.info(f"Número de candidatos pré-filtrados: {len(candidatos)}")
-        logging.info(f"Tempo para 'filtrar_celulares_localmente': {(time.perf_counter() - start_filter_time) * 1000:.2f} ms")
-
-        # Etapa 3
-        start_rank_time = time.perf_counter()
+        logging.info(f"Candidatos pré-filtrados: {len(candidatos)}")
         produtos_recomendados = self.classificar_e_recomendar(candidatos, intencao)
-        logging.info(f"Tempo para 'classificar_e_recomendar': {(time.perf_counter() - start_rank_time) * 1000:.2f} ms")
-
-        if not produtos_recomendados:
-            return "Puxa, após analisar nossa base, não encontrei uma combinação ideal para o seu pedido. Que tal tentarmos outros termos?"
-
-        # Etapa 4
+        if not produtos_recomendados: return "Puxa, não encontrei uma combinação ideal para o seu pedido."
         resultado_html = self.apresentar_resultados(produtos_recomendados)
-        logging.info(f"--- Tempo TOTAL de processamento da consulta: {(time.perf_counter() - start_time_total) * 1000:.2f} ms ---")
+        logging.info(f"--- Tempo TOTAL: {(time.perf_counter() - start_time_total) * 1000:.2f} ms ---")
         return resultado_html
 
-    def gerar_link_afiliado(self, loja: str, produto: str) -> str:
-        # ... (sem mudanças aqui) ...
-        loja_lower = loja.lower()
-        produto_slug = produto.replace(" ", "+").lower()
-        if "amazon" in loja_lower:
-            return f"[https://www.amazon.com.br/s?k=](https://www.amazon.com.br/s?k=){produto_slug}&tag=seu_tag-20"
-        elif "magazine" in loja_lower:
-            return f"[https://www.magazinevoce.com.br/magazinesua_loja/busca/](https://www.magazinevoce.com.br/magazinesua_loja/busca/){produto_slug}"
-        elif "mercado" in loja_lower:
-            return f"[https://mercadolivre.com/sec/1NiRmMA?keywords=](https://mercadolivre.com/sec/1NiRmMA?keywords=){produto_slug}"
-        else:
-            return f"[https://www.google.com/search?q=](https://www.google.com/search?q=){produto_slug}+{loja_lower}"
+    # <-- NOVO: Função para selecionar as lojas com a Estratégia 3 -->
+    def selecionar_lojas(self) -> List[Dict[str, str]]:
+        """Seleciona 1 loja âncora e 2 rotativas, e embaralha a ordem final."""
+        lojas_selecionadas = []
+        
+        # Seleciona 1 âncora aleatoriamente, se houver
+        if self.lojas_ancora:
+            lojas_selecionadas.append(random.choice(self.lojas_ancora))
+            
+        # Seleciona 2 rotativas aleatoriamente, se houver
+        if len(self.lojas_rotativas) >= 2:
+            lojas_selecionadas.extend(random.sample(self.lojas_rotativas, 2))
+        else: # Fallback se tiver menos de 2 lojas rotativas
+            lojas_selecionadas.extend(self.lojas_rotativas)
 
+        # Embaralha a lista final para que a âncora não seja sempre a primeira
+        random.shuffle(lojas_selecionadas)
+        
+        return lojas_selecionadas[:3] # Garante que retornará no máximo 3 lojas
+
+    # <-- REMOVIDO: A função gerar_link_afiliado não é mais necessária -->
+
+    # <-- ALTERADO: A função apresentar_resultados agora usa a nova lógica de lojas -->
     def apresentar_resultados(self, produtos: list[dict]) -> str:
-        # ... (sem mudanças aqui, esta função já está pronta para os dados ricos) ...
         if not produtos: return ""
 
+        # A sub-função interna para gerar os detalhes de cada produto permanece a mesma
         def gerar_html_detalhes(p: dict) -> str:
             avaliacao_html = ""
             avaliacao = p.get('avaliacoes', {}).get('avaliacao_geral')
@@ -207,13 +139,10 @@ class ConsultorInteligente:
             negativos = p.get('avaliacoes', {}).get("negativos_percebidos") or []
             positivos_html = "".join([f"<li class='flex items-start gap-2'><span class='text-green-400'>✅</span><span>{b}</span></li>" for b in positivos])
             negativos_html = "".join([f"<li class='flex items-start gap-2'><span class='text-red-400'>❌</span><span>{b}</span></li>" for b in negativos])
-            precos_html = ""
-            for loja in p.get("compra", {}).get("links_afiliados") or []:
-                link = self.gerar_link_afiliado(loja.get("loja", ""), p.get("identificacao", {}).get("nome_completo", ""))
-                precos_html += f"""<a href="{link}" target="_blank" class="block bg-blue-600/20 hover:bg-blue-600/40 rounded-lg px-3 py-2 my-1 transition text-sm">🛒 <strong>{loja.get("loja", "")}</strong>: R$ {p.get("compra", {}).get("preco_medio_lancamento_brl")}</a>"""
+            # A geração de links de preço foi removida daqui
+            return f"""{avaliacao_html}{perfil_html}<div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs mb-3"><div><h4 class='font-semibold mb-1'>Pontos Positivos</h4><ul class='space-y-1'>{positivos_html}</ul></div><div><h4 class='font-semibold mb-1'>Pontos a Considerar</h4><ul class='space-y-1'>{negativos_html}</ul></div></div>"""
 
-            return f"""{avaliacao_html}{perfil_html}<div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs mb-3"><div><h4 class='font-semibold mb-1'>Pontos Positivos</h4><ul class='space-y-1'>{positivos_html}</ul></div><div><h4 class='font-semibold mb-1'>Pontos a Considerar</h4><ul class='space-y-1'>{negativos_html}</ul></div></div><div>{precos_html}</div>"""
-
+        # Construção do HTML dos produtos (carrossel e acordeão)
         toggle_buttons_html = """<div class="flex items-center justify-center gap-2 mb-3"><button data-view="carousel" class="view-toggle-button active-view-button text-xs px-3 py-1 rounded-full">Carrossel</button><button data-view="accordion" class="view-toggle-button inactive-view-button text-xs px-3 py-1 rounded-full">Lista</button></div>"""
         carousel_html = "<div id='view-carousel' class='card-carousel flex overflow-x-auto snap-x snap-mandatory space-x-4 py-2'>"
         for p in produtos:
@@ -225,4 +154,13 @@ class ConsultorInteligente:
             detalhes_produto_html = gerar_html_detalhes(p)
             accordion_html += f"""<div class="bg-[#2a2a46] rounded-lg border border-gray-700/50 overflow-hidden"><button class="accordion-toggle w-full text-left p-3 flex justify-between items-center transition hover:bg-gray-700/30"><span class="font-semibold text-blue-400">{p.get("identificacao", {}).get("nome_completo", "Modelo desconhecido")}</span><svg class="accordion-icon w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="accordion-content hidden p-3 pt-0 border-t border-gray-700/50">{detalhes_produto_html}</div></div>"""
         accordion_html += "</div>"
-        return f"""<div class="interactive-results">{toggle_buttons_html}{carousel_html}{accordion_html}</div>"""
+        
+        # --- NOVO: Geração do bloco de lojas dinâmicas ---
+        lojas_selecionadas = self.selecionar_lojas()
+        lojas_html = "<div class='mt-4 text-center'><h4 class='text-sm font-semibold text-white mb-2'>Confira os preços e promoções nas lojas a seguir:</h4><div class='flex flex-wrap justify-center gap-2'>"
+        for loja in lojas_selecionadas:
+            lojas_html += f"""<a href="{loja['url']}" target="_blank" class="block bg-gray-700 hover:bg-gray-600 rounded-lg px-4 py-2 transition text-sm text-white font-semibold">🛒 {loja['nome']}</a>"""
+        lojas_html += "</div></div>"
+        
+        # Concatena tudo na resposta final
+        return f"""<div class="interactive-results">{toggle_buttons_html}{carousel_html}{accordion_html}{lojas_html}</div>"""

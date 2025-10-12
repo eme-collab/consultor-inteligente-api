@@ -1,0 +1,30 @@
+{
+  "ancoras": [
+    {
+      "nome": "Amazon BR",
+      "url": "https://www.amazon.com.br/s?k=&tag=seu_tag-20"
+    },
+    {
+      "nome": "Mercado Livre",
+      "url": "https://mercadolivre.com/sec/1NiRmMA?keywords="
+    }
+  ],
+  "rotativas": [
+    {
+      "nome": "Magazine Luiza",
+      "url": "https://www.magazinevoce.com.br/magazinesua_loja/busca/"
+    },
+    {
+      "nome": "Casas Bahia",
+      "url": "https://www.casasbahia.com.br/"
+    },
+    {
+      "nome": "Ponto",
+      "url": "https://www.pontofrio.com.br/"
+    },
+    {
+      "nome": "Fast Shop",
+      "url": "https://www.fastshop.com.br/web/c/search-pre-search"
+    }
+  ]
+}
