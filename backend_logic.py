@@ -4,6 +4,7 @@ import os
 import json
 import time
 import logging
+import random
 from typing import Dict, Any, List
 import google.generativeai as genai
 
@@ -112,9 +113,13 @@ class ConsultorInteligente:
                     pontuacao += celular["avaliacoes"]["notas_detalhadas"].get("design", 0)
             return pontuacao
 
-        # Ordena os candidatos pela pontuação e retorna os 5 melhores
-        candidatos.sort(key=calcular_pontuacao, reverse=True)
-        return candidatos[:5]
+            top_candidatos = candidatos[:7] # Pega um grupo um pouco maior, os 7 melhores
+            if len(top_candidatos) > 5:
+                # Se tivermos mais de 5, selecionamos 5 aleatoriamente desse grupo de elite
+                return random.sample(top_candidatos, 5)
+            
+            # Se tivermos 5 ou menos, retornamos todos
+            return top_candidatos
 
     def classificar_e_recomendar(self, candidatos: List[Dict[str, Any]], intencao: Dict[str, Any]) -> List[Dict[str, Any]]:
         """
@@ -134,7 +139,12 @@ class ConsultorInteligente:
         No seu raciocínio, compare os pontos positivos e negativos de cada um em relação à necessidade do usuário.
         Retorne APENAS a lista JSON com os 3 objetos dos celulares escolhidos e ordenados. Não adicione nenhum celular que não esteja na lista que eu forneci.
         """
-        response = self.model.generate_content(prompt)
+        
+        # <-- MUDANÇA AQUI -->
+        # Adicionamos uma temperatura mais alta para respostas mais variadas
+        generation_config = {"temperature": 0.7}
+        response = self.model.generate_content(prompt, generation_config=generation_config)
+        
         return self._extrair_json_da_resposta(response.text) or []
 
     def gerar_recomendacao_completa(self, query_usuario: str) -> str:
