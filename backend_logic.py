@@ -4,7 +4,7 @@ import os
 import json
 import time
 import logging
-import random # <-- NOVO: Import para o sorteio das lojas
+import random
 from typing import Dict, Any, List
 import google.generativeai as genai
 
@@ -19,20 +19,17 @@ class ConsultorInteligente:
     def __init__(self):
         self.model = genai.GenerativeModel('gemini-2.5-pro')
         self.database_celulares = []
-        self.lojas_ancora = [] # <-- NOVO
-        self.lojas_rotativas = [] # <-- NOVO
+        self.lojas_ancora = []
+        self.lojas_rotativas = []
         try:
             with open('celulares.json', 'r', encoding='utf-8') as f:
                 self.database_celulares = json.load(f)
             logging.info(f"Banco de dados de celulares carregado com {len(self.database_celulares)} itens.")
-            
-            # <-- NOVO: Carrega o arquivo de lojas na inicialização -->
             with open('lojas.json', 'r', encoding='utf-8') as f:
                 lojas_data = json.load(f)
                 self.lojas_ancora = lojas_data.get("ancoras", [])
                 self.lojas_rotativas = lojas_data.get("rotativas", [])
-            logging.info(f"Banco de dados de lojas carregado. {len(self.lojas_ancora)} âncoras, {len(self.lojas_rotativas)} rotativas.")
-
+            logging.info(f"Banco de dados de lojas carregado.")
         except FileNotFoundError as e:
             logging.error(f"ERRO CRÍTICO: O arquivo '{e.filename}' não foi encontrado.")
             raise
@@ -40,9 +37,7 @@ class ConsultorInteligente:
             logging.error(f"ERRO CRÍTICO: Um arquivo JSON contém um erro de formatação: {e}")
             raise
 
-    # <-- ALTERADO: A classe principal continua daqui, com as funções de lógica -->
-    # ... (as funções _extrair_json_da_resposta, captar_intencao, filtrar_celulares_localmente,
-    # e classificar_e_recomendar continuam EXATAMENTE IGUAIS ao que você já tem) ...
+    # As funções de lógica principal (captar, filtrar, classificar) permanecem as mesmas
     def _extrair_json_da_resposta(self, text: str) -> Any:
         try:
             json_start = text.find('```json')
@@ -102,65 +97,129 @@ class ConsultorInteligente:
         logging.info(f"--- Tempo TOTAL: {(time.perf_counter() - start_time_total) * 1000:.2f} ms ---")
         return resultado_html
 
-    # <-- NOVO: Função para selecionar as lojas com a Estratégia 3 -->
     def selecionar_lojas(self) -> List[Dict[str, str]]:
-        """Seleciona 1 loja âncora e 2 rotativas, e embaralha a ordem final."""
         lojas_selecionadas = []
-        
-        # Seleciona 1 âncora aleatoriamente, se houver
-        if self.lojas_ancora:
-            lojas_selecionadas.append(random.choice(self.lojas_ancora))
-            
-        # Seleciona 2 rotativas aleatoriamente, se houver
-        if len(self.lojas_rotativas) >= 2:
-            lojas_selecionadas.extend(random.sample(self.lojas_rotativas, 2))
-        else: # Fallback se tiver menos de 2 lojas rotativas
-            lojas_selecionadas.extend(self.lojas_rotativas)
-
-        # Embaralha a lista final para que a âncora não seja sempre a primeira
+        if self.lojas_ancora: lojas_selecionadas.append(random.choice(self.lojas_ancora))
+        if len(self.lojas_rotativas) >= 2: lojas_selecionadas.extend(random.sample(self.lojas_rotativas, 2))
+        else: lojas_selecionadas.extend(self.lojas_rotativas)
         random.shuffle(lojas_selecionadas)
-        
-        return lojas_selecionadas[:3] # Garante que retornará no máximo 3 lojas
+        return lojas_selecionadas[:3]
 
-    # <-- REMOVIDO: A função gerar_link_afiliado não é mais necessária -->
-
-    # <-- ALTERADO: A função apresentar_resultados agora usa a nova lógica de lojas -->
+    # --- NOVA LÓGICA DE APRESENTAÇÃO ---
     def apresentar_resultados(self, produtos: list[dict]) -> str:
-        if not produtos: return ""
+        if not produtos or len(produtos) < 3: return "Não encontrei recomendações suficientes."
 
-        # A sub-função interna para gerar os detalhes de cada produto permanece a mesma
-        def gerar_html_detalhes(p: dict) -> str:
-            avaliacao_html = ""
+        # --- Sub-funções para gerar o HTML rico ---
+        def _gerar_selo_destaque(p: dict) -> str:
+            notas = p.get('avaliacoes', {}).get('notas_detalhadas', {})
+            custo_beneficio = p.get('avaliacoes', {}).get('custo_beneficio', 0)
+            
+            # Mapeia a característica para o selo e a nota
+            mapeamento_selos = {
+                "🚀 Super Desempenho": notas.get("desempenho", 0),
+                "📸 Câmera Pro": notas.get("camera_principal", 0),
+                "🔋 Bateria Monstra": notas.get("bateria", 0),
+                "👑 Rei do Custo-Benefício": custo_beneficio
+            }
+            # Encontra a característica com a maior nota
+            melhor_caracteristica = max(mapeamento_selos, key=mapeamento_selos.get)
+            maior_nota = mapeamento_selos[melhor_caracteristica]
+
+            if maior_nota > 8.8: # Limiar para exibir o selo
+                return f"<div class='absolute top-2 right-2 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow-lg'>{melhor_caracteristica}</div>"
+            return ""
+
+        def _gerar_html_card(p: dict) -> str:
+            selo_html = _gerar_selo_destaque(p)
+            imagem_url = p.get('identificacao', {}).get('imagem_url', '[https://via.placeholder.com/150](https://via.placeholder.com/150)')
             avaliacao = p.get('avaliacoes', {}).get('avaliacao_geral')
-            if avaliacao:
-                avaliacao_html = f"""<div class="flex items-center gap-1 text-sm text-amber-400 mb-2"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><span>{avaliacao}/10</span></div>"""
-            perfil_html = f"<p class='text-xs text-gray-300 mb-3 italic'>👤 {p.get('avaliacoes', {}).get('perfil_ideal', '')}</p>" if p.get('avaliacoes', {}).get('perfil_ideal') else ""
+            
+            # Specs com Ícones
+            specs_html = f"""
+            <div class='grid grid-cols-2 gap-2 text-xs text-gray-300 my-3'>
+                <span class='flex items-center gap-1'>📱 {p.get('especificacoes', {}).get('tela', {}).get('tamanho_polegadas', '?')}”</span>
+                <span class='flex items-center gap-1'>🔋 {p.get('especificacoes', {}).get('bateria', {}).get('capacidade_mah', '?')} mAh</span>
+                <span class='flex items-center gap-1'>📷 {p.get('especificacoes', {}).get('cameras', {}).get('principal', {}).get('megapixels', '?')} MP</span>
+                <span class='flex items-center gap-1'>⚙️ {p.get('especificacoes', {}).get('desempenho', {}).get('memoria_ram_gb', ['?'])[0]} GB RAM</span>
+            </div>
+            """
             positivos = p.get('avaliacoes', {}).get("positivos_percebidos") or []
-            negativos = p.get('avaliacoes', {}).get("negativos_percebidos") or []
-            positivos_html = "".join([f"<li class='flex items-start gap-2'><span class='text-green-400'>✅</span><span>{b}</span></li>" for b in positivos])
-            negativos_html = "".join([f"<li class='flex items-start gap-2'><span class='text-red-400'>❌</span><span>{b}</span></li>" for b in negativos])
-            # A geração de links de preço foi removida daqui
-            return f"""{avaliacao_html}{perfil_html}<div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs mb-3"><div><h4 class='font-semibold mb-1'>Pontos Positivos</h4><ul class='space-y-1'>{positivos_html}</ul></div><div><h4 class='font-semibold mb-1'>Pontos a Considerar</h4><ul class='space-y-1'>{negativos_html}</ul></div></div>"""
+            positivos_html = "".join([f"<li class='flex items-start gap-2 text-xs'><span class='text-green-400'>✅</span><span>{b}</span></li>" for b in positivos[:2]]) # Mostra apenas 2 para economizar espaço
+            
+            return f"""
+            <div class="relative flex-shrink-0 w-11/12 snap-center bg-[#2a2a46] text-white p-4 rounded-xl shadow-md border border-gray-700/50">
+                {selo_html}
+                <div class='flex gap-4'>
+                    <img src='{imagem_url}' alt='{p.get("identificacao", {}).get("nome_completo", "")}' class='w-24 h-24 object-contain rounded-lg'/>
+                    <div>
+                        <h3 class="text-lg font-bold text-blue-400">{p.get("identificacao", {}).get("nome_completo", "Modelo desconhecido")}</h3>
+                        <p class='text-xs text-gray-400 mb-2 italic'>👤 {p.get('avaliacoes', {}).get('perfil_ideal', '')}</p>
+                        {'<span class="text-amber-400 font-bold">⭐ ' + str(avaliacao) + '/10</span>' if avaliacao else ''}
+                    </div>
+                </div>
+                {specs_html}
+                <h4 class='font-semibold text-xs mb-1'>Destaques:</h4>
+                <ul class='space-y-1'>{positivos_html}</ul>
+            </div>
+            """
 
-        # Construção do HTML dos produtos (carrossel e acordeão)
-        toggle_buttons_html = """<div class="flex items-center justify-center gap-2 mb-3"><button data-view="carousel" class="view-toggle-button active-view-button text-xs px-3 py-1 rounded-full">Carrossel</button><button data-view="accordion" class="view-toggle-button inactive-view-button text-xs px-3 py-1 rounded-full">Lista</button></div>"""
+        def _gerar_html_tabela_comparativa(produtos: list[dict]) -> str:
+            headers_html = "".join([f"<th class='p-2 text-sm font-semibold text-blue-400'>{p.get('identificacao',{}).get('modelo','?')}</th>" for p in produtos])
+            
+            def get_row(label, key_path):
+                cells_html = ""
+                for p in produtos:
+                    value = p
+                    try:
+                        for key in key_path: value = value.get(key, {})
+                    except (AttributeError, TypeError): value = "-"
+                    cells_html += f"<td class='p-2 text-center'>{value}</td>"
+                return f"<tr><td class='p-2 font-semibold text-left'>{label}</td>{cells_html}</tr>"
+
+            tabela_html = f"""
+            <div class='bg-[#2a2a46] text-white p-4 rounded-xl shadow-md border border-gray-700/50 overflow-x-auto'>
+                <table class='w-full text-xs text-left'>
+                    <thead><tr class='border-b border-gray-700'><th>Característica</th>{headers_html}</tr></thead>
+                    <tbody class='divide-y divide-gray-700'>
+                        {get_row("⭐ Avaliação Geral", ["avaliacoes", "avaliacao_geral"])}
+                        {get_row("💰 Custo-Benefício", ["avaliacoes", "custo_beneficio"])}
+                        {get_row("📱 Tela (pol)", ["especificacoes", "tela", "tamanho_polegadas"])}
+                        {get_row("📷 Câmera (MP)", ["especificacoes", "cameras", "principal", "megapixels"])}
+                        {get_row("🔋 Bateria (mAh)", ["especificacoes", "bateria", "capacidade_mah"])}
+                        {get_row("⚙️ Processador", ["especificacoes", "desempenho", "processador"])}
+                        {get_row("📈 Preço (R$)", ["compra", "preco_medio_lancamento_brl"])}
+                    </tbody>
+                </table>
+            </div>
+            """
+            return tabela_html
+
+        # --- Construção do HTML Final ---
+        toggle_buttons_html = """
+        <div class="flex items-center justify-center gap-2 mb-3">
+            <button data-view="carousel" class="view-toggle-button active-view-button text-xs px-3 py-1 rounded-full">Resumo</button>
+            <button data-view="accordion" class="view-toggle-button inactive-view-button text-xs px-3 py-1 rounded-full">Detalhes</button>
+            <button data-view="table" class="view-toggle-button inactive-view-button text-xs px-3 py-1 rounded-full">Comparar</button>
+        </div>
+        """
+        
+        # Visão Carrossel (Resumo)
         carousel_html = "<div id='view-carousel' class='card-carousel flex overflow-x-auto snap-x snap-mandatory space-x-4 py-2'>"
-        for p in produtos:
-            detalhes_produto_html = gerar_html_detalhes(p)
-            carousel_html += f"""<div class="flex-shrink-0 w-11/12 snap-center bg-[#2a2a46] text-white p-4 rounded-xl shadow-md border border-gray-700/50"><h3 class="text-lg font-semibold mb-1 text-blue-400">{p.get("identificacao", {}).get("nome_completo", "Modelo desconhecido")}</h3>{detalhes_produto_html}</div>"""
+        for p in produtos: carousel_html += _gerar_html_card(p)
         carousel_html += "</div><p class='text-xs text-gray-400 mt-1 text-center md:hidden'> arraste para o lado para ver mais opções.</p>"
+
+        # Visão Acordeão (Detalhes) - Simplificada para usar o mesmo card, mas pode ser expandida
         accordion_html = "<div id='view-accordion' class='hidden space-y-2'>"
-        for p in produtos:
-            detalhes_produto_html = gerar_html_detalhes(p)
-            accordion_html += f"""<div class="bg-[#2a2a46] rounded-lg border border-gray-700/50 overflow-hidden"><button class="accordion-toggle w-full text-left p-3 flex justify-between items-center transition hover:bg-gray-700/30"><span class="font-semibold text-blue-400">{p.get("identificacao", {}).get("nome_completo", "Modelo desconhecido")}</span><svg class="accordion-icon w-5 h-5 text-gray-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="accordion-content hidden p-3 pt-0 border-t border-gray-700/50">{detalhes_produto_html}</div></div>"""
+        for p in produtos: accordion_html += _gerar_html_card(p) # Reutilizando o card para simplicidade
         accordion_html += "</div>"
         
-        # --- NOVO: Geração do bloco de lojas dinâmicas ---
+        # Visão Tabela (Comparar)
+        table_html = f"<div id='view-table' class='hidden'>{_gerar_html_tabela_comparativa(produtos)}</div>"
+        
+        # Bloco de Lojas
         lojas_selecionadas = self.selecionar_lojas()
-        lojas_html = "<div class='mt-4 text-center'><h4 class='text-sm font-semibold text-white mb-2'>Confira os preços e promoções nas lojas a seguir:</h4><div class='flex flex-wrap justify-center gap-2'>"
-        for loja in lojas_selecionadas:
-            lojas_html += f"""<a href="{loja['url']}" target="_blank" class="block bg-gray-700 hover:bg-gray-600 rounded-lg px-4 py-2 transition text-sm text-white font-semibold">🛒 {loja['nome']}</a>"""
+        lojas_html = "<div class='mt-6 text-center'><h4 class='text-sm font-semibold text-white mb-2'>Confira os preços e promoções nas lojas a seguir:</h4><div class='flex flex-wrap justify-center gap-2'>"
+        for loja in lojas_selecionadas: lojas_html += f"""<a href="{loja['url']}" target="_blank" class="block bg-gray-700 hover:bg-gray-600 rounded-lg px-4 py-2 transition text-sm text-white font-semibold">🛒 {loja['nome']}</a>"""
         lojas_html += "</div></div>"
         
-        # Concatena tudo na resposta final
-        return f"""<div class="interactive-results">{toggle_buttons_html}{carousel_html}{accordion_html}{lojas_html}</div>"""
+        return f"""<div class="interactive-results">{toggle_buttons_html}{carousel_html}{accordion_html}{table_html}{lojas_html}</div>"""

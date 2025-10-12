@@ -2,17 +2,17 @@
   "ancoras": [
     {
       "nome": "Amazon BR",
-      "url": "https://www.amazon.com.br/s?k=&tag=seu_tag-20"
+      "url": "https://amzn.to/4q8K9PR"
     },
     {
       "nome": "Mercado Livre",
-      "url": "https://mercadolivre.com/sec/1NiRmMA?keywords="
+      "url": "https://mercadolivre.com/sec/2vqcHjM"
     }
   ],
   "rotativas": [
     {
       "nome": "Magazine Luiza",
-      "url": "https://www.magazinevoce.com.br/magazinesua_loja/busca/"
+      "url": "https://www.magazinevoce.com.br/magazinerefrigerador/celulares-e-smartphones/l/te/"
     },
     {
       "nome": "Casas Bahia",
@@ -24,7 +24,7 @@
     },
     {
       "nome": "Fast Shop",
-      "url": "https://www.fastshop.com.br/web/c/search-pre-search"
+      "url": "https://www.fastshop.com.br"
     }
   ]
 }

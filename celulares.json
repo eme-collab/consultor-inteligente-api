@@ -7,6 +7,8 @@
     "avaliacoes": {
       "resumo_consultor": "A escolha definitiva para quem busca o auge da tecnologia mobile. Seu sistema de câmeras com IA aprimorada e a S-Pen o tornam uma potência para produtividade e criação de conteúdo.",
       "perfil_ideal": "Criadores de conteúdo, profissionais e entusiastas de tecnologia.",
+      "longevidade_e_desvalorizacao": "Excelente longevidade com 7 anos de atualizações garantidas. Tende a manter um bom valor de revenda para um Android, embora a desvalorização seja mais acentuada no primeiro ano.",
+      "concorrentes_diretos": ["Apple iPhone 17 Pro Max", "Google Pixel 9 Pro", "Xiaomi 15 Pro"],
       "avaliacao_geral": 9.6, "custo_beneficio": 7.5,
       "positivos_percebidos": [ "Sistema de câmeras mais versátil e potente do mercado", "Tela com brilho e cores insuperáveis", "Desempenho extremo com o novo chip Snapdragon", "Recursos de IA (Galaxy AI) mais refinados e úteis", "Caneta S-Pen integrada" ],
       "negativos_percebidos": [ "Preço extremamente elevado", "Carregamento de 45W é mais lento que concorrentes", "Design grande e pesado" ],
@@ -31,6 +33,8 @@
     "avaliacoes": {
       "resumo_consultor": "O Galaxy A56 continua a ser a escolha mais equilibrada para a maioria, oferecendo uma experiência premium com tela excelente e bateria confiável, sem o custo de um top de linha.",
       "perfil_ideal": "Usuário médio que busca um aparelho confiável para o dia a dia.",
+      "longevidade_e_desvalorizacao": "Boa longevidade graças à política de 4 anos de atualizações do Android. A desvalorização é constante, mas sua popularidade ajuda a manter um valor de revenda razoável.",
+      "concorrentes_diretos": ["Motorola Edge 60", "Xiaomi Redmi Note 14 Pro"],
       "avaliacao_geral": 8.8, "custo_beneficio": 9.2,
       "positivos_percebidos": [ "Excelente tela Super AMOLED", "Bateria que dura o dia inteiro com folga", "Design premium com certificação IP67", "Longa política de atualizações" ],
       "negativos_percebidos": [ "Desempenho apenas ok para jogos pesados", "Sem carregador na caixa", "Câmeras secundárias básicas" ],
@@ -55,6 +59,8 @@
     "avaliacoes": {
       "resumo_consultor": "O Motorola Edge 60 foca em uma experiência de uso fluida com seu Android 'puro' e tela de alta frequência. Ideal para quem valoriza design leve e carregamento ultrarrápido.",
       "perfil_ideal": "Fãs do Android puro e que consomem muita mídia.",
+      "longevidade_e_desvalorizacao": "Longevidade de software limitada (2 anos de Android). A desvalorização tende a ser mais rápida em comparação com concorrentes da Samsung.",
+      "concorrentes_diretos": ["Samsung Galaxy A56", "Xiaomi Redmi Note 14 Pro"],
       "avaliacao_geral": 8.7, "custo_beneficio": 9.0,
       "positivos_percebidos": [ "Android 'puro' com poucas modificações", "Carregador de 68W incluso na caixa", "Tela pOLED com cores vibrantes e 144Hz", "Design extremamente fino e leve" ],
       "negativos_percebidos": [ "Processamento de imagem da câmera inferior aos concorrentes", "Política de atualizações mais curta", "Bateria pode ser insuficiente para usuários intensos" ],
@@ -79,6 +85,8 @@
     "avaliacoes": {
       "resumo_consultor": "O iPhone 17 Pro eleva o padrão de desempenho e captura de vídeo. É a ferramenta ideal para profissionais criativos e para quem busca a máxima integração com o ecossistema Apple.",
       "perfil_ideal": "Videomakers, usuários do ecossistema Apple e quem busca o máximo de desempenho.",
+      "longevidade_e_desvalorizacao": "A maior longevidade do mercado, com 6-7 anos de atualizações do iOS. Apresenta a menor taxa de desvalorização, mantendo um excelente valor de revenda.",
+      "concorrentes_diretos": ["Samsung Galaxy S25 Ultra", "Google Pixel 9 Pro"],
       "avaliacao_geral": 9.7, "custo_beneficio": 7.2,
       "positivos_percebidos": [ "Desempenho incomparável com chip A19 Pro", "Melhor captura de vídeo em um smartphone", "Integração perfeita com outros produtos Apple", "Construção em titânio e acabamento premium", "Tela ProMotion com 'Dynamic Island' aprimorada" ],
       "negativos_percebidos": [ "Preço extremamente alto", "Pouca customização do iOS", "Velocidade de carregamento continua atrás dos concorrentes Android" ],
@@ -103,6 +111,8 @@
     "avaliacoes": {
       "resumo_consultor": "O Redmi Note 14 Pro continua a tradição da Xiaomi de entregar especificações de ponta por um preço agressivo. É a escolha ideal para quem quer tela, câmera e carregamento rápido sem gastar muito.",
       "perfil_ideal": "Jovens e usuários que buscam o máximo de especificações pelo menor preço.",
+      "longevidade_e_desvalorizacao": "Longevidade de software mediana (2 anos de Android). A desvalorização é acentuada, característica da marca em modelos de alto volume.",
+      "concorrentes_diretos": ["Samsung Galaxy A56", "Motorola Edge 60", "Poco X7 Pro"],
       "avaliacao_geral": 8.5, "custo_beneficio": 9.8,
       "positivos_percebidos": [ "Tela AMOLED 120Hz de alta qualidade", "Carregador de 120W na caixa, recarga completa em ~20 min", "Câmera principal de 108MP com bons resultados", "Ótima relação de desempenho por real" ],
       "negativos_percebidos": [ "Software HyperOS (MIUI) com anúncios e bloatware", "Sensor de proximidade pode apresentar falhas", "Qualidade de vídeo inconsistente" ],
@@ -127,6 +137,8 @@
     "avaliacoes": {
       "resumo_consultor": "O Pixel 9 Pro é para o purista de fotografia. Seu pós-processamento de software é mágico, entregando fotos incríveis com facilidade. A experiência Android é a mais limpa e inteligente do mercado.",
       "perfil_ideal": "Amantes de fotografia 'aponte e dispare' e fãs do Android puro.",
+      "longevidade_e_desvalorizacao": "Excelente longevidade de software com 7 anos de atualizações diretas do Google. O valor de revenda no Brasil pode ser instável devido à falta de presença oficial da marca.",
+      "concorrentes_diretos": ["Samsung Galaxy S25 Ultra", "Apple iPhone 17 Pro"],
       "avaliacao_geral": 9.2, "custo_beneficio": 8.0,
       "positivos_percebidos": [ "Melhor software de processamento de imagem", "Experiência Android pura e com recursos de IA exclusivos", "Atualizações de sistema operacional mais rápidas do mercado", "Design único e confortável" ],
       "negativos_percebidos": [ "Não vendido oficialmente no Brasil, requer importação", "Desempenho do chip Tensor pode aquecer", "Velocidade de carregamento lenta" ],
@@ -151,6 +163,8 @@
     "avaliacoes": {
       "resumo_consultor": "O Z Flip7 aprimora a fórmula do dobrável mais popular do mundo, com uma tela externa ainda mais útil e vincos menos aparentes. É um statement de estilo com funcionalidade.",
       "perfil_ideal": "Usuários que priorizam portabilidade, estilo e buscam uma experiência de uso diferente.",
+      "longevidade_e_desvalorizacao": "Boa longevidade de software (4 anos de Android), mas a durabilidade física da tela dobrável é um fator a ser considerado a longo prazo. A desvalorização de dobráveis é historicamente muito acentuada.",
+      "concorrentes_diretos": ["Motorola Razr (2025)"],
       "avaliacao_geral": 9.0, "custo_beneficio": 7.8,
       "positivos_percebidos": [ "Extremamente compacto quando fechado", "Tela externa funcional para notificações e apps", "Flex Cam oferece ângulos criativos para fotos", "Design icônico e estiloso" ],
       "negativos_percebidos": [ "Durabilidade da tela dobrável ainda é uma preocupação", "Bateria dura menos que em celulares tradicionais", "Sistema de câmeras não compete com os tops de linha não-dobráveis" ],
@@ -175,6 +189,8 @@
     "avaliacoes": {
       "resumo_consultor": "Com a chegada do seu sucessor, o iPhone 16 se torna a porta de entrada 'custo-benefício' para a experiência premium da Apple. Oferece desempenho de ponta e câmeras excelentes que ainda competem com os melhores.",
       "perfil_ideal": "Quem busca uma experiência Apple de ponta com um orçamento mais controlado.",
+      "longevidade_e_desvalorizacao": "Excelente longevidade e valor de revenda, recebendo atualizações do iOS por mais 5-6 anos. Uma das compras mais seguras pensando no longo prazo.",
+      "concorrentes_diretos": ["Samsung Galaxy S24+", "Google Pixel 8"],
       "avaliacao_geral": 9.4, "custo_beneficio": 8.5,
       "positivos_percebidos": [ "Desempenho de elite com o chip A18", "Câmeras extremamente consistentes e confiáveis", "Excelente valor de revenda", "Qualidade de construção impecável" ],
       "negativos_percebidos": [ "Tela de apenas 60Hz, defasada para a categoria", "Design praticamente inalterado", "Entalhe (notch) ou Dynamic Island pode não agradar a todos" ],
@@ -199,6 +215,8 @@
     "avaliacoes": {
       "resumo_consultor": "O Xiaomi 15 Pro é a alternativa Android para quem busca o máximo de hardware. Focado em carregamento ultrarrápido e um conjunto de câmeras em parceria com a Leica, ele apela para o entusiasta de tecnologia.",
       "perfil_ideal": "Usuários avançados que gostam de customização e querem o hardware mais rápido possível.",
+      "longevidade_e_desvalorizacao": "Longevidade de software mediana (3 anos de Android). A desvalorização tende a ser rápida, especialmente com os ciclos de lançamento acelerados da marca.",
+      "concorrentes_diretos": ["Samsung Galaxy S25+", "Apple iPhone 17"],
       "avaliacao_geral": 9.3, "custo_beneficio": 8.8,
       "positivos_percebidos": [ "Carregamento de 150W é absurdamente rápido", "Desempenho de ponta com o Snapdragon mais recente", "Câmeras com a grife Leica entregam ótimas fotos", "Tela LTPO de alta resolução" ],
       "negativos_percebidos": [ "Software HyperOS pode ser inconsistente", "Disponibilidade limitada no Brasil", "Desvalorização mais acentuada que concorrentes" ],
@@ -223,6 +241,8 @@
     "avaliacoes": {
       "resumo_consultor": "O Moto G86 Power é focado em uma única coisa: bateria. É um celular básico, para tarefas do dia a dia, mas que não vai te deixar na mão por falta de energia, durando facilmente 2 dias de uso.",
       "perfil_ideal": "Usuários que precisam de máxima autonomia e usam o celular para tarefas básicas.",
+      "longevidade_e_desvalorizacao": "Baixa longevidade de software, com apenas 1 grande atualização do Android garantida. A desvalorização é extremamente rápida, com baixo valor de revenda.",
+      "concorrentes_diretos": ["Samsung Galaxy A16"],
       "avaliacao_geral": 7.5, "custo_beneficio": 8.8,
       "positivos_percebidos": [ "Bateria gigante de 6000mAh", "Android com poucas modificações", "Tela grande para consumo de mídia", "Carregador incluso na caixa" ],
       "negativos_percebidos": [ "Desempenho muito limitado para jogos", "Câmeras apenas para registros básicos com boa luz", "Construção simples em plástico" ],
@@ -247,6 +267,8 @@
     "avaliacoes": {
       "resumo_consultor": "O S24 FE (Fan Edition) entrega a experiência de um top de linha, com o processador e câmeras principais da série S24, mas com alguns cortes de custos no acabamento para ter um preço mais competitivo.",
       "perfil_ideal": "Quem quer desempenho e câmeras de flagship sem pagar o preço de um.",
+      "longevidade_e_desvalorizacao": "Ótima longevidade, herdando a política de 4 anos de atualizações. Mantém o valor melhor que a série A, mas desvaloriza mais que a série S principal.",
+      "concorrentes_diretos": ["Poco X7 Pro", "Motorola Edge 60"],
       "avaliacao_geral": 9.0, "custo_beneficio": 9.4,
       "positivos_percebidos": [ "Desempenho de top de linha (chip Exynos 2400)", "Câmera principal de alta qualidade", "Tela Dynamic AMOLED 2X excelente", "Longa política de atualizações" ],
       "negativos_percebidos": [ "Acabamento em plástico", "Bordas da tela mais espessas que na linha principal", "Carregamento de 25W" ],
@@ -271,6 +293,8 @@
     "avaliacoes": {
       "resumo_consultor": "O Poco X7 Pro foca exclusivamente em desempenho bruto para jogos. Ele corta custos em câmera e acabamento para entregar o processador mais potente possível em sua faixa de preço.",
       "perfil_ideal": "Gamers com orçamento limitado.",
+      "longevidade_e_desvalorizacao": "Longevidade de software limitada, focada em entregar desempenho imediato. A desvalorização é muito acentuada, sendo um aparelho para o 'agora'.",
+      "concorrentes_diretos": ["Samsung Galaxy S24 FE", "Motorola Edge 60"],
       "avaliacao_geral": 8.2, "custo_beneficio": 9.5,
       "positivos_percebidos": [ "Desempenho excepcional para jogos", "Tela com alta taxa de atualização", "Carregamento rápido", "Preço agressivo" ],
       "negativos_percebidos": [ "Câmeras muito básicas", "Acabamento em plástico de baixa qualidade", "Software HyperOS com muitos anúncios" ],
@@ -295,6 +319,8 @@
     "avaliacoes": {
       "resumo_consultor": "O Galaxy A16 é o celular para tarefas essenciais. Ideal para quem busca um smartphone confiável para WhatsApp, redes sociais leves e ligações, com a qualidade de construção da Samsung.",
       "perfil_ideal": "Primeiro smartphone, idosos, ou para uso como celular de trabalho básico.",
+      "longevidade_e_desvalorizacao": "Longevidade de software limitada (2 atualizações de Android). A desvalorização é muito rápida, como esperado para um modelo de entrada.",
+      "concorrentes_diretos": ["Motorola Moto G86 Power"],
       "avaliacao_geral": 7.2, "custo_beneficio": 8.5,
       "positivos_percebidos": [ "Preço muito acessível", "Bateria de longa duração", "Interface One UI Core é fácil de usar", "Tela com bom tamanho" ],
       "negativos_percebidos": [ "Extremamente lento para multitarefa ou jogos", "Câmeras muito limitadas, sofrem com pouca luz", "Tela com resolução apenas HD", "Sem NFC para pagamentos" ],
@@ -319,6 +345,8 @@
     "avaliacoes": {
       "resumo_consultor": "O iPhone SE é a porta de entrada para o ecossistema Apple. Ele coloca um processador de top de linha em um corpo mais antigo e compacto, oferecendo desempenho incrível por um preço mais baixo.",
       "perfil_ideal": "Quem quer um iPhone potente e compacto e não se importa com design antigo ou múltiplas câmeras.",
+      "longevidade_e_desvalorizacao": "Excelente longevidade de software, recebendo atualizações por muitos anos graças ao chip potente. O valor de revenda é bom, mas a percepção de 'modelo de entrada' pode acelerar sua desvalorização.",
+      "concorrentes_diretos": ["Samsung Galaxy A56", "Google Pixel 8a"],
       "avaliacao_geral": 8.3, "custo_beneficio": 8.0,
       "positivos_percebidos": [ "Desempenho de flagship com chip da linha principal", "Compacto e fácil de usar com uma mão", "Receberá atualizações do iOS por muitos anos", "Qualidade de construção sólida" ],
       "negativos_percebidos": [ "Design muito datado com bordas grandes", "Tela LCD pequena e de apenas 60Hz", "Bateria dura pouco para uso intenso", "Apenas uma câmera traseira" ],
@@ -343,6 +371,8 @@
     "avaliacoes": {
       "resumo_consultor": "O S25+ é a escolha ideal para quem quer a experiência de um flagship da Samsung com tela grande, mas não precisa das câmeras de zoom extremo ou da S-Pen do modelo Ultra.",
       "perfil_ideal": "Usuários que querem um top de linha com tela grande para mídia e produtividade.",
+      "longevidade_e_desvalorizacao": "Excelente longevidade com 7 anos de atualizações garantidas pela Samsung. A retenção de valor é boa para um flagship Android, mas inferior à do iPhone.",
+      "concorrentes_diretos": ["Apple iPhone 17", "Google Pixel 9", "Xiaomi 15"],
       "avaliacao_geral": 9.4, "custo_beneficio": 8.2,
       "positivos_percebidos": [ "Tela grande e de altíssima qualidade", "Desempenho de ponta", "Câmeras principal e ultrawide excelentes", "Design simétrico e elegante com bordas finas" ],
       "negativos_percebidos": [ "Preço ainda é alto", "Sem a versatilidade de zoom do Ultra", "Carregamento de 45W" ],
@@ -360,3 +390,4 @@
     "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
   }
 ]
+}
