@@ -82,7 +82,7 @@ class ConsultorInteligente:
         contexto_total = ""
         for query in queries:
             logging.info(f"Realizando busca no Google com a query: '{query}'")
-            url = "[https://www.googleapis.com/customsearch/v1](https://www.googleapis.com/customsearch/v1)"
+            url = "https://www.googleapis.com/customsearch/v1"
             params = {'key': self.search_api_key, 'cx': self.search_cx, 'q': query, 'num': 3}
             
             try:
