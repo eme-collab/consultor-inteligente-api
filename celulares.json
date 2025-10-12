@@ -389,4 +389,790 @@
     "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 com One UI 7.1", "politica_atualizacao": "7 anos de atualizações de OS e segurança", "recursos_extras": ["Samsung DeX Wireless", "Galaxy AI"] },
     "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
   }
+],
+[
+  {
+    "id": 16,
+    "ativo": true,
+    "identificacao": { "marca": "Samsung", "modelo": "Galaxy A17", "nome_completo": "Samsung Galaxy A17", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_16.png" },
+    "compra": { "faixa_preco_categoria": "Entrada", "preco_medio_lancamento_brl": 1199.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O Galaxy A17 é um aparelho honesto para o dia a dia. Com uma bateria que dura bastante e uma tela de 90Hz, ele oferece uma experiência básica satisfatória para redes sociais e comunicação.",
+      "perfil_ideal": "Usuários que precisam de um celular confiável para tarefas básicas e valorizam a marca Samsung.",
+      "longevidade_e_desvalorizacao": "Longevidade de software limitada (2 atualizações de Android). A desvalorização é muito rápida, como esperado para um modelo de entrada.",
+      "concorrentes_diretos": ["Motorola Moto G35", "Xiaomi Redmi 14"],
+      "avaliacao_geral": 7.4, "custo_beneficio": 8.6,
+      "positivos_percebidos": ["Bateria de 5000mAh com boa autonomia", "Tela com 90Hz de atualização", "Interface One UI Core é simples de usar"],
+      "negativos_percebidos": ["Desempenho insuficiente para jogos ou multitarefa", "Câmera sofre bastante em ambientes com pouca luz", "Não possui NFC para pagamentos por aproximação"],
+      "notas_detalhadas": { "desempenho": 6.2, "camera_principal": 6.8, "bateria": 9.2, "tela": 7.8, "design": 7.5 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.6, "tecnologia": "PLS LCD", "resolucao": "1600 x 720", "taxa_atualizacao_hz": 90, "brilho_maximo_nits": 500, "protecao": null },
+      "desempenho": { "processador": "MediaTek Helio G88", "memoria_ram_gb": [4], "armazenamento_interno_gb": [128], "expansivel_microsd": true },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.8" }, "ultrawide": { "megapixels": 5, "abertura": "f/2.2" }, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 13, "abertura": "f/2.0" }, "recursos_video": "1080p@30fps" },
+      "bateria": { "capacidade_mah": 5000, "carregamento_rapido_watts": 25, "carregamento_sem_fio_watts": null, "carregamento_reverso": false },
+      "conectividade": { "rede": "4G", "nfc": false, "bluetooth_versao": "5.3", "wifi": "Wi-Fi 5", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "167.7 x 78 x 9.1", "peso_gramas": 195, "material_construcao": "Plástico", "resistencia_agua": null }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 com One UI Core 7.0", "politica_atualizacao": "2 grandes atualizações de OS", "recursos_extras": ["Entrada para fone de ouvido", "Leitor de digital na lateral"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 17,
+    "ativo": true,
+    "identificacao": { "marca": "Motorola", "modelo": "Moto G35", "nome_completo": "Motorola Moto G35", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_17.png" },
+    "compra": { "faixa_preco_categoria": "Entrada", "preco_medio_lancamento_brl": 1399.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O Moto G35 se destaca na categoria de entrada por trazer conectividade 5G e uma experiência de Android limpo, ideal para quem busca velocidade em tarefas básicas e na internet.",
+      "perfil_ideal": "Usuários que querem a velocidade do 5G em um aparelho acessível e gostam do Android sem customizações.",
+      "longevidade_e_desvalorizacao": "Longevidade de software baixa (1-2 atualizações de OS). A desvalorização é rápida, mas a marca forte ajuda na revenda.",
+      "concorrentes_diretos": ["Samsung Galaxy A17", "Realme C65"],
+      "avaliacao_geral": 7.6, "custo_beneficio": 8.7,
+      "positivos_percebidos": ["Conectividade 5G", "Software limpo e fluido para tarefas básicas", "Bateria de longa duração", "Carregador incluso na caixa"],
+      "negativos_percebidos": ["Câmera secundária praticamente inútil", "Tela com resolução apenas HD+", "Acabamento simples em plástico"],
+      "notas_detalhadas": { "desempenho": 7.0, "camera_principal": 7.0, "bateria": 9.3, "tela": 7.5, "design": 7.8 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.5, "tecnologia": "IPS LCD", "resolucao": "1600 x 720", "taxa_atualizacao_hz": 90, "brilho_maximo_nits": 500, "protecao": null },
+      "desempenho": { "processador": "Snapdragon 4 Gen 2", "memoria_ram_gb": [4], "armazenamento_interno_gb": [128], "expansivel_microsd": true },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.8" }, "ultrawide": null, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 8, "abertura": "f/2.0" }, "recursos_video": "1080p@30fps" },
+      "bateria": { "capacidade_mah": 5000, "carregamento_rapido_watts": 20, "carregamento_sem_fio_watts": null, "carregamento_reverso": false },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.1", "wifi": "Wi-Fi 5", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "162.7 x 74.8 x 8.2", "peso_gramas": 185, "material_construcao": "Plástico", "resistencia_agua": "IP52 (repelente à água)" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15", "politica_atualizacao": "1 grande atualização de OS", "recursos_extras": ["Rádio FM", "Som estéreo"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 18,
+    "ativo": true,
+    "identificacao": { "marca": "Xiaomi", "modelo": "Redmi 14", "nome_completo": "Xiaomi Redmi 14", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_18.png" },
+    "compra": { "faixa_preco_categoria": "Entrada", "preco_medio_lancamento_brl": 1099.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O Redmi 14 entrega um pacote de especificações impressionante para seu preço, com destaque para a tela Full HD+, algo raro na categoria de entrada. É um forte candidato para quem busca valor.",
+      "perfil_ideal": "Usuários que buscam as melhores especificações possíveis gastando o mínimo.",
+      "longevidade_e_desvalorizacao": "Longevidade de software baixa. A desvalorização é acentuada, mas o preço inicial baixo minimiza a perda financeira.",
+      "concorrentes_diretos": ["Samsung Galaxy A17", "Motorola Moto G35"],
+      "avaliacao_geral": 7.8, "custo_beneficio": 9.1,
+      "positivos_percebidos": ["Tela com resolução Full HD+, superior aos concorrentes", "Bom desempenho para a categoria com chip Helio G99", "Design com aparência mais cara", "Bateria grande"],
+      "negativos_percebidos": ["Software HyperOS com anúncios", "Câmera decente, mas com cores inconsistentes", "Sem 5G"],
+      "notas_detalhadas": { "desempenho": 7.5, "camera_principal": 7.2, "bateria": 9.0, "tela": 8.5, "design": 8.0 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.7, "tecnologia": "IPS LCD", "resolucao": "2400 x 1080", "taxa_atualizacao_hz": 90, "brilho_maximo_nits": 600, "protecao": "Gorilla Glass 3" },
+      "desempenho": { "processador": "MediaTek Helio G99", "memoria_ram_gb": [4, 6], "armazenamento_interno_gb": [128], "expansivel_microsd": true },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.8" }, "ultrawide": null, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 8, "abertura": "f/2.0" }, "recursos_video": "1080p@30fps" },
+      "bateria": { "capacidade_mah": 5000, "carregamento_rapido_watts": 18, "carregamento_sem_fio_watts": null, "carregamento_reverso": false },
+      "conectividade": { "rede": "4G", "nfc": true, "bluetooth_versao": "5.2", "wifi": "Wi-Fi 5", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "168.6 x 76.3 x 8.2", "peso_gramas": 192, "material_construcao": "Plástico e Vidro", "resistencia_agua": "IP53" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 com HyperOS 2.0", "politica_atualizacao": "1 grande atualização de OS", "recursos_extras": ["Emissor de infravermelho", "Entrada para fone de ouvido"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 19,
+    "ativo": true,
+    "identificacao": { "marca": "Samsung", "modelo": "Galaxy A07", "nome_completo": "Samsung Galaxy A07", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_19.png" },
+    "compra": { "faixa_preco_categoria": "Entrada", "preco_medio_lancamento_brl": 899.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O Galaxy A07 é o smartphone mais básico da Samsung. Ele é projetado para quem precisa de um aparelho funcional para WhatsApp e ligações, com uma bateria que dura o dia todo, e nada mais.",
+      "perfil_ideal": "Usuários com orçamento extremamente limitado ou que precisam de um segundo celular apenas para comunicação.",
+      "longevidade_e_desvalorizacao": "Longevidade muito baixa e desvalorização extremamente rápida. Não é uma compra pensando no futuro.",
+      "concorrentes_diretos": ["Motorola Moto E25"],
+      "avaliacao_geral": 6.8, "custo_beneficio": 8.2,
+      "positivos_percebidos": ["Preço muito baixo", "Bateria de longa duração", "Marca confiável"],
+      "negativos_percebidos": ["Extremamente lento, engasga em tarefas simples", "Qualidade da tela é apenas básica", "Câmeras servem apenas para registros com muita luz", "Sem leitor de digital"],
+      "notas_detalhadas": { "desempenho": 4.0, "camera_principal": 5.5, "bateria": 9.0, "tela": 6.5, "design": 7.0 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.7, "tecnologia": "PLS LCD", "resolucao": "1600 x 720", "taxa_atualizacao_hz": 60, "brilho_maximo_nits": 400, "protecao": null },
+      "desempenho": { "processador": "MediaTek Helio P35", "memoria_ram_gb": [4], "armazenamento_interno_gb": [64], "expansivel_microsd": true },
+      "cameras": { "principal": { "megapixels": 13, "abertura": "f/2.2" }, "ultrawide": null, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 5, "abertura": "f/2.2" }, "recursos_video": "1080p@30fps" },
+      "bateria": { "capacidade_mah": 5000, "carregamento_rapido_watts": 10, "carregamento_sem_fio_watts": null, "carregamento_reverso": false },
+      "conectividade": { "rede": "4G", "nfc": false, "bluetooth_versao": "5.1", "wifi": "Wi-Fi 5", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "168 x 77.8 x 8.8", "peso_gramas": 195, "material_construcao": "Plástico", "resistencia_agua": null }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 (Go Edition)", "politica_atualizacao": "Apenas atualizações de segurança esporádicas", "recursos_extras": ["Entrada para fone de ouvido"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 20,
+    "ativo": true,
+    "identificacao": { "marca": "Motorola", "modelo": "Moto E25", "nome_completo": "Motorola Moto E25", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_20.png" },
+    "compra": { "faixa_preco_categoria": "Entrada", "preco_medio_lancamento_brl": 799.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O Moto E25 é a definição de smartphone ultra-básico. Com Android Go para garantir o mínimo de fluidez, é indicado apenas para quem vai usar WhatsApp, fazer ligações e nada mais.",
+      "perfil_ideal": "Orçamentos mais apertados e para quem precisa de um aparelho de emergência ou secundário.",
+      "longevidade_e_desvalorizacao": "Muito baixa. A desvalorização é imediata e o suporte de software é mínimo.",
+      "concorrentes_diretos": ["Samsung Galaxy A07"],
+      "avaliacao_geral": 6.5, "custo_beneficio": 8.0,
+      "positivos_percebidos": ["Preço extremamente baixo", "Android Go é leve para o hardware", "Bateria razoável"],
+      "negativos_percebidos": ["Muito pouco armazenamento interno", "Desempenho sofre com mais de um app aberto", "Qualidade de construção muito simples"],
+      "notas_detalhadas": { "desempenho": 3.5, "camera_principal": 5.0, "bateria": 8.5, "tela": 6.0, "design": 6.5 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.5, "tecnologia": "IPS LCD", "resolucao": "1600 x 720", "taxa_atualizacao_hz": 60, "brilho_maximo_nits": 400, "protecao": null },
+      "desempenho": { "processador": "Unisoc T606", "memoria_ram_gb": [2], "armazenamento_interno_gb": [64], "expansivel_microsd": true },
+      "cameras": { "principal": { "megapixels": 13, "abertura": "f/2.2" }, "ultrawide": null, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 5, "abertura": "f/2.2" }, "recursos_video": "1080p@30fps" },
+      "bateria": { "capacidade_mah": 5000, "carregamento_rapido_watts": 10, "carregamento_sem_fio_watts": null, "carregamento_reverso": false },
+      "conectividade": { "rede": "4G", "nfc": false, "bluetooth_versao": "5.0", "wifi": "Wi-Fi 5", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "163.6 x 75.3 x 8.5", "peso_gramas": 184, "material_construcao": "Plástico", "resistencia_agua": null }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 (Go Edition)", "politica_atualizacao": "Apenas atualizações de segurança", "recursos_extras": ["Leitor de digital na lateral"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 21,
+    "ativo": true,
+    "identificacao": { "marca": "Realme", "modelo": "C65", "nome_completo": "Realme C65", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_21.png" },
+    "compra": { "faixa_preco_categoria": "Entrada", "preco_medio_lancamento_brl": 1499.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O Realme C65 compete agressivamente no mercado de entrada, oferecendo um carregamento mais rápido e mais memória RAM que seus concorrentes diretos, mas peca na qualidade do software.",
+      "perfil_ideal": "Usuários de entrada que querem um pouco mais de desempenho e não se importam com uma interface muito customizada.",
+      "longevidade_e_desvalorizacao": "Baixa. A marca tem um ciclo de lançamentos muito rápido, o que acelera a desvalorização.",
+      "concorrentes_diretos": ["Motorola Moto G35", "Xiaomi Redmi 14"],
+      "avaliacao_geral": 7.7, "custo_beneficio": 8.8,
+      "positivos_percebidos": ["Carregamento rápido de 33W", "6GB de RAM como padrão", "Design chamativo"],
+      "negativos_percebidos": ["Realme UI é pesada e com muitos apps pré-instalados", "Qualidade da câmera é inconsistente", "Apenas 1 grande atualização de Android"],
+      "notas_detalhadas": { "desempenho": 7.2, "camera_principal": 7.0, "bateria": 8.8, "tela": 7.5, "design": 8.2 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.72, "tecnologia": "IPS LCD", "resolucao": "1600 x 720", "taxa_atualizacao_hz": 90, "brilho_maximo_nits": 625, "protecao": null },
+      "desempenho": { "processador": "MediaTek Helio G90", "memoria_ram_gb": [6], "armazenamento_interno_gb": [128], "expansivel_microsd": true },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.8" }, "ultrawide": null, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 8, "abertura": "f/2.0" }, "recursos_video": "1080p@30fps" },
+      "bateria": { "capacidade_mah": 5000, "carregamento_rapido_watts": 33, "carregamento_sem_fio_watts": null, "carregamento_reverso": false },
+      "conectividade": { "rede": "4G", "nfc": true, "bluetooth_versao": "5.2", "wifi": "Wi-Fi 5", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "165.6 x 76.1 x 7.9", "peso_gramas": 190, "material_construcao": "Plástico", "resistencia_agua": "IP54" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 com Realme UI 6.0", "politica_atualizacao": "1 grande atualização de OS", "recursos_extras": ["Mini Capsule (similar à Dynamic Island)"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 22,
+    "ativo": true,
+    "identificacao": { "marca": "Infinix", "modelo": "Hot 50", "nome_completo": "Infinix Hot 50", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_22.png" },
+    "compra": { "faixa_preco_categoria": "Entrada", "preco_medio_lancamento_brl": 950.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O Infinix Hot 50 foca em oferecer uma tela grande e som estéreo para consumo de mídia, com um design chamativo. O desempenho é básico, mas o pacote geral é atraente pelo preço.",
+      "perfil_ideal": "Jovens com orçamento curto que usam o celular para assistir vídeos e ouvir música.",
+      "longevidade_e_desvalorizacao": "Muito baixa. A marca não tem uma política de atualizações clara e a desvalorização é imediata.",
+      "concorrentes_diretos": ["Samsung Galaxy A07", "Motorola Moto E25"],
+      "avaliacao_geral": 7.0, "custo_beneficio": 8.3,
+      "positivos_percebidos": ["Tela grande de quase 6.8 polegadas", "Alto-falantes estéreo", "Design diferenciado"],
+      "negativos_percebidos": ["Desempenho muito fraco", "Software XOS é poluído e confuso", "Câmeras de baixa qualidade"],
+      "notas_detalhadas": { "desempenho": 5.5, "camera_principal": 6.2, "bateria": 8.8, "tela": 7.8, "design": 7.9 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.78, "tecnologia": "IPS LCD", "resolucao": "1600 x 720", "taxa_atualizacao_hz": 90, "brilho_maximo_nits": 500, "protecao": null },
+      "desempenho": { "processador": "Unisoc T616", "memoria_ram_gb": [4], "armazenamento_interno_gb": [128], "expansivel_microsd": true },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.6" }, "ultrawide": null, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 8, "abertura": "f/2.0" }, "recursos_video": "1080p@30fps" },
+      "bateria": { "capacidade_mah": 5000, "carregamento_rapido_watts": 18, "carregamento_sem_fio_watts": null, "carregamento_reverso": false },
+      "conectividade": { "rede": "4G", "nfc": true, "bluetooth_versao": "5.0", "wifi": "Wi-Fi 5", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "168.6 x 76.6 x 8.4", "peso_gramas": 195, "material_construcao": "Plástico", "resistencia_agua": null }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 14 com XOS 14", "politica_atualizacao": "Incerta, provavelmente apenas atualizações de segurança", "recursos_extras": ["Som estéreo com DTS"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 23,
+    "ativo": true,
+    "identificacao": { "marca": "Motorola", "modelo": "Moto G15", "nome_completo": "Motorola Moto G15", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_23.png" },
+    "compra": { "faixa_preco_categoria": "Entrada", "preco_medio_lancamento_brl": 999.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O Moto G15 é um celular de entrada que cumpre o básico com a vantagem de um software limpo e gestos úteis da Motorola. É uma escolha segura para quem não quer complexidade.",
+      "perfil_ideal": "Usuários que preferem uma experiência de Android mais pura e valorizam gestos práticos no dia a dia.",
+      "longevidade_e_desvalorizacao": "Baixa longevidade de software e desvalorização rápida.",
+      "concorrentes_diretos": ["Samsung Galaxy A16", "Xiaomi Redmi 14"],
+      "avaliacao_geral": 7.3, "custo_beneficio": 8.4,
+      "positivos_percebidos": ["Android quase puro", "Gestos da Motorola (ex: sacudir para lanterna)", "Bateria para o dia todo"],
+      "negativos_percebidos": ["Desempenho limitado", "Tela de resolução apenas HD+", "Câmeras básicas"],
+      "notas_detalhadas": { "desempenho": 6.0, "camera_principal": 6.7, "bateria": 9.1, "tela": 7.2, "design": 7.5 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.5, "tecnologia": "IPS LCD", "resolucao": "1600 x 720", "taxa_atualizacao_hz": 90, "brilho_maximo_nits": 450, "protecao": null },
+      "desempenho": { "processador": "MediaTek Helio G85", "memoria_ram_gb": [4], "armazenamento_interno_gb": [128], "expansivel_microsd": true },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.8" }, "ultrawide": null, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 8, "abertura": "f/2.0" }, "recursos_video": "1080p@30fps" },
+      "bateria": { "capacidade_mah": 5000, "carregamento_rapido_watts": 15, "carregamento_sem_fio_watts": null, "carregamento_reverso": false },
+      "conectividade": { "rede": "4G", "nfc": true, "bluetooth_versao": "5.1", "wifi": "Wi-Fi 5", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "164.2 x 75.8 x 8.5", "peso_gramas": 188, "material_construcao": "Plástico", "resistencia_agua": "IP52" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15", "politica_atualizacao": "1 grande atualização de OS", "recursos_extras": ["Gestos Moto", "Rádio FM"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 24,
+    "ativo": true,
+    "identificacao": { "marca": "Samsung", "modelo": "Galaxy A25", "nome_completo": "Samsung Galaxy A25", "ano_lancamento": 2024, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_24.png" },
+    "compra": { "faixa_preco_categoria": "Intermediário", "preco_medio_lancamento_brl": 1799.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "Lançado no ano anterior, o Galaxy A25 se torna uma excelente opção de 'intermediário de entrada' em 2025. Sua tela Super AMOLED e o suporte de software longo o destacam de lançamentos mais recentes na mesma faixa de preço.",
+      "perfil_ideal": "Usuários que valorizam uma tela de alta qualidade e longevidade de software em um aparelho mais acessível.",
+      "longevidade_e_desvalorizacao": "Boa longevidade de software para a categoria. Por ser um modelo do ano anterior, a maior parte da sua desvalorização já ocorreu.",
+      "concorrentes_diretos": ["Redmi Note 14 Pro", "Moto G35"],
+      "avaliacao_geral": 8.2, "custo_beneficio": 9.0,
+      "positivos_percebidos": ["Tela Super AMOLED com cores vibrantes", "Longa política de atualizações da Samsung", "Desempenho sólido com chip Exynos", "Som estéreo"],
+      "negativos_percebidos": ["Design com entalhe em 'U' é datado", "Carregamento de 25W sem carregador na caixa"],
+      "notas_detalhadas": { "desempenho": 7.9, "camera_principal": 8.1, "bateria": 8.8, "tela": 9.3, "design": 8.0 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.5, "tecnologia": "Super AMOLED", "resolucao": "2340 x 1080", "taxa_atualizacao_hz": 120, "brilho_maximo_nits": 1000, "protecao": null },
+      "desempenho": { "processador": "Exynos 1280", "memoria_ram_gb": [6, 8], "armazenamento_interno_gb": [128, 256], "expansivel_microsd": true },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.8" }, "ultrawide": { "megapixels": 8, "abertura": "f/2.2" }, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 13, "abertura": "f/2.2" }, "recursos_video": "4K@30fps" },
+      "bateria": { "capacidade_mah": 5000, "carregamento_rapido_watts": 25, "carregamento_sem_fio_watts": null, "carregamento_reverso": false },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.3", "wifi": "Wi-Fi 5", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "161 x 76.5 x 8.3", "peso_gramas": 197, "material_construcao": "Plástico", "resistencia_agua": null }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 14 com One UI 6", "politica_atualizacao": "4 anos de OS e 5 de segurança", "recursos_extras": ["Leitor de digital na lateral", "Som estéreo"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 25,
+    "ativo": true,
+    "identificacao": { "marca": "Xiaomi", "modelo": "Redmi 13C", "nome_completo": "Xiaomi Redmi 13C", "ano_lancamento": 2024, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_25.png" },
+    "compra": { "faixa_preco_categoria": "Entrada", "preco_medio_lancamento_brl": 999.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "Um dos celulares mais baratos disponíveis que ainda oferece uma experiência de uso aceitável. O Redmi 13C é para quem precisa gastar o mínimo possível em um smartphone funcional.",
+      "perfil_ideal": "Orçamento muito restrito, celular de emergência.",
+      "longevidade_e_desvalorizacao": "Baixa longevidade e desvalorização rápida. É um aparelho para uso imediato, não um investimento.",
+      "concorrentes_diretos": ["Samsung Galaxy A07", "Motorola Moto E25"],
+      "avaliacao_geral": 7.0, "custo_beneficio": 8.9,
+      "positivos_percebidos": ["Preço extremamente competitivo", "Design agradável para a categoria", "Bateria duradoura"],
+      "negativos_percebidos": ["Desempenho muito lento", "Tela de baixa resolução", "Porta microUSB em alguns modelos", "Software com anúncios"],
+      "notas_detalhadas": { "desempenho": 5.5, "camera_principal": 6.5, "bateria": 9.0, "tela": 7.0, "design": 7.8 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.74, "tecnologia": "IPS LCD", "resolucao": "1600 x 720", "taxa_atualizacao_hz": 90, "brilho_maximo_nits": 600, "protecao": "Gorilla Glass" },
+      "desempenho": { "processador": "MediaTek Helio G85", "memoria_ram_gb": [4, 6], "armazenamento_interno_gb": [128], "expansivel_microsd": true },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.8" }, "ultrawide": null, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 8, "abertura": "f/2.0" }, "recursos_video": "1080p@30fps" },
+      "bateria": { "capacidade_mah": 5000, "carregamento_rapido_watts": 18, "carregamento_sem_fio_watts": null, "carregamento_reverso": false },
+      "conectividade": { "rede": "4G", "nfc": true, "bluetooth_versao": "5.3", "wifi": "Wi-Fi 5", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "168 x 78 x 8.1", "peso_gramas": 192, "material_construcao": "Plástico", "resistencia_agua": null }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 13 com MIUI 14", "politica_atualizacao": "Incerta", "recursos_extras": ["Entrada para fone de ouvido"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  }
+],
+[
+  {
+    "id": 26,
+    "ativo": true,
+    "identificacao": { "marca": "Samsung", "modelo": "Galaxy M56", "nome_completo": "Samsung Galaxy M56", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_26.png" },
+    "compra": { "faixa_preco_categoria": "Intermediário", "preco_medio_lancamento_brl": 2299.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O Galaxy M56 é o campeão de autonomia da Samsung no segmento intermediário. Com uma bateria monstruosa de 6000mAh, é feito para quem quer esquecer o carregador por até dois dias, sem abrir mão de uma boa tela AMOLED.",
+      "perfil_ideal": "Usuários que precisam de máxima autonomia de bateria para trabalho ou viagens.",
+      "longevidade_e_desvalorizacao": "Boa longevidade de software (4 anos de updates). A desvalorização é moderada, típica do segmento.",
+      "concorrentes_diretos": ["Motorola Moto G75 5G", "Redmi Note 14"],
+      "avaliacao_geral": 8.5, "custo_beneficio": 9.0,
+      "positivos_percebidos": ["Bateria de 6000mAh dura até 2 dias", "Tela Super AMOLED de alta qualidade", "Desempenho sólido para o dia a dia", "Suporte de software da Samsung"],
+      "negativos_percebidos": ["Design mais espesso e pesado devido à bateria", "Câmeras competentes, mas não excepcionais", "Acabamento em plástico"],
+      "notas_detalhadas": { "desempenho": 7.9, "camera_principal": 8.2, "bateria": 9.9, "tela": 9.1, "design": 7.8 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.7, "tecnologia": "Super AMOLED+", "resolucao": "2400 x 1080", "taxa_atualizacao_hz": 120, "brilho_maximo_nits": 1000, "protecao": "Gorilla Glass 5" },
+      "desempenho": { "processador": "MediaTek Dimensity 7050", "memoria_ram_gb": [8], "armazenamento_interno_gb": [128, 256], "expansivel_microsd": true },
+      "cameras": { "principal": { "megapixels": 108, "abertura": "f/1.8" }, "ultrawide": { "megapixels": 8, "abertura": "f/2.2" }, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 32, "abertura": "f/2.2" }, "recursos_video": "4K@30fps" },
+      "bateria": { "capacidade_mah": 6000, "carregamento_rapido_watts": 25, "carregamento_sem_fio_watts": null, "carregamento_reverso": false },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.3", "wifi": "Wi-Fi 6", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "166.8 x 77.2 x 9.4", "peso_gramas": 215, "material_construcao": "Plástico", "resistencia_agua": "IP67" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 com One UI 7.0", "politica_atualizacao": "4 anos de OS e 5 de segurança", "recursos_extras": ["Som estéreo", "Leitor de digital na lateral"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 27,
+    "ativo": true,
+    "identificacao": { "marca": "Motorola", "modelo": "Moto G75 5G", "nome_completo": "Motorola Moto G75 5G", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_27.png" },
+    "compra": { "faixa_preco_categoria": "Intermediário", "preco_medio_lancamento_brl": 1899.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O Moto G75 é o clássico 'bom e barato' da Motorola, oferecendo uma experiência de Android limpo, tela fluida e um conjunto equilibrado para quem busca um celular funcional sem gastar muito.",
+      "perfil_ideal": "Usuário que busca uma experiência de Android pura e um celular equilibrado para o dia a dia.",
+      "longevidade_e_desvalorizacao": "Longevidade de software limitada a 1-2 atualizações. A desvalorização é moderada, sendo um aparelho de alto volume.",
+      "concorrentes_diretos": ["Samsung Galaxy A37", "Redmi Note 14"],
+      "avaliacao_geral": 8.3, "custo_beneficio": 9.0,
+      "positivos_percebidos": ["Android quase puro com gestos Moto", "Tela pOLED de 120Hz", "Carregador rápido incluso", "Som estéreo com Dolby Atmos"],
+      "negativos_percebidos": ["Apenas 1 grande atualização de Android", "Câmera ultrawide de baixa qualidade", "Desempenho pode engasgar em jogos pesados"],
+      "notas_detalhadas": { "desempenho": 7.8, "camera_principal": 8.0, "bateria": 8.8, "tela": 8.9, "design": 8.5 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.5, "tecnologia": "pOLED", "resolucao": "2400 x 1080", "taxa_atualizacao_hz": 120, "brilho_maximo_nits": 1100, "protecao": "Gorilla Glass 3" },
+      "desempenho": { "processador": "Snapdragon 6 Gen 2", "memoria_ram_gb": [8], "armazenamento_interno_gb": [128, 256], "expansivel_microsd": true },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.8" }, "ultrawide": { "megapixels": 8, "abertura": "f/2.2" }, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 16, "abertura": "f/2.4" }, "recursos_video": "1080p@60fps" },
+      "bateria": { "capacidade_mah": 5000, "carregamento_rapido_watts": 33, "carregamento_sem_fio_watts": null, "carregamento_reverso": false },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.2", "wifi": "Wi-Fi 5", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "161.6 x 73.8 x 7.9", "peso_gramas": 177, "material_construcao": "Plástico", "resistencia_agua": "IP54" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15", "politica_atualizacao": "1 ano de OS e 3 de segurança", "recursos_extras": ["Gestos Moto", "Ready For"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 28,
+    "ativo": true,
+    "identificacao": { "marca": "Xiaomi", "modelo": "Redmi Note 14", "nome_completo": "Xiaomi Redmi Note 14", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_28.png" },
+    "compra": { "faixa_preco_categoria": "Intermediário", "preco_medio_lancamento_brl": 1699.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O Redmi Note 14 é o campeão de vendas da Xiaomi, entregando um pacote muito forte para sua faixa de preço, com destaque para a tela AMOLED e a bateria de longa duração. Uma escolha segura de custo-benefício.",
+      "perfil_ideal": "Usuário geral que busca um celular com boa tela e bateria para o dia a dia.",
+      "longevidade_e_desvalorizacao": "Longevidade mediana de software. Desvaloriza rapidamente, mas é um dos modelos mais procurados no mercado de usados.",
+      "concorrentes_diretos": ["Samsung Galaxy A37", "Motorola Moto G75 5G"],
+      "avaliacao_geral": 8.4, "custo_beneficio": 9.3,
+      "positivos_percebidos": ["Tela AMOLED 120Hz com bom brilho", "Bateria de 5000mAh com boa otimização", "Design com bordas finas", "Carregador rápido na caixa"],
+      "negativos_percebidos": ["Desempenho apenas suficiente, não ideal para jogos", "Software HyperOS com anúncios", "Câmeras secundárias de baixa qualidade"],
+      "notas_detalhadas": { "desempenho": 7.5, "camera_principal": 8.0, "bateria": 9.2, "tela": 9.0, "design": 8.6 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.67, "tecnologia": "AMOLED", "resolucao": "2400 x 1080", "taxa_atualizacao_hz": 120, "brilho_maximo_nits": 1000, "protecao": "Gorilla Glass 3" },
+      "desempenho": { "processador": "Snapdragon 6s Gen 2", "memoria_ram_gb": [6, 8], "armazenamento_interno_gb": [128, 256], "expansivel_microsd": true },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.8" }, "ultrawide": { "megapixels": 8, "abertura": "f/2.2" }, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 13, "abertura": "f/2.4" }, "recursos_video": "1080p@30fps" },
+      "bateria": { "capacidade_mah": 5000, "carregamento_rapido_watts": 33, "carregamento_sem_fio_watts": null, "carregamento_reverso": false },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.2", "wifi": "Wi-Fi 5", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "162.2 x 75.5 x 7.9", "peso_gramas": 188, "material_construcao": "Plástico e Vidro", "resistencia_agua": "IP54" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 com HyperOS 2.0", "politica_atualizacao": "2 anos de OS e 3 de segurança", "recursos_extras": ["Emissor de infravermelho"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 29,
+    "ativo": true,
+    "identificacao": { "marca": "Google", "modelo": "Pixel 8a", "nome_completo": "Google Pixel 8a", "ano_lancamento": 2024, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_29.png" },
+    "compra": { "faixa_preco_categoria": "Intermediário Premium", "preco_medio_lancamento_brl": 3499.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O Pixel 8a é a forma mais acessível de ter a mágica da câmera do Google. Ele entrega fotos de flagship em um corpo mais simples, com a vantagem do Android puro e atualizações rápidas.",
+      "perfil_ideal": "Fotógrafos com orçamento limitado que valorizam software inteligente.",
+      "longevidade_e_desvalorizacao": "Excelente longevidade de software (7 anos). Valor de revenda no Brasil é uma incógnita pela falta de venda oficial.",
+      "concorrentes_diretos": ["Samsung Galaxy S24 FE", "iPhone SE (4ª Geração)"],
+      "avaliacao_geral": 8.9, "custo_beneficio": 8.5,
+      "positivos_percebidos": ["Câmera com o mesmo software de pós-processamento dos modelos mais caros", "Android puro e recursos de IA do Google", "7 anos de atualizações de software", "Tela OLED de alta qualidade"],
+      "negativos_percebidos": ["Requer importação", "Bordas da tela são grossas", "Carregamento lento", "Chip Tensor pode aquecer sob estresse"],
+      "notas_detalhadas": { "desempenho": 8.5, "camera_principal": 9.7, "bateria": 8.0, "tela": 9.0, "design": 8.3 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.1, "tecnologia": "OLED", "resolucao": "2400 x 1080", "taxa_atualizacao_hz": 120, "brilho_maximo_nits": 2000, "protecao": "Gorilla Glass 3" },
+      "desempenho": { "processador": "Google Tensor G3", "memoria_ram_gb": [8], "armazenamento_interno_gb": [128, 256], "expansivel_microsd": false },
+      "cameras": { "principal": { "megapixels": 64, "abertura": "f/1.9" }, "ultrawide": { "megapixels": 13, "abertura": "f/2.2" }, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 13, "abertura": "f/2.2" }, "recursos_video": "4K@60fps" },
+      "bateria": { "capacidade_mah": 4492, "carregamento_rapido_watts": 18, "carregamento_sem_fio_watts": 7.5, "carregamento_reverso": false },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.3", "wifi": "Wi-Fi 6E", "porta_usb": "Type-C 3.2" },
+      "corpo_e_design": { "dimensoes_mm": "152.1 x 72.7 x 8.9", "peso_gramas": 188, "material_construcao": "Alumínio e Plástico", "resistencia_agua": "IP67" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 14", "politica_atualizacao": "7 anos de OS e segurança", "recursos_extras": ["Magic Editor", "Circle to Search"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 30,
+    "ativo": true,
+    "identificacao": { "marca": "Realme", "modelo": "13 5G", "nome_completo": "Realme 13 5G", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_30.png" },
+    "compra": { "faixa_preco_categoria": "Intermediário", "preco_medio_lancamento_brl": 1799.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O Realme 13 é um intermediário que aposta em design arrojado e carregamento muito rápido para se destacar. É uma boa opção para quem busca um celular estiloso e não quer perder tempo na tomada.",
+      "perfil_ideal": "Jovens que valorizam design e velocidade de carregamento.",
+      "longevidade_e_desvalorizacao": "Baixa longevidade de software e desvalorização rápida devido ao grande volume de lançamentos da marca.",
+      "concorrentes_diretos": ["Redmi Note 14", "Moto G75 5G"],
+      "avaliacao_geral": 8.1, "custo_beneficio": 8.8,
+      "positivos_percebidos": ["Carregamento rápido de 67W", "Design traseiro diferenciado", "Boa quantidade de RAM e armazenamento pelo preço"],
+      "negativos_percebidos": ["Software Realme UI é pesado e pode ser confuso", "Apenas 2 grandes atualizações de Android", "Câmera superestimada pelo marketing"],
+      "notas_detalhadas": { "desempenho": 7.7, "camera_principal": 7.8, "bateria": 8.9, "tela": 8.5, "design": 8.8 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.7, "tecnologia": "IPS LCD", "resolucao": "2400 x 1080", "taxa_atualizacao_hz": 120, "brilho_maximo_nits": 950, "protecao": null },
+      "desempenho": { "processador": "MediaTek Dimensity 7020", "memoria_ram_gb": [8], "armazenamento_interno_gb": [256], "expansivel_microsd": true },
+      "cameras": { "principal": { "megapixels": 108, "abertura": "f/1.8" }, "ultrawide": null, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 16, "abertura": "f/2.5" }, "recursos_video": "1080p@30fps" },
+      "bateria": { "capacidade_mah": 5000, "carregamento_rapido_watts": 67, "carregamento_sem_fio_watts": null, "carregamento_reverso": false },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.3", "wifi": "Wi-Fi 5", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "165.7 x 76 x 7.9", "peso_gramas": 190, "material_construcao": "Plástico", "resistencia_agua": "IP54" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 com Realme UI 6.0", "politica_atualizacao": "2 anos de OS e 3 de segurança", "recursos_extras": ["Som estéreo"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 31,
+    "ativo": true,
+    "identificacao": { "marca": "Samsung", "modelo": "Galaxy A37", "nome_completo": "Samsung Galaxy A37", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_31.png" },
+    "compra": { "faixa_preco_categoria": "Intermediário", "preco_medio_lancamento_brl": 1999.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O Galaxy A37 preenche a lacuna no portfólio da Samsung, oferecendo uma tela AMOLED e o excelente suporte de software da marca em um pacote mais acessível que a linha A5x. É o 'ponto de equilíbrio' para muitos.",
+      "perfil_ideal": "Quem quer a confiabilidade e a tela de um Samsung sem precisar investir no modelo A56.",
+      "longevidade_e_desvalorizacao": "Boa longevidade com 4 anos de atualizações. Desvalorização moderada.",
+      "concorrentes_diretos": ["Redmi Note 14", "Moto G75 5G"],
+      "avaliacao_geral": 8.6, "custo_beneficio": 9.1,
+      "positivos_percebidos": ["Tela Super AMOLED de alta qualidade", "Bateria de longa duração", "Política de atualizações de 4 anos", "Design limpo e resistência à água"],
+      "negativos_percebidos": ["Desempenho apenas para o básico, não para jogos", "Sem carregador na caixa", "Câmera ultrawide simples"],
+      "notas_detalhadas": { "desempenho": 7.6, "camera_principal": 8.3, "bateria": 9.3, "tela": 9.4, "design": 8.8 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.6, "tecnologia": "Super AMOLED", "resolucao": "2340 x 1080", "taxa_atualizacao_hz": 90, "brilho_maximo_nits": 800, "protecao": "Gorilla Glass 5" },
+      "desempenho": { "processador": "MediaTek Dimensity 6100+", "memoria_ram_gb": [6, 8], "armazenamento_interno_gb": [128], "expansivel_microsd": true },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.8" }, "ultrawide": { "megapixels": 5, "abertura": "f/2.2" }, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 13, "abertura": "f/2.2" }, "recursos_video": "1080p@30fps" },
+      "bateria": { "capacidade_mah": 5000, "carregamento_rapido_watts": 25, "carregamento_sem_fio_watts": null, "carregamento_reverso": false },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.3", "wifi": "Wi-Fi 5", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "160.1 x 76.8 x 8.4", "peso_gramas": 200, "material_construcao": "Plástico", "resistencia_agua": "IP67" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 com One UI 7.0", "politica_atualizacao": "4 anos de OS e 5 de segurança", "recursos_extras": ["Leitor de digital na lateral"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 32,
+    "ativo": true,
+    "identificacao": { "marca": "Motorola", "modelo": "Edge 50 Neo", "nome_completo": "Motorola Edge 50 Neo", "ano_lancamento": 2024, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_32.png" },
+    "compra": { "faixa_preco_categoria": "Intermediário", "preco_medio_lancamento_brl": 2499.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "Um intermediário focado em estilo. O Edge 50 Neo é extremamente fino e leve, com uma tela curva e cores em parceria com a Pantone, mas suas especificações são um pouco abaixo de concorrentes no mesmo preço.",
+      "perfil_ideal": "Quem prioriza design, leveza e uma pegada confortável acima de tudo.",
+      "longevidade_e_desvalorizacao": "Longevidade mediana e desvalorização rápida, comum em aparelhos focados em design.",
+      "concorrentes_diretos": ["Samsung Galaxy A56", "Realme 13 5G"],
+      "avaliacao_geral": 8.0, "custo_beneficio": 8.2,
+      "positivos_percebidos": ["Design muito fino, leve e elegante", "Tela pOLED curva de alta qualidade", "Carregamento rápido com carregador na caixa", "Android limpo"],
+      "negativos_percebidos": ["Processador inferior a concorrentes da mesma faixa de preço", "Política de atualizações curta", "Câmeras apenas ok"],
+      "notas_detalhadas": { "desempenho": 7.5, "camera_principal": 7.9, "bateria": 8.2, "tela": 9.2, "design": 9.7 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.55, "tecnologia": "pOLED", "resolucao": "2400 x 1080", "taxa_atualizacao_hz": 120, "brilho_maximo_nits": 1300, "protecao": "Gorilla Glass 3" },
+      "desempenho": { "processador": "Snapdragon 695 5G", "memoria_ram_gb": [8], "armazenamento_interno_gb": [256], "expansivel_microsd": false },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.8" }, "ultrawide": { "megapixels": 13, "abertura": "f/2.2" }, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 32, "abertura": "f/2.4" }, "recursos_video": "4K@30fps" },
+      "bateria": { "capacidade_mah": 5000, "carregamento_rapido_watts": 68, "carregamento_sem_fio_watts": null, "carregamento_reverso": false },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.1", "wifi": "Wi-Fi 5", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "159.6 x 72 x 7.8", "peso_gramas": 170, "material_construcao": "Plástico (Couro Vegano)", "resistencia_agua": "IP68" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 14", "politica_atualizacao": "2 anos de OS e 3 de segurança", "recursos_extras": ["Cores Pantone", "Ready For"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 33,
+    "ativo": true,
+    "identificacao": { "marca": "Xiaomi", "modelo": "Poco M7 Pro", "nome_completo": "Xiaomi Poco M7 Pro", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_33.png" },
+    "compra": { "faixa_preco_categoria": "Intermediário", "preco_medio_lancamento_brl": 1599.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O Poco M7 Pro é um intermediário de entrada focado em entregar um pacote completo e equilibrado por um preço muito baixo, com tela AMOLED, carregamento rápido e bom desempenho.",
+      "perfil_ideal": "Quem busca o máximo de recursos possível na faixa de preço mais baixa do segmento intermediário.",
+      "longevidade_e_desvalorizacao": "Baixa. O software é o ponto fraco e a desvalorização é rápida.",
+      "concorrentes_diretos": ["Redmi Note 14", "Moto G75 5G"],
+      "avaliacao_geral": 8.3, "custo_beneficio": 9.4,
+      "positivos_percebidos": ["Tela AMOLED 120Hz", "Carregamento de 67W", "Desempenho sólido para a categoria", "Leitor de digital na tela"],
+      "negativos_percebidos": ["Câmeras apenas razoáveis", "Software HyperOS com bugs e anúncios", "Construção em plástico"],
+      "notas_detalhadas": { "desempenho": 8.0, "camera_principal": 7.5, "bateria": 8.7, "tela": 9.0, "design": 8.0 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.67, "tecnologia": "AMOLED", "resolucao": "2400 x 1080", "taxa_atualizacao_hz": 120, "brilho_maximo_nits": 1300, "protecao": "Gorilla Glass 5" },
+      "desempenho": { "processador": "MediaTek Helio G99 Ultra", "memoria_ram_gb": [8], "armazenamento_interno_gb": [256], "expansivel_microsd": false },
+      "cameras": { "principal": { "megapixels": 64, "abertura": "f/1.8" }, "ultrawide": { "megapixels": 8, "abertura": "f/2.2" }, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 16, "abertura": "f/2.5" }, "recursos_video": "1080p@60fps" },
+      "bateria": { "capacidade_mah": 5000, "carregamento_rapido_watts": 67, "carregamento_sem_fio_watts": null, "carregamento_reverso": false },
+      "conectividade": { "rede": "4G", "nfc": true, "bluetooth_versao": "5.2", "wifi": "Wi-Fi 5", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "161.1 x 75 x 8", "peso_gramas": 179, "material_construcao": "Plástico", "resistencia_agua": "IP54" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 14 com HyperOS for Poco", "politica_atualizacao": "2 anos de OS e 3 de segurança", "recursos_extras": ["Entrada para fone de ouvido"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 34,
+    "ativo": true,
+    "identificacao": { "marca": "Asus", "modelo": "Zenfone 12", "nome_completo": "Asus Zenfone 12", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_34.png" },
+    "compra": { "faixa_preco_categoria": "Premium", "preco_medio_lancamento_brl": 4999.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O Zenfone 12 continua a ser o refúgio dos celulares compactos. Ele entrega desempenho de top de linha em um corpo pequeno e fácil de usar com uma mão, um diferencial enorme no mercado atual.",
+      "perfil_ideal": "Quem odeia celulares grandes e quer um aparelho potente e compacto.",
+      "longevidade_e_desvalorizacao": "Longevidade de software mediana. Por ser um aparelho de nicho, a desvalorização pode ser acentuada.",
+      "concorrentes_diretos": ["iPhone 16", "Samsung Galaxy S25"],
+      "avaliacao_geral": 9.1, "custo_beneficio": 8.4,
+      "positivos_percebidos": ["Formato compacto, ideal para uso com uma mão", "Desempenho de flagship com chip Snapdragon", "Software limpo com recursos úteis", "Entrada para fone de ouvido, uma raridade"],
+      "negativos_percebidos": ["Bateria pode ser um ponto fraco devido ao tamanho", "Apenas duas câmeras traseiras", "Disponibilidade limitada no Brasil"],
+      "notas_detalhadas": { "desempenho": 9.8, "camera_principal": 9.0, "bateria": 8.0, "tela": 9.2, "design": 9.8 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 5.9, "tecnologia": "AMOLED", "resolucao": "2400 x 1080", "taxa_atualizacao_hz": 144, "brilho_maximo_nits": 1500, "protecao": "Gorilla Glass Victus 2" },
+      "desempenho": { "processador": "Snapdragon 8 Gen 4", "memoria_ram_gb": [8, 16], "armazenamento_interno_gb": [128, 256], "expansivel_microsd": false },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.9" }, "ultrawide": { "megapixels": 13, "abertura": "f/2.2" }, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 32, "abertura": "f/2.5" }, "recursos_video": "8K@24fps" },
+      "bateria": { "capacidade_mah": 4300, "carregamento_rapido_watts": 30, "carregamento_sem_fio_watts": 15, "carregamento_reverso": false },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.4", "wifi": "Wi-Fi 7", "porta_usb": "Type-C 3.0" },
+      "corpo_e_design": { "dimensoes_mm": "146.5 x 68.1 x 9.4", "peso_gramas": 172, "material_construcao": "Alumínio e Plástico", "resistencia_agua": "IP68" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15", "politica_atualizacao": "2 anos de OS e 4 de segurança", "recursos_extras": ["Entrada para fone de ouvido", "Estabilização Gimbal na câmera"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 35,
+    "ativo": true,
+    "identificacao": { "marca": "Nokia", "modelo": "G80 5G", "nome_completo": "Nokia G80 5G", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_35.png" },
+    "compra": { "faixa_preco_categoria": "Intermediário", "preco_medio_lancamento_brl": 1600.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O Nokia G80 5G aposta na durabilidade e na experiência do Android One (puro e seguro). Não é o mais potente, mas é um celular feito para durar e para quem valoriza uma interface limpa e sem excessos.",
+      "perfil_ideal": "Usuários que buscam durabilidade e um software limpo e seguro acima de tudo.",
+      "longevidade_e_desvalorizacao": "Longevidade de software razoável com 3 anos de atualizações de segurança. A desvalorização é acentuada.",
+      "concorrentes_diretos": ["Motorola Moto G75 5G"],
+      "avaliacao_geral": 7.9, "custo_beneficio": 8.5,
+      "positivos_percebidos": ["Android One, sem bloatware e com atualizações de segurança garantidas", "Qualidade de construção robusta", "Bateria de longa duração"],
+      "negativos_percebidos": ["Desempenho abaixo da média para a categoria", "Design pouco inspirado", "Câmeras apenas funcionais"],
+      "notas_detalhadas": { "desempenho": 7.0, "camera_principal": 7.5, "bateria": 9.0, "tela": 8.0, "design": 7.5 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.58, "tecnologia": "IPS LCD", "resolucao": "2408 x 1080", "taxa_atualizacao_hz": 120, "brilho_maximo_nits": 500, "protecao": "Gorilla Glass 5" },
+      "desempenho": { "processador": "Snapdragon 695 5G", "memoria_ram_gb": [6], "armazenamento_interno_gb": [128], "expansivel_microsd": true },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.8" }, "ultrawide": { "megapixels": 5, "abertura": "f/2.2" }, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 8, "abertura": "f/2.0" }, "recursos_video": "1080p@30fps" },
+      "bateria": { "capacidade_mah": 5000, "carregamento_rapido_watts": 20, "carregamento_sem_fio_watts": null, "carregamento_reverso": false },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.1", "wifi": "Wi-Fi 5", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "166 x 76 x 8.6", "peso_gramas": 200, "material_construcao": "Plástico", "resistencia_agua": "IP52" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 (Android One)", "politica_atualizacao": "2 anos de OS e 3 de segurança", "recursos_extras": ["Construção com materiais reciclados"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  }
+],
+[
+  {
+    "id": 36,
+    "ativo": true,
+    "identificacao": { "marca": "Apple", "modelo": "iPhone 17 Pro Max", "nome_completo": "Apple iPhone 17 Pro Max", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_36.png" },
+    "compra": { "faixa_preco_categoria": "Super Premium", "preco_medio_lancamento_brl": 11599.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O iPhone 17 Pro Max é o ápice da tecnologia da Apple. Com a maior tela, a melhor bateria da linha e um sistema de câmeras com zoom aprimorado, é o aparelho definitivo para quem busca o melhor ecossistema sem compromissos.",
+      "perfil_ideal": "Profissionais criativos, heavy users de mídia e quem deseja a melhor e maior experiência iOS.",
+      "longevidade_e_desvalorizacao": "A maior longevidade e menor desvalorização do mercado. Um investimento seguro para quem planeja ficar com o aparelho por muitos anos.",
+      "concorrentes_diretos": ["Samsung Galaxy S25 Ultra", "Google Pixel 9 Pro"],
+      "avaliacao_geral": 9.8, "custo_beneficio": 7.0,
+      "positivos_percebidos": ["Autonomia de bateria líder da categoria", "Tela Super Retina XDR gigante e imersiva", "Sistema de câmeras Pro com zoom óptico de 5x ou mais", "Desempenho absoluto com chip A19 Pro"],
+      "negativos_percebidos": ["Preço proibitivo para a maioria", "Muito grande e pesado", "Carregamento mais lento que todos os concorrentes Android"],
+      "notas_detalhadas": { "desempenho": 10.0, "camera_principal": 9.7, "bateria": 9.8, "tela": 9.9, "design": 9.5 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.9, "tecnologia": "Super Retina XDR com ProMotion", "resolucao": "2796 x 1290", "taxa_atualizacao_hz": 120, "brilho_maximo_nits": 2500, "protecao": "Ceramic Shield" },
+      "desempenho": { "processador": "A19 Pro", "memoria_ram_gb": [8], "armazenamento_interno_gb": [256, 512, 1024], "expansivel_microsd": false },
+      "cameras": { "principal": { "megapixels": 48, "abertura": "f/1.8" }, "ultrawide": { "megapixels": 12, "abertura": "f/2.2" }, "teleobjetiva_1": { "megapixels": 12, "abertura": "f/2.8", "zoom_optico": "5x" }, "teleobjetiva_2": null, "frontal": { "megapixels": 12, "abertura": "f/1.9" }, "recursos_video": "Gravação de vídeo Log, modo Cinema 4K HDR" },
+      "bateria": { "capacidade_mah": 4500, "carregamento_rapido_watts": 27, "carregamento_sem_fio_watts": 15, "carregamento_reverso": false },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.4", "wifi": "Wi-Fi 7", "porta_usb": "Type-C (Thunderbolt 4)" },
+      "corpo_e_design": { "dimensoes_mm": "160.7 x 77.6 x 7.9", "peso_gramas": 225, "material_construcao": "Titânio e Vidro", "resistencia_agua": "IP68" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "iOS 19", "politica_atualizacao": "Aproximadamente 6-7 anos de atualizações", "recursos_extras": ["Face ID", "Dynamic Island", "MagSafe"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 37,
+    "ativo": true,
+    "identificacao": { "marca": "Samsung", "modelo": "Galaxy Z Fold7", "nome_completo": "Samsung Galaxy Z Fold7", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_37.png" },
+    "compra": { "faixa_preco_categoria": "Super Premium", "preco_medio_lancamento_brl": 12799.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O Z Fold7 é um tablet que se dobra para caber no seu bolso. É a ferramenta definitiva para multitarefa, com uma tela interna gigante perfeita para trabalho e consumo de mídia. A produtividade é seu sobrenome.",
+      "perfil_ideal": "Profissionais multitarefa, executivos e entusiastas que querem o futuro da tecnologia móvel.",
+      "longevidade_e_desvalorizacao": "Boa longevidade de software, mas a durabilidade física da tela interna é uma preocupação a longo prazo. A desvalorização é a mais rápida entre todos os celulares premium.",
+      "concorrentes_diretos": ["Google Pixel Fold 2", "OnePlus Open 2"],
+      "avaliacao_geral": 9.3, "custo_beneficio": 6.5,
+      "positivos_percebidos": ["Tela interna gigante ideal para multitarefa", "Desempenho de ponta", "Suporte à S-Pen para produtividade", "Sistema de câmeras de alta qualidade"],
+      "negativos_percebidos": ["Extremamente caro, pesado e espesso", "Durabilidade da tela interna requer cuidados", "Formato 'controle remoto' da tela externa não agrada a todos"],
+      "notas_detalhadas": { "desempenho": 9.8, "camera_principal": 9.2, "bateria": 8.5, "tela": 9.8, "design": 9.0 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 7.6, "tecnologia": "Dynamic AMOLED 2X (interna)", "resolucao": "2176 x 1812", "taxa_atualizacao_hz": 120, "brilho_maximo_nits": 1800, "protecao": "Ultra Thin Glass" },
+      "desempenho": { "processador": "Snapdragon 8 Gen 4 for Galaxy", "memoria_ram_gb": [12], "armazenamento_interno_gb": [256, 512, 1024], "expansivel_microsd": false },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.8" }, "ultrawide": { "megapixels": 12, "abertura": "f/2.2" }, "teleobjetiva_1": { "megapixels": 10, "abertura": "f/2.4", "zoom_optico": "3x" }, "teleobjetiva_2": null, "frontal": { "megapixels": 10, "abertura": "f/2.2" }, "recursos_video": "8K@30fps" },
+      "bateria": { "capacidade_mah": 4400, "carregamento_rapido_watts": 25, "carregamento_sem_fio_watts": 15, "carregamento_reverso": true },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.4", "wifi": "Wi-Fi 7", "porta_usb": "Type-C 3.2" },
+      "corpo_e_design": { "dimensoes_mm": "155.1 x 130.1 x 6.1 (aberto)", "peso_gramas": 253, "material_construcao": "Armor Aluminum e Vidro", "resistencia_agua": "IPX8" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 com One UI 7.1", "politica_atualizacao": "4 anos de OS e 5 de segurança", "recursos_extras": ["Suporte à S-Pen", "Modo DeX", "Multitarefa avançada"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 38,
+    "ativo": true,
+    "identificacao": { "marca": "Asus", "modelo": "ROG Phone 9", "nome_completo": "Asus ROG Phone 9", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_38.png" },
+    "compra": { "faixa_preco_categoria": "Premium", "preco_medio_lancamento_brl": 7599.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O ROG Phone 9 é um monstro de desempenho, construído com um único propósito: ser o melhor celular para jogos do mundo. Tudo, do design ao software, é otimizado para a experiência gamer.",
+      "perfil_ideal": "Gamers competitivos e entusiastas que querem o máximo de performance.",
+      "longevidade_e_desvalorizacao": "Longevidade de software mediana. A desvalorização é rápida, pois o nicho gamer é focado sempre no hardware mais recente.",
+      "concorrentes_diretos": ["Nubia Red Magic 10S Pro"],
+      "avaliacao_geral": 9.0, "custo_beneficio": 7.9,
+      "positivos_percebidos": ["Desempenho bruto inigualável", "Tela de 165Hz com resposta ao toque ultrarrápida", "Gatilhos ultrassônicos configuráveis", "Sistema de refrigeração avançado", "Bateria gigante e carregamento rápido"],
+      "negativos_percebidos": ["Design chamativo pode não agradar a todos", "Conjunto de câmeras apenas mediano para o preço", "Muito pesado e grande"],
+      "notas_detalhadas": { "desempenho": 10.0, "camera_principal": 8.0, "bateria": 9.5, "tela": 9.8, "design": 8.5 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.78, "tecnologia": "AMOLED", "resolucao": "2448 x 1080", "taxa_atualizacao_hz": 165, "brilho_maximo_nits": 2500, "protecao": "Gorilla Glass Victus 2" },
+      "desempenho": { "processador": "Snapdragon 8 Gen 4 (Overclocked)", "memoria_ram_gb": [16, 24], "armazenamento_interno_gb": [512, 1024], "expansivel_microsd": false },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.9" }, "ultrawide": { "megapixels": 13, "abertura": "f/2.2" }, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 32, "abertura": "f/2.5" }, "recursos_video": "8K@24fps" },
+      "bateria": { "capacidade_mah": 6000, "carregamento_rapido_watts": 65, "carregamento_sem_fio_watts": 15, "carregamento_reverso": false },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.4", "wifi": "Wi-Fi 7", "porta_usb": "Type-C 3.1 (lateral e inferior)" },
+      "corpo_e_design": { "dimensoes_mm": "173 x 77 x 10.3", "peso_gramas": 228, "material_construcao": "Alumínio e Vidro", "resistencia_agua": "IPX4" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 com ROG UI", "politica_atualizacao": "2 anos de OS e 4 de segurança", "recursos_extras": ["Gatilhos AirTrigger", "Cooler externo AeroActive", "Entrada para fone de ouvido", "Display de LED na traseira"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 39,
+    "ativo": true,
+    "identificacao": { "marca": "OnePlus", "modelo": "13", "nome_completo": "OnePlus 13", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_39.png" },
+    "compra": { "faixa_preco_categoria": "Premium", "preco_medio_lancamento_brl": 5999.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O OnePlus 13 mantém a tradição da marca: foco em desempenho fluido e carregamento extremamente rápido. É uma alternativa sólida aos flagships da Samsung para quem valoriza uma experiência de software veloz.",
+      "perfil_ideal": "Entusiastas de performance que valorizam carregamento rápido e uma interface limpa.",
+      "longevidade_e_desvalorizacao": "Boa longevidade de software (4 anos de updates). A desvalorização é mais rápida que a de Samsung e Apple.",
+      "concorrentes_diretos": ["Samsung Galaxy S25+", "Xiaomi 15 Pro", "Google Pixel 9"],
+      "avaliacao_geral": 9.2, "custo_beneficio": 8.7,
+      "positivos_percebidos": ["Carregamento SuperVOOC de 150W é incrivelmente rápido", "Desempenho de ponta com Snapdragon 8 Gen 4", "Tela AMOLED com qualidade de cor excelente", "Software OxygenOS é rápido e fluido"],
+      "negativos_percebidos": ["Câmeras (Hasselblad) são boas, mas não líderes de categoria", "Sem suporte oficial e garantia no Brasil", "Faltam alguns recursos 'premium' como carregamento reverso avançado"],
+      "notas_detalhadas": { "desempenho": 9.9, "camera_principal": 9.0, "bateria": 9.3, "tela": 9.7, "design": 9.1 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.7, "tecnologia": "AMOLED LTPO 4.0", "resolucao": "3216 x 1440", "taxa_atualizacao_hz": 120, "brilho_maximo_nits": 3000, "protecao": "Gorilla Glass Victus 2" },
+      "desempenho": { "processador": "Snapdragon 8 Gen 4", "memoria_ram_gb": [12, 16], "armazenamento_interno_gb": [256, 512], "expansivel_microsd": false },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.8" }, "ultrawide": { "megapixels": 48, "abertura": "f/2.2" }, "teleobjetiva_1": { "megapixels": 32, "abertura": "f/2.0", "zoom_optico": "2x" }, "teleobjetiva_2": null, "frontal": { "megapixels": 32, "abertura": "f/2.4" }, "recursos_video": "8K@24fps" },
+      "bateria": { "capacidade_mah": 5000, "carregamento_rapido_watts": 150, "carregamento_sem_fio_watts": 50, "carregamento_reverso": true },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.4", "wifi": "Wi-Fi 7", "porta_usb": "Type-C 3.2" },
+      "corpo_e_design": { "dimensoes_mm": "163.3 x 75.8 x 9.2", "peso_gramas": 207, "material_construcao": "Alumínio e Vidro", "resistencia_agua": "IP68" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 com OxygenOS 15", "politica_atualizacao": "4 anos de OS e 5 de segurança", "recursos_extras": ["Alert Slider", "Calibração de cor Hasselblad"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 40,
+    "ativo": true,
+    "identificacao": { "marca": "Apple", "modelo": "iPhone 17", "nome_completo": "Apple iPhone 17", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_40.png" },
+    "compra": { "faixa_preco_categoria": "Premium", "preco_medio_lancamento_brl": 8599.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O iPhone 17 é o carro-chefe da Apple para o grande público. Traz o novo design e o poderoso chip A19, oferecendo uma experiência de ponta com a simplicidade e confiabilidade do iOS, mas sem a tela ProMotion dos modelos Pro.",
+      "perfil_ideal": "A maioria dos usuários que querem um novo iPhone e não precisam dos recursos de câmera profissionais dos modelos Pro.",
+      "longevidade_e_desvalorizacao": "Excelente longevidade e o melhor valor de revenda do mercado.",
+      "concorrentes_diretos": ["Samsung Galaxy S25+", "Google Pixel 9"],
+      "avaliacao_geral": 9.5, "custo_beneficio": 8.0,
+      "positivos_percebidos": ["Desempenho de ponta com o novo chip A19", "Câmeras principais excelentes e fáceis de usar", "Integração com o ecossistema Apple", "Construção premium e alta durabilidade"],
+      "negativos_percebidos": ["Tela ainda limitada a 60Hz, inaceitável para o preço", "Ausência de uma câmera com zoom óptico", "Preço alto para as especificações oferecidas"],
+      "notas_detalhadas": { "desempenho": 9.9, "camera_principal": 9.3, "bateria": 9.2, "tela": 8.5, "design": 9.3 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.1, "tecnologia": "Super Retina XDR", "resolucao": "2556 x 1179", "taxa_atualizacao_hz": 60, "brilho_maximo_nits": 2000, "protecao": "Ceramic Shield" },
+      "desempenho": { "processador": "A19 Bionic", "memoria_ram_gb": [8], "armazenamento_interno_gb": [128, 256, 512], "expansivel_microsd": false },
+      "cameras": { "principal": { "megapixels": 48, "abertura": "f/1.6" }, "ultrawide": { "megapixels": 12, "abertura": "f/2.4" }, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 12, "abertura": "f/1.9" }, "recursos_video": "4K@60fps, Modo Cinema 4K" },
+      "bateria": { "capacidade_mah": 3450, "carregamento_rapido_watts": 20, "carregamento_sem_fio_watts": 15, "carregamento_reverso": false },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.4", "wifi": "Wi-Fi 7", "porta_usb": "Type-C" },
+      "corpo_e_design": { "dimensoes_mm": "147.6 x 71.6 x 7.8", "peso_gramas": 173, "material_construcao": "Alumínio e Vidro", "resistencia_agua": "IP68" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "iOS 19", "politica_atualizacao": "Aproximadamente 6-7 anos de atualizações", "recursos_extras": ["Face ID", "Dynamic Island"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 41,
+    "ativo": true,
+    "identificacao": { "marca": "Google", "modelo": "Pixel 9", "nome_completo": "Google Pixel 9", "ano_lancamento": 2024, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_41.png" },
+    "compra": { "faixa_preco_categoria": "Premium", "preco_medio_lancamento_brl": 5999.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O Pixel 9 oferece a mesma experiência de software e a inteligência de câmera do modelo Pro em um formato mais compacto e acessível. É a melhor câmera 'aponte e dispare' em um pacote mais tradicional.",
+      "perfil_ideal": "Quem quer a melhor câmera e a experiência Android pura, mas não precisa de uma tela gigante ou zoom óptico.",
+      "longevidade_e_desvalorizacao": "Excelente longevidade de software (7 anos). Valor de revenda no Brasil é uma incógnita.",
+      "concorrentes_diretos": ["Samsung Galaxy S25", "iPhone 17", "Asus Zenfone 12"],
+      "avaliacao_geral": 9.1, "custo_beneficio": 8.3,
+      "positivos_percebidos": ["Software de câmera excepcional", "Android puro com recursos de IA exclusivos", "7 anos de atualizações garantidas", "Formato compacto e confortável"],
+      "negativos_percebidos": ["Ausência de câmera com zoom óptico", "Requer importação", "Carregamento mais lento que a concorrência"],
+      "notas_detalhadas": { "desempenho": 8.8, "camera_principal": 9.9, "bateria": 8.6, "tela": 9.2, "design": 9.4 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.2, "tecnologia": "OLED", "resolucao": "2400 x 1080", "taxa_atualizacao_hz": 120, "brilho_maximo_nits": 2000, "protecao": "Gorilla Glass Victus" },
+      "desempenho": { "processador": "Google Tensor G4", "memoria_ram_gb": [8], "armazenamento_interno_gb": [128, 256], "expansivel_microsd": false },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.7" }, "ultrawide": { "megapixels": 12, "abertura": "f/2.2" }, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 10.5, "abertura": "f/2.2" }, "recursos_video": "4K@60fps" },
+      "bateria": { "capacidade_mah": 4575, "carregamento_rapido_watts": 27, "carregamento_sem_fio_watts": 18, "carregamento_reverso": true },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.3", "wifi": "Wi-Fi 7", "porta_usb": "Type-C 3.2" },
+      "corpo_e_design": { "dimensoes_mm": "150.5 x 70.8 x 8.9", "peso_gramas": 187, "material_construcao": "Alumínio e Vidro", "resistencia_agua": "IP68" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15", "politica_atualizacao": "7 anos de OS e segurança", "recursos_extras": ["Magic Editor", "Live Translate"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 42,
+    "ativo": true,
+    "identificacao": { "marca": "Xiaomi", "modelo": "15 Ultra", "nome_completo": "Xiaomi 15 Ultra", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_42.png" },
+    "compra": { "faixa_preco_categoria": "Super Premium", "preco_medio_lancamento_brl": 8999.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O Xiaomi 15 Ultra é uma vitrine tecnológica, com foco absoluto em fotografia. Seu sensor principal gigante e a parceria com a Leica o colocam como um dos sistemas de câmera mais poderosos e versáteis disponíveis.",
+      "perfil_ideal": "Entusiastas de fotografia mobile que querem o máximo de hardware de câmera.",
+      "longevidade_e_desvalorizacao": "Longevidade de software mediana. Desvaloriza mais rápido que Samsung e Apple.",
+      "concorrentes_diretos": ["Samsung Galaxy S25 Ultra", "iPhone 17 Pro Max"],
+      "avaliacao_geral": 9.5, "custo_beneficio": 8.2,
+      "positivos_percebidos": ["Sensor da câmera principal de 1 polegada, captura muita luz", "Carregamento extremamente rápido", "Tela de altíssima qualidade", "Desempenho de ponta"],
+      "negativos_percebidos": ["Software pode ser inconsistente para um aparelho tão caro", "Disponibilidade limitada e sem garantia oficial no Brasil", "Módulo de câmera é enorme e desequilibra o aparelho"],
+      "notas_detalhadas": { "desempenho": 9.8, "camera_principal": 9.9, "bateria": 9.3, "tela": 9.8, "design": 8.8 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.8, "tecnologia": "AMOLED LTPO", "resolucao": "3200 x 1440", "taxa_atualizacao_hz": 120, "brilho_maximo_nits": 3500, "protecao": "Xiaomi Shield Glass" },
+      "desempenho": { "processador": "Snapdragon 8 Gen 4", "memoria_ram_gb": [16], "armazenamento_interno_gb": [512, 1024], "expansivel_microsd": false },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.6-f/4.0 (variável)" }, "ultrawide": { "megapixels": 50, "abertura": "f/1.8" }, "teleobjetiva_1": { "megapixels": 50, "abertura": "f/2.5", "zoom_optico": "5x" }, "teleobjetiva_2": null, "frontal": { "megapixels": 32, "abertura": "f/2.0" }, "recursos_video": "8K@30fps, gravação em LOG" },
+      "bateria": { "capacidade_mah": 5300, "carregamento_rapido_watts": 120, "carregamento_sem_fio_watts": 80, "carregamento_reverso": true },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.4", "wifi": "Wi-Fi 7", "porta_usb": "Type-C 3.2" },
+      "corpo_e_design": { "dimensoes_mm": "163 x 76 x 9.5", "peso_gramas": 227, "material_construcao": "Titânio, Couro Vegano e Vidro", "resistencia_agua": "IP68" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 com HyperOS 2.0", "politica_atualizacao": "3 anos de OS e 4 de segurança", "recursos_extras": ["Lentes Leica Summilux", "Sensor de 1 polegada"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 43,
+    "ativo": true,
+    "identificacao": { "marca": "Sony", "modelo": "Xperia 1 VII", "nome_completo": "Sony Xperia 1 VII", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_43.png" },
+    "compra": { "faixa_preco_categoria": "Super Premium", "preco_medio_lancamento_brl": 9999.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O Xperia 1 VII é um celular de nicho para profissionais do audiovisual. Ele oferece controles de câmera manuais inigualáveis, uma tela 4K 21:9 e entrada para fone de ouvido, recursos abandonados pela maioria.",
+      "perfil_ideal": "Fotógrafos, videomakers e audiófilos que querem controle profissional total.",
+      "longevidade_e_desvalorizacao": "Longevidade de software mediana. Por ser um produto de nicho, a desvalorização é extremamente alta e a revenda é difícil.",
+      "concorrentes_diretos": ["iPhone 17 Pro Max", "Samsung Galaxy S25 Ultra"],
+      "avaliacao_geral": 8.8, "custo_beneficio": 6.8,
+      "positivos_percebidos": ["Controles manuais de câmera inspirados nas câmeras Alpha", "Tela 4K 21:9 sem furos ou recortes", "Qualidade de áudio superior, com entrada P2", "Botão de disparo de câmera dedicado"],
+      "negativos_percebidos": ["Extremamente caro", "Requer conhecimento técnico para extrair o melhor das câmeras", "Design 'quadrado' pode ser desconfortável", "Brilho da tela inferior aos concorrentes"],
+      "notas_detalhadas": { "desempenho": 9.5, "camera_principal": 9.8, "bateria": 8.2, "tela": 9.5, "design": 8.9 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.5, "tecnologia": "OLED", "resolucao": "3840 x 1644 (4K)", "taxa_atualizacao_hz": 120, "brilho_maximo_nits": 1500, "protecao": "Gorilla Glass Victus 2" },
+      "desempenho": { "processador": "Snapdragon 8 Gen 4", "memoria_ram_gb": [12], "armazenamento_interno_gb": [256, 512], "expansivel_microsd": true },
+      "cameras": { "principal": { "megapixels": 48, "abertura": "f/1.9" }, "ultrawide": { "megapixels": 12, "abertura": "f/2.2" }, "teleobjetiva_1": { "megapixels": 12, "abertura": "f/2.3-f/2.8", "zoom_optico": "3.5x-5.2x contínuo" }, "teleobjetiva_2": null, "frontal": { "megapixels": 12, "abertura": "f/2.0" }, "recursos_video": "4K@120fps, apps Pro de vídeo e foto" },
+      "bateria": { "capacidade_mah": 5000, "carregamento_rapido_watts": 30, "carregamento_sem_fio_watts": 15, "carregamento_reverso": false },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.4", "wifi": "Wi-Fi 6E", "porta_usb": "Type-C 3.2" },
+      "corpo_e_design": { "dimensoes_mm": "165 x 71 x 8.3", "peso_gramas": 187, "material_construcao": "Alumínio e Vidro", "resistencia_agua": "IP68" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15", "politica_atualizacao": "2 anos de OS e 3 de segurança", "recursos_extras": ["Entrada para fone de ouvido", "Botão de disparo físico", "Apps Photography Pro e Cinema Pro"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 44,
+    "ativo": true,
+    "identificacao": { "marca": "Honor", "modelo": "Magic7 Ultimate", "nome_completo": "Honor Magic7 Ultimate", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_44.png" },
+    "compra": { "faixa_preco_categoria": "Super Premium", "preco_medio_lancamento_brl": 8500.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O Honor Magic7 Ultimate foca em um sistema de câmera inovador, com abertura variável e sensores de ponta. É um concorrente direto dos modelos 'Ultra' e 'Pro Max', com um forte apelo para fotografia.",
+      "perfil_ideal": "Entusiastas de fotografia que buscam uma alternativa às marcas tradicionais.",
+      "longevidade_e_desvalorizacao": "Longevidade de software mediana. Desvalorização acentuada por ser uma marca menos estabelecida no Brasil.",
+      "concorrentes_diretos": ["Xiaomi 15 Ultra", "Samsung Galaxy S25 Ultra"],
+      "avaliacao_geral": 9.4, "custo_beneficio": 8.0,
+      "positivos_percebidos": ["Câmera principal com abertura variável", "Excelente câmera de zoom periscópico", "Tela OLED de altíssima qualidade", "Design luxuoso"],
+      "negativos_percebidos": ["Disponibilidade e suporte limitados no Brasil", "Software MagicOS pode ser agressivo no gerenciamento de bateria", "Preço de importação elevado"],
+      "notas_detalhadas": { "desempenho": 9.7, "camera_principal": 9.8, "bateria": 9.1, "tela": 9.7, "design": 9.5 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.8, "tecnologia": "OLED LTPO", "resolucao": "2848 x 1280", "taxa_atualizacao_hz": 120, "brilho_maximo_nits": 4000, "protecao": "Jurhino Glass" },
+      "desempenho": { "processador": "Snapdragon 8 Gen 4", "memoria_ram_gb": [16], "armazenamento_interno_gb": [512, 1024], "expansivel_microsd": false },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.4-f/2.0 (variável)" }, "ultrawide": { "megapixels": 50, "abertura": "f/2.0" }, "teleobjetiva_1": { "megapixels": 180, "abertura": "f/2.6", "zoom_optico": "2.5x" }, "teleobjetiva_2": null, "frontal": { "megapixels": 50, "abertura": "f/2.0" }, "recursos_video": "4K@60fps" },
+      "bateria": { "capacidade_mah": 5600, "carregamento_rapido_watts": 80, "carregamento_sem_fio_watts": 66, "carregamento_reverso": true },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.3", "wifi": "Wi-Fi 7", "porta_usb": "Type-C 3.1" },
+      "corpo_e_design": { "dimensoes_mm": "162.5 x 75.8 x 8.9", "peso_gramas": 221, "material_construcao": "Alumínio e Couro Vegano", "resistencia_agua": "IP68" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 com MagicOS 9.0", "politica_atualizacao": "3 anos de OS e 5 de segurança", "recursos_extras": ["Câmera com IA de captura de movimento"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 45,
+    "ativo": true,
+    "identificacao": { "marca": "Motorola", "modelo": "Razr+ 2025", "nome_completo": "Motorola Razr+ 2025", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_45.png" },
+    "compra": { "faixa_preco_categoria": "Premium", "preco_medio_lancamento_brl": 6499.00, "links_afiliados": [] },
+    "avaliacoes": {
+      "resumo_consultor": "O Razr+ 2025 é o principal concorrente do Z Flip, com foco em uma tela externa ainda maior e uma experiência de software mais limpa. É a escolha premium para quem ama o formato flip.",
+      "perfil_ideal": "Entusiastas de dobráveis que preferem o software da Motorola e uma tela externa grande.",
+      "longevidade_e_desvalorizacao": "Longevidade de software mediana e desvalorização muito acentuada, como é comum em dobráveis.",
+      "concorrentes_diretos": ["Samsung Galaxy Z Flip7"],
+      "avaliacao_geral": 8.9, "custo_beneficio": 7.7,
+      "positivos_percebidos": ["Tela externa gigante e totalmente funcional", "Dobradiça com menos vinco visível", "Design elegante e fino", "Android com poucas modificações"],
+      "negativos_percebidos": ["Autonomia de bateria inferior a celulares tradicionais", "Câmeras não competem com flagships não-dobráveis", "Preço alto pela performance oferecida"],
+      "notas_detalhadas": { "desempenho": 8.8, "camera_principal": 8.6, "bateria": 7.9, "tela": 9.3, "design": 9.7 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.9, "tecnologia": "pOLED LTPO", "resolucao": "2640 x 1080", "taxa_atualizacao_hz": 165, "brilho_maximo_nits": 1400, "protecao": "Ultra Thin Glass" },
+      "desempenho": { "processador": "Snapdragon 8s Gen 3", "memoria_ram_gb": [12], "armazenamento_interno_gb": [256], "expansivel_microsd": false },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.8" }, "ultrawide": { "megapixels": 13, "abertura": "f/2.2" }, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 32, "abertura": "f/2.4" }, "recursos_video": "4K@60fps" },
+      "bateria": { "capacidade_mah": 4000, "carregamento_rapido_watts": 30, "carregamento_sem_fio_watts": 5, "carregamento_reverso": false },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.3", "wifi": "Wi-Fi 6E", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "170.8 x 74 x 7", "peso_gramas": 189, "material_construcao": "Alumínio e Couro Vegano", "resistencia_agua": "IPX8" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15", "politica_atualizacao": "3 anos de OS e 4 de segurança", "recursos_extras": ["Tela externa de 4.0 polegadas", "Ready For"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  }
 ]
