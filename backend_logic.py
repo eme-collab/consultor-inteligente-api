@@ -187,8 +187,9 @@ class ConsultorInteligente:
             perfil_html = f"<p class='text-xs text-gray-300 mb-3 italic'>👤 {p.get('perfil_ideal', '')}</p>" if p.get('perfil_ideal') else ""
             
             # Pontos Positivos e Negativos
-            positivos_html = "".join([f"<li class='flex items-start gap-2'><span class='text-green-400'>✅</span><span>{b}</span></li>" for b in p.get("pontos_positivos", [])])
-            negativos_html = "".join([f"<li class='flex items-start gap-2'><span class='text-red-400'>❌</span><span>{b}</span></li>" for b in p.get("pontos_negativos", [])])
+            # Correção
+            positivos_html = "".join([f"<li...>{b}</span></li>" for b in p.get("pontos_positivos") or []])
+            negativos_html = "".join([f"<li...>{b}</span></li>" for b in p.get("pontos_negativos") or []])
             
             # Preços
             precos_html = ""
