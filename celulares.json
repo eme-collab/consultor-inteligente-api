@@ -388,9 +388,7 @@
     },
     "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 com One UI 7.1", "politica_atualizacao": "7 anos de atualizações de OS e segurança", "recursos_extras": ["Samsung DeX Wireless", "Galaxy AI"] },
     "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
-  }
-],
-[
+  },
   {
     "id": 16,
     "ativo": true,
@@ -650,9 +648,7 @@
     },
     "software_e_recursos": { "sistema_operacional_lancamento": "Android 13 com MIUI 14", "politica_atualizacao": "Incerta", "recursos_extras": ["Entrada para fone de ouvido"] },
     "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
-  }
-],
-[
+  },
   {
     "id": 26,
     "ativo": true,
@@ -912,9 +908,7 @@
     },
     "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 (Android One)", "politica_atualizacao": "2 anos de OS e 3 de segurança", "recursos_extras": ["Construção com materiais reciclados"] },
     "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
-  }
-],
-[
+  },
   {
     "id": 36,
     "ativo": true,
