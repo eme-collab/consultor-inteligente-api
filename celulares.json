@@ -1,0 +1,362 @@
+[
+  {
+    "id": 1,
+    "ativo": true,
+    "identificacao": { "marca": "Samsung", "modelo": "Galaxy S25 Ultra", "nome_completo": "Samsung Galaxy S25 Ultra", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_1.png" },
+    "compra": { "faixa_preco_categoria": "Super Premium", "preco_medio_lancamento_brl": 9599.00, "links_afiliados": [ { "loja": "Amazon BR", "url": "https://www.amazon.com.br/" }, { "loja": "Samsung Oficial", "url": "https://www.samsung.com/br/" } ] },
+    "avaliacoes": {
+      "resumo_consultor": "A escolha definitiva para quem busca o auge da tecnologia mobile. Seu sistema de câmeras com IA aprimorada e a S-Pen o tornam uma potência para produtividade e criação de conteúdo.",
+      "perfil_ideal": "Criadores de conteúdo, profissionais e entusiastas de tecnologia.",
+      "avaliacao_geral": 9.6, "custo_beneficio": 7.5,
+      "positivos_percebidos": [ "Sistema de câmeras mais versátil e potente do mercado", "Tela com brilho e cores insuperáveis", "Desempenho extremo com o novo chip Snapdragon", "Recursos de IA (Galaxy AI) mais refinados e úteis", "Caneta S-Pen integrada" ],
+      "negativos_percebidos": [ "Preço extremamente elevado", "Carregamento de 45W é mais lento que concorrentes", "Design grande e pesado" ],
+      "notas_detalhadas": { "desempenho": 9.9, "camera_principal": 9.8, "bateria": 9.2, "tela": 9.9, "design": 9.3 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.8, "tecnologia": "Dynamic AMOLED 3X", "resolucao": "3120 x 1440", "taxa_atualizacao_hz": 144, "brilho_maximo_nits": 2600, "protecao": "Gorilla Glass Armor 2" },
+      "desempenho": { "processador": "Snapdragon 8 Gen 4 for Galaxy", "memoria_ram_gb": [12, 16], "armazenamento_interno_gb": [256, 512, 1024], "expansivel_microsd": false },
+      "cameras": { "principal": { "megapixels": 200, "abertura": "f/1.7" }, "ultrawide": { "megapixels": 12, "abertura": "f/2.2" }, "teleobjetiva_1": { "megapixels": 50, "abertura": "f/3.4", "zoom_optico": "5x" }, "teleobjetiva_2": { "megapixels": 10, "abertura": "f/2.4", "zoom_optico": "3x" }, "frontal": { "megapixels": 12, "abertura": "f/2.2" }, "recursos_video": "8K@30fps, 4K@120fps" },
+      "bateria": { "capacidade_mah": 5100, "carregamento_rapido_watts": 45, "carregamento_sem_fio_watts": 15, "carregamento_reverso": true },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.4", "wifi": "Wi-Fi 7", "porta_usb": "Type-C 3.2" },
+      "corpo_e_design": { "dimensoes_mm": "162.3 x 79 x 8.6", "peso_gramas": 234, "material_construcao": "Titânio e Vidro", "resistencia_agua": "IP68" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 com One UI 7.1", "politica_atualizacao": "7 anos de atualizações de OS e segurança", "recursos_extras": ["Caneta S-Pen", "Samsung DeX Wireless", "Galaxy AI"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 2,
+    "ativo": true,
+    "identificacao": { "marca": "Samsung", "modelo": "Galaxy A56", "nome_completo": "Samsung Galaxy A56", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_2.png" },
+    "compra": { "faixa_preco_categoria": "Intermediário Premium", "preco_medio_lancamento_brl": 2799.00, "links_afiliados": [ { "loja": "Amazon BR", "url": "https://www.amazon.com.br/" }, { "loja": "Casas Bahia", "url": "https://www.casasbahia.com.br/" } ] },
+    "avaliacoes": {
+      "resumo_consultor": "O Galaxy A56 continua a ser a escolha mais equilibrada para a maioria, oferecendo uma experiência premium com tela excelente e bateria confiável, sem o custo de um top de linha.",
+      "perfil_ideal": "Usuário médio que busca um aparelho confiável para o dia a dia.",
+      "avaliacao_geral": 8.8, "custo_beneficio": 9.2,
+      "positivos_percebidos": [ "Excelente tela Super AMOLED", "Bateria que dura o dia inteiro com folga", "Design premium com certificação IP67", "Longa política de atualizações" ],
+      "negativos_percebidos": [ "Desempenho apenas ok para jogos pesados", "Sem carregador na caixa", "Câmeras secundárias básicas" ],
+      "notas_detalhadas": { "desempenho": 7.8, "camera_principal": 8.5, "bateria": 9.4, "tela": 9.5, "design": 9.0 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.6, "tecnologia": "Super AMOLED", "resolucao": "2340 x 1080", "taxa_atualizacao_hz": 120, "brilho_maximo_nits": 1000, "protecao": "Gorilla Glass 5" },
+      "desempenho": { "processador": "Exynos 1580", "memoria_ram_gb": [8], "armazenamento_interno_gb": [128, 256], "expansivel_microsd": true },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.8" }, "ultrawide": { "megapixels": 8, "abertura": "f/2.2" }, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 32, "abertura": "f/2.2" }, "recursos_video": "4K@30fps" },
+      "bateria": { "capacidade_mah": 5000, "carregamento_rapido_watts": 25, "carregamento_sem_fio_watts": null, "carregamento_reverso": false },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.4", "wifi": "Wi-Fi 6", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "158.2 x 76.7 x 8.2", "peso_gramas": 202, "material_construcao": "Plástico e Vidro", "resistencia_agua": "IP67" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 com One UI 7.0", "politica_atualizacao": "4 anos de OS e 5 de segurança", "recursos_extras": ["Leitor de digital na tela", "Som estéreo"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 3,
+    "ativo": true,
+    "identificacao": { "marca": "Motorola", "modelo": "Edge 60", "nome_completo": "Motorola Edge 60", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_3.png" },
+    "compra": { "faixa_preco_categoria": "Intermediário Premium", "preco_medio_lancamento_brl": 2899.00, "links_afiliados": [ { "loja": "Amazon BR", "url": "https://www.amazon.com.br/" }, { "loja": "Motorola Oficial", "url": "https://www.motorola.com.br/" } ] },
+    "avaliacoes": {
+      "resumo_consultor": "O Motorola Edge 60 foca em uma experiência de uso fluida com seu Android 'puro' e tela de alta frequência. Ideal para quem valoriza design leve e carregamento ultrarrápido.",
+      "perfil_ideal": "Fãs do Android puro e que consomem muita mídia.",
+      "avaliacao_geral": 8.7, "custo_beneficio": 9.0,
+      "positivos_percebidos": [ "Android 'puro' com poucas modificações", "Carregador de 68W incluso na caixa", "Tela pOLED com cores vibrantes e 144Hz", "Design extremamente fino e leve" ],
+      "negativos_percebidos": [ "Processamento de imagem da câmera inferior aos concorrentes", "Política de atualizações mais curta", "Bateria pode ser insuficiente para usuários intensos" ],
+      "notas_detalhadas": { "desempenho": 8.2, "camera_principal": 8.0, "bateria": 8.5, "tela": 9.6, "design": 9.4 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.55, "tecnologia": "pOLED", "resolucao": "2400 x 1080", "taxa_atualizacao_hz": 144, "brilho_maximo_nits": 1300, "protecao": "Gorilla Glass 5" },
+      "desempenho": { "processador": "Snapdragon 7s Gen 3", "memoria_ram_gb": [8], "armazenamento_interno_gb": [256], "expansivel_microsd": false },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.8" }, "ultrawide": { "megapixels": 13, "abertura": "f/2.2" }, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 32, "abertura": "f/2.4" }, "recursos_video": "4K@30fps" },
+      "bateria": { "capacidade_mah": 4400, "carregamento_rapido_watts": 68, "carregamento_sem_fio_watts": 15, "carregamento_reverso": false },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.3", "wifi": "Wi-Fi 6E", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "159.6 x 72 x 7.8", "peso_gramas": 175, "material_construcao": "Plástico e Vidro", "resistencia_agua": "IP68" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15", "politica_atualizacao": "2 anos de OS e 3 de segurança", "recursos_extras": ["Ready For", "Som estéreo com Dolby Atmos"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 4,
+    "ativo": true,
+    "identificacao": { "marca": "Apple", "modelo": "iPhone 17 Pro", "nome_completo": "Apple iPhone 17 Pro", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_4.png" },
+    "compra": { "faixa_preco_categoria": "Super Premium", "preco_medio_lancamento_brl": 10499.00, "links_afiliados": [ { "loja": "Apple Store BR", "url": "https://www.apple.com/br/" }, { "loja": "Amazon BR", "url": "https://www.amazon.com.br/" } ] },
+    "avaliacoes": {
+      "resumo_consultor": "O iPhone 17 Pro eleva o padrão de desempenho e captura de vídeo. É a ferramenta ideal para profissionais criativos e para quem busca a máxima integração com o ecossistema Apple.",
+      "perfil_ideal": "Videomakers, usuários do ecossistema Apple e quem busca o máximo de desempenho.",
+      "avaliacao_geral": 9.7, "custo_beneficio": 7.2,
+      "positivos_percebidos": [ "Desempenho incomparável com chip A19 Pro", "Melhor captura de vídeo em um smartphone", "Integração perfeita com outros produtos Apple", "Construção em titânio e acabamento premium", "Tela ProMotion com 'Dynamic Island' aprimorada" ],
+      "negativos_percebidos": [ "Preço extremamente alto", "Pouca customização do iOS", "Velocidade de carregamento continua atrás dos concorrentes Android" ],
+      "notas_detalhadas": { "desempenho": 10.0, "camera_principal": 9.6, "bateria": 9.1, "tela": 9.8, "design": 9.5 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.3, "tecnologia": "Super Retina XDR com ProMotion", "resolucao": "2556 x 1179", "taxa_atualizacao_hz": 120, "brilho_maximo_nits": 2200, "protecao": "Ceramic Shield" },
+      "desempenho": { "processador": "A19 Pro", "memoria_ram_gb": [8], "armazenamento_interno_gb": [128, 256, 512, 1024], "expansivel_microsd": false },
+      "cameras": { "principal": { "megapixels": 48, "abertura": "f/1.8" }, "ultrawide": { "megapixels": 12, "abertura": "f/2.2" }, "teleobjetiva_1": { "megapixels": 12, "abertura": "f/2.8", "zoom_optico": "3x" }, "teleobjetiva_2": null, "frontal": { "megapixels": 12, "abertura": "f/1.9" }, "recursos_video": "4K@60fps, Modo Cinema 4K, ProRes" },
+      "bateria": { "capacidade_mah": 3400, "carregamento_rapido_watts": 25, "carregamento_sem_fio_watts": 15, "carregamento_reverso": false },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.4", "wifi": "Wi-Fi 7", "porta_usb": "Type-C (Thunderbolt)" },
+      "corpo_e_design": { "dimensoes_mm": "147.6 x 71.6 x 7.8", "peso_gramas": 189, "material_construcao": "Titânio e Vidro", "resistencia_agua": "IP68" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "iOS 19", "politica_atualizacao": "Aproximadamente 6-7 anos de atualizações", "recursos_extras": ["Face ID", "Dynamic Island", "MagSafe"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 5,
+    "ativo": true,
+    "identificacao": { "marca": "Xiaomi", "modelo": "Redmi Note 14 Pro", "nome_completo": "Xiaomi Redmi Note 14 Pro", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_5.png" },
+    "compra": { "faixa_preco_categoria": "Intermediário", "preco_medio_lancamento_brl": 1999.00, "links_afiliados": [ { "loja": "Amazon BR", "url": "https://www.amazon.com.br/" }, { "loja": "AliExpress", "url": "https://pt.aliexpress.com/" } ] },
+    "avaliacoes": {
+      "resumo_consultor": "O Redmi Note 14 Pro continua a tradição da Xiaomi de entregar especificações de ponta por um preço agressivo. É a escolha ideal para quem quer tela, câmera e carregamento rápido sem gastar muito.",
+      "perfil_ideal": "Jovens e usuários que buscam o máximo de especificações pelo menor preço.",
+      "avaliacao_geral": 8.5, "custo_beneficio": 9.8,
+      "positivos_percebidos": [ "Tela AMOLED 120Hz de alta qualidade", "Carregador de 120W na caixa, recarga completa em ~20 min", "Câmera principal de 108MP com bons resultados", "Ótima relação de desempenho por real" ],
+      "negativos_percebidos": [ "Software HyperOS (MIUI) com anúncios e bloatware", "Sensor de proximidade pode apresentar falhas", "Qualidade de vídeo inconsistente" ],
+      "notas_detalhadas": { "desempenho": 8.5, "camera_principal": 8.4, "bateria": 9.0, "tela": 9.2, "design": 8.5 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.67, "tecnologia": "AMOLED", "resolucao": "2400 x 1080", "taxa_atualizacao_hz": 120, "brilho_maximo_nits": 1200, "protecao": "Gorilla Glass 5" },
+      "desempenho": { "processador": "MediaTek Dimensity 8300", "memoria_ram_gb": [8, 12], "armazenamento_interno_gb": [256, 512], "expansivel_microsd": false },
+      "cameras": { "principal": { "megapixels": 108, "abertura": "f/1.9" }, "ultrawide": { "megapixels": 8, "abertura": "f/2.2" }, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 16, "abertura": "f/2.4" }, "recursos_video": "4K@30fps" },
+      "bateria": { "capacidade_mah": 5000, "carregamento_rapido_watts": 120, "carregamento_sem_fio_watts": null, "carregamento_reverso": false },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.3", "wifi": "Wi-Fi 6", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "161.1 x 75 x 8", "peso_gramas": 187, "material_construcao": "Plástico e Vidro", "resistencia_agua": "IP54" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 com HyperOS 2.0", "politica_atualizacao": "2 anos de OS e 3 de segurança", "recursos_extras": ["Emissor de infravermelho (controle remoto)", "Alto-falantes estéreo"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 6,
+    "ativo": true,
+    "identificacao": { "marca": "Google", "modelo": "Pixel 9 Pro", "nome_completo": "Google Pixel 9 Pro", "ano_lancamento": 2024, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_6.png" },
+    "compra": { "faixa_preco_categoria": "Premium", "preco_medio_lancamento_brl": 7999.00, "links_afiliados": [ { "loja": "Amazon US", "url": "https://www.amazon.com/" } ] },
+    "avaliacoes": {
+      "resumo_consultor": "O Pixel 9 Pro é para o purista de fotografia. Seu pós-processamento de software é mágico, entregando fotos incríveis com facilidade. A experiência Android é a mais limpa e inteligente do mercado.",
+      "perfil_ideal": "Amantes de fotografia 'aponte e dispare' e fãs do Android puro.",
+      "avaliacao_geral": 9.2, "custo_beneficio": 8.0,
+      "positivos_percebidos": [ "Melhor software de processamento de imagem", "Experiência Android pura e com recursos de IA exclusivos", "Atualizações de sistema operacional mais rápidas do mercado", "Design único e confortável" ],
+      "negativos_percebidos": [ "Não vendido oficialmente no Brasil, requer importação", "Desempenho do chip Tensor pode aquecer", "Velocidade de carregamento lenta" ],
+      "notas_detalhadas": { "desempenho": 8.8, "camera_principal": 9.9, "bateria": 8.5, "tela": 9.4, "design": 9.3 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.7, "tecnologia": "OLED com LTPO", "resolucao": "2992 x 1344", "taxa_atualizacao_hz": 120, "brilho_maximo_nits": 2400, "protecao": "Gorilla Glass Victus 2" },
+      "desempenho": { "processador": "Google Tensor G4", "memoria_ram_gb": [12], "armazenamento_interno_gb": [128, 256, 512], "expansivel_microsd": false },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.7" }, "ultrawide": { "megapixels": 48, "abertura": "f/2.0" }, "teleobjetiva_1": { "megapixels": 48, "abertura": "f/2.8", "zoom_optico": "5x" }, "teleobjetiva_2": null, "frontal": { "megapixels": 10.5, "abertura": "f/2.2" }, "recursos_video": "4K@60fps, Magic Eraser para vídeo" },
+      "bateria": { "capacidade_mah": 5050, "carregamento_rapido_watts": 30, "carregamento_sem_fio_watts": 23, "carregamento_reverso": true },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.3", "wifi": "Wi-Fi 7", "porta_usb": "Type-C 3.2" },
+      "corpo_e_design": { "dimensoes_mm": "162.6 x 76.5 x 8.8", "peso_gramas": 213, "material_construcao": "Alumínio e Vidro", "resistencia_agua": "IP68" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15", "politica_atualizacao": "7 anos de atualizações de OS e segurança", "recursos_extras": ["Google AI, Magic Editor, Call Screen"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 7,
+    "ativo": true,
+    "identificacao": { "marca": "Samsung", "modelo": "Galaxy Z Flip7", "nome_completo": "Samsung Galaxy Z Flip7", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_7.png" },
+    "compra": { "faixa_preco_categoria": "Premium", "preco_medio_lancamento_brl": 6999.00, "links_afiliados": [ { "loja": "Samsung Oficial", "url": "https://www.samsung.com/br/" } ] },
+    "avaliacoes": {
+      "resumo_consultor": "O Z Flip7 aprimora a fórmula do dobrável mais popular do mundo, com uma tela externa ainda mais útil e vincos menos aparentes. É um statement de estilo com funcionalidade.",
+      "perfil_ideal": "Usuários que priorizam portabilidade, estilo e buscam uma experiência de uso diferente.",
+      "avaliacao_geral": 9.0, "custo_beneficio": 7.8,
+      "positivos_percebidos": [ "Extremamente compacto quando fechado", "Tela externa funcional para notificações e apps", "Flex Cam oferece ângulos criativos para fotos", "Design icônico e estiloso" ],
+      "negativos_percebidos": [ "Durabilidade da tela dobrável ainda é uma preocupação", "Bateria dura menos que em celulares tradicionais", "Sistema de câmeras não compete com os tops de linha não-dobráveis" ],
+      "notas_detalhadas": { "desempenho": 9.0, "camera_principal": 8.5, "bateria": 7.8, "tela": 9.2, "design": 9.8 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.7, "tecnologia": "Dynamic AMOLED 2X", "resolucao": "2640 x 1080", "taxa_atualizacao_hz": 120, "brilho_maximo_nits": 1800, "protecao": "Ultra Thin Glass" },
+      "desempenho": { "processador": "Snapdragon 8 Gen 3 for Galaxy", "memoria_ram_gb": [8], "armazenamento_interno_gb": [256, 512], "expansivel_microsd": false },
+      "cameras": { "principal": { "megapixels": 12, "abertura": "f/1.8" }, "ultrawide": { "megapixels": 12, "abertura": "f/2.2" }, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 10, "abertura": "f/2.4" }, "recursos_video": "4K@60fps" },
+      "bateria": { "capacidade_mah": 3900, "carregamento_rapido_watts": 25, "carregamento_sem_fio_watts": 15, "carregamento_reverso": true },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.3", "wifi": "Wi-Fi 6E", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "165.1 x 71.9 x 6.9", "peso_gramas": 187, "material_construcao": "Alumínio e Vidro", "resistencia_agua": "IPX8" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 com One UI 7.1", "politica_atualizacao": "4 anos de OS e 5 de segurança", "recursos_extras": ["Tela externa de 3.6 polegadas", "FlexCam"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 8,
+    "ativo": true,
+    "identificacao": { "marca": "Apple", "modelo": "iPhone 16", "nome_completo": "Apple iPhone 16", "ano_lancamento": 2024, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_8.png" },
+    "compra": { "faixa_preco_categoria": "Premium", "preco_medio_lancamento_brl": 7299.00, "links_afiliados": [ { "loja": "Apple Store BR", "url": "https://www.apple.com/br/" } ] },
+    "avaliacoes": {
+      "resumo_consultor": "Com a chegada do seu sucessor, o iPhone 16 se torna a porta de entrada 'custo-benefício' para a experiência premium da Apple. Oferece desempenho de ponta e câmeras excelentes que ainda competem com os melhores.",
+      "perfil_ideal": "Quem busca uma experiência Apple de ponta com um orçamento mais controlado.",
+      "avaliacao_geral": 9.4, "custo_beneficio": 8.5,
+      "positivos_percebidos": [ "Desempenho de elite com o chip A18", "Câmeras extremamente consistentes e confiáveis", "Excelente valor de revenda", "Qualidade de construção impecável" ],
+      "negativos_percebidos": [ "Tela de apenas 60Hz, defasada para a categoria", "Design praticamente inalterado", "Entalhe (notch) ou Dynamic Island pode não agradar a todos" ],
+      "notas_detalhadas": { "desempenho": 9.8, "camera_principal": 9.2, "bateria": 9.0, "tela": 8.5, "design": 9.0 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.1, "tecnologia": "Super Retina XDR", "resolucao": "2532 x 1170", "taxa_atualizacao_hz": 60, "brilho_maximo_nits": 1200, "protecao": "Ceramic Shield" },
+      "desempenho": { "processador": "A18 Bionic", "memoria_ram_gb": [6], "armazenamento_interno_gb": [128, 256, 512], "expansivel_microsd": false },
+      "cameras": { "principal": { "megapixels": 48, "abertura": "f/1.6" }, "ultrawide": { "megapixels": 12, "abertura": "f/2.4" }, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 12, "abertura": "f/1.9" }, "recursos_video": "4K@60fps, Modo Cinema" },
+      "bateria": { "capacidade_mah": 3349, "carregamento_rapido_watts": 20, "carregamento_sem_fio_watts": 15, "carregamento_reverso": false },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.3", "wifi": "Wi-Fi 6E", "porta_usb": "Type-C" },
+      "corpo_e_design": { "dimensoes_mm": "147.6 x 71.6 x 7.8", "peso_gramas": 171, "material_construcao": "Alumínio e Vidro", "resistencia_agua": "IP68" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "iOS 18", "politica_atualizacao": "Aproximadamente 6-7 anos de atualizações", "recursos_extras": ["Face ID", "MagSafe"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 9,
+    "ativo": true,
+    "identificacao": { "marca": "Xiaomi", "modelo": "15 Pro", "nome_completo": "Xiaomi 15 Pro", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_9.png" },
+    "compra": { "faixa_preco_categoria": "Premium", "preco_medio_lancamento_brl": 6500.00, "links_afiliados": [ { "loja": "AliExpress", "url": "https://pt.aliexpress.com/" } ] },
+    "avaliacoes": {
+      "resumo_consultor": "O Xiaomi 15 Pro é a alternativa Android para quem busca o máximo de hardware. Focado em carregamento ultrarrápido e um conjunto de câmeras em parceria com a Leica, ele apela para o entusiasta de tecnologia.",
+      "perfil_ideal": "Usuários avançados que gostam de customização e querem o hardware mais rápido possível.",
+      "avaliacao_geral": 9.3, "custo_beneficio": 8.8,
+      "positivos_percebidos": [ "Carregamento de 150W é absurdamente rápido", "Desempenho de ponta com o Snapdragon mais recente", "Câmeras com a grife Leica entregam ótimas fotos", "Tela LTPO de alta resolução" ],
+      "negativos_percebidos": [ "Software HyperOS pode ser inconsistente", "Disponibilidade limitada no Brasil", "Desvalorização mais acentuada que concorrentes" ],
+      "notas_detalhadas": { "desempenho": 9.8, "camera_principal": 9.4, "bateria": 9.5, "tela": 9.6, "design": 9.0 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.73, "tecnologia": "AMOLED LTPO", "resolucao": "3200 x 1440", "taxa_atualizacao_hz": 120, "brilho_maximo_nits": 3000, "protecao": "Gorilla Glass Victus 2" },
+      "desempenho": { "processador": "Snapdragon 8 Gen 4", "memoria_ram_gb": [12, 16], "armazenamento_interno_gb": [256, 512, 1024], "expansivel_microsd": false },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.6" }, "ultrawide": { "megapixels": 50, "abertura": "f/2.2" }, "teleobjetiva_1": { "megapixels": 50, "abertura": "f/2.0", "zoom_optico": "3.2x" }, "teleobjetiva_2": null, "frontal": { "megapixels": 32, "abertura": "f/2.0" }, "recursos_video": "8K@24fps" },
+      "bateria": { "capacidade_mah": 4880, "carregamento_rapido_watts": 150, "carregamento_sem_fio_watts": 50, "carregamento_reverso": true },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.4", "wifi": "Wi-Fi 7", "porta_usb": "Type-C 3.2" },
+      "corpo_e_design": { "dimensoes_mm": "161.4 x 75.3 x 8.5", "peso_gramas": 220, "material_construcao": "Alumínio e Couro Vegano", "resistencia_agua": "IP68" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 com HyperOS 2.0", "politica_atualizacao": "3 anos de OS e 4 de segurança", "recursos_extras": ["Emissor de infravermelho", "Som Harman Kardon"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 10,
+    "ativo": true,
+    "identificacao": { "marca": "Motorola", "modelo": "Moto G86 Power", "nome_completo": "Motorola Moto G86 Power", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_10.png" },
+    "compra": { "faixa_preco_categoria": "Entrada", "preco_medio_lancamento_brl": 1299.00, "links_afiliados": [ { "loja": "Casas Bahia", "url": "https://www.casasbahia.com.br/" } ] },
+    "avaliacoes": {
+      "resumo_consultor": "O Moto G86 Power é focado em uma única coisa: bateria. É um celular básico, para tarefas do dia a dia, mas que não vai te deixar na mão por falta de energia, durando facilmente 2 dias de uso.",
+      "perfil_ideal": "Usuários que precisam de máxima autonomia e usam o celular para tarefas básicas.",
+      "avaliacao_geral": 7.5, "custo_beneficio": 8.8,
+      "positivos_percebidos": [ "Bateria gigante de 6000mAh", "Android com poucas modificações", "Tela grande para consumo de mídia", "Carregador incluso na caixa" ],
+      "negativos_percebidos": [ "Desempenho muito limitado para jogos", "Câmeras apenas para registros básicos com boa luz", "Construção simples em plástico" ],
+      "notas_detalhadas": { "desempenho": 6.0, "camera_principal": 6.5, "bateria": 10.0, "tela": 7.5, "design": 7.0 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.7, "tecnologia": "IPS LCD", "resolucao": "1600 x 720", "taxa_atualizacao_hz": 90, "brilho_maximo_nits": 560, "protecao": "Gorilla Glass 3" },
+      "desempenho": { "processador": "Snapdragon 4 Gen 2", "memoria_ram_gb": [4], "armazenamento_interno_gb": [128], "expansivel_microsd": true },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.8" }, "ultrawide": null, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 8, "abertura": "f/2.0" }, "recursos_video": "1080p@30fps" },
+      "bateria": { "capacidade_mah": 6000, "carregamento_rapido_watts": 30, "carregamento_sem_fio_watts": null, "carregamento_reverso": false },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.1", "wifi": "Wi-Fi 5", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "165 x 76 x 9.3", "peso_gramas": 205, "material_construcao": "Plástico", "resistencia_agua": "IP52 (repelente à água)" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15", "politica_atualizacao": "1 ano de OS e 3 de segurança", "recursos_extras": ["Rádio FM", "Entrada para fone de ouvido"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 11,
+    "ativo": true,
+    "identificacao": { "marca": "Samsung", "modelo": "Galaxy S24 FE", "nome_completo": "Samsung Galaxy S24 FE", "ano_lancamento": 2024, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_11.png" },
+    "compra": { "faixa_preco_categoria": "Intermediário Premium", "preco_medio_lancamento_brl": 3999.00, "links_afiliados": [ { "loja": "Samsung Oficial", "url": "https://www.samsung.com/br/" } ] },
+    "avaliacoes": {
+      "resumo_consultor": "O S24 FE (Fan Edition) entrega a experiência de um top de linha, com o processador e câmeras principais da série S24, mas com alguns cortes de custos no acabamento para ter um preço mais competitivo.",
+      "perfil_ideal": "Quem quer desempenho e câmeras de flagship sem pagar o preço de um.",
+      "avaliacao_geral": 9.0, "custo_beneficio": 9.4,
+      "positivos_percebidos": [ "Desempenho de top de linha (chip Exynos 2400)", "Câmera principal de alta qualidade", "Tela Dynamic AMOLED 2X excelente", "Longa política de atualizações" ],
+      "negativos_percebidos": [ "Acabamento em plástico", "Bordas da tela mais espessas que na linha principal", "Carregamento de 25W" ],
+      "notas_detalhadas": { "desempenho": 9.5, "camera_principal": 9.2, "bateria": 8.8, "tela": 9.6, "design": 8.5 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.4, "tecnologia": "Dynamic AMOLED 2X", "resolucao": "2340 x 1080", "taxa_atualizacao_hz": 120, "brilho_maximo_nits": 1450, "protecao": "Gorilla Glass 5" },
+      "desempenho": { "processador": "Exynos 2400", "memoria_ram_gb": [8], "armazenamento_interno_gb": [128, 256], "expansivel_microsd": false },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.8" }, "ultrawide": { "megapixels": 12, "abertura": "f/2.2" }, "teleobjetiva_1": { "megapixels": 8, "abertura": "f/2.4", "zoom_optico": "3x" }, "teleobjetiva_2": null, "frontal": { "megapixels": 10, "abertura": "f/2.4" }, "recursos_video": "8K@24fps" },
+      "bateria": { "capacidade_mah": 4500, "carregamento_rapido_watts": 25, "carregamento_sem_fio_watts": 15, "carregamento_reverso": true },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.3", "wifi": "Wi-Fi 6E", "porta_usb": "Type-C 3.2" },
+      "corpo_e_design": { "dimensoes_mm": "158 x 76.5 x 8.2", "peso_gramas": 209, "material_construcao": "Alumínio e Plástico", "resistencia_agua": "IP68" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 14 com One UI 6.1", "politica_atualizacao": "4 anos de OS e 5 de segurança", "recursos_extras": ["Samsung DeX", "Galaxy AI"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 12,
+    "ativo": true,
+    "identificacao": { "marca": "Xiaomi", "modelo": "Poco X7 Pro", "nome_completo": "Xiaomi Poco X7 Pro", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_12.png" },
+    "compra": { "faixa_preco_categoria": "Intermediário", "preco_medio_lancamento_brl": 2300.00, "links_afiliados": [ { "loja": "Amazon BR", "url": "https://www.amazon.com.br/" } ] },
+    "avaliacoes": {
+      "resumo_consultor": "O Poco X7 Pro foca exclusivamente em desempenho bruto para jogos. Ele corta custos em câmera e acabamento para entregar o processador mais potente possível em sua faixa de preço.",
+      "perfil_ideal": "Gamers com orçamento limitado.",
+      "avaliacao_geral": 8.2, "custo_beneficio": 9.5,
+      "positivos_percebidos": [ "Desempenho excepcional para jogos", "Tela com alta taxa de atualização", "Carregamento rápido", "Preço agressivo" ],
+      "negativos_percebidos": [ "Câmeras muito básicas", "Acabamento em plástico de baixa qualidade", "Software HyperOS com muitos anúncios" ],
+      "notas_detalhadas": { "desempenho": 9.7, "camera_principal": 7.0, "bateria": 8.5, "tela": 8.8, "design": 7.5 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.67, "tecnologia": "AMOLED", "resolucao": "2400 x 1080", "taxa_atualizacao_hz": 120, "brilho_maximo_nits": 1100, "protecao": "Gorilla Glass 5" },
+      "desempenho": { "processador": "MediaTek Dimensity 9000+", "memoria_ram_gb": [8, 12], "armazenamento_interno_gb": [256], "expansivel_microsd": false },
+      "cameras": { "principal": { "megapixels": 64, "abertura": "f/1.8" }, "ultrawide": { "megapixels": 8, "abertura": "f/2.2" }, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 16, "abertura": "f/2.5" }, "recursos_video": "4K@30fps" },
+      "bateria": { "capacidade_mah": 5000, "carregamento_rapido_watts": 67, "carregamento_sem_fio_watts": null, "carregamento_reverso": false },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.3", "wifi": "Wi-Fi 6", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "163.7 x 76.4 x 7.8", "peso_gramas": 181, "material_construcao": "Plástico", "resistencia_agua": "IP53" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 com HyperOS for Poco", "politica_atualizacao": "2 anos de OS e 3 de segurança", "recursos_extras": ["Gatilhos para jogos", "Sistema de refrigeração aprimorado"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 13,
+    "ativo": true,
+    "identificacao": { "marca": "Samsung", "modelo": "Galaxy A16", "nome_completo": "Samsung Galaxy A16", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_13.png" },
+    "compra": { "faixa_preco_categoria": "Entrada", "preco_medio_lancamento_brl": 999.00, "links_afiliados": [ { "loja": "Magazine Luiza", "url": "https://www.magazineluiza.com.br/" } ] },
+    "avaliacoes": {
+      "resumo_consultor": "O Galaxy A16 é o celular para tarefas essenciais. Ideal para quem busca um smartphone confiável para WhatsApp, redes sociais leves e ligações, com a qualidade de construção da Samsung.",
+      "perfil_ideal": "Primeiro smartphone, idosos, ou para uso como celular de trabalho básico.",
+      "avaliacao_geral": 7.2, "custo_beneficio": 8.5,
+      "positivos_percebidos": [ "Preço muito acessível", "Bateria de longa duração", "Interface One UI Core é fácil de usar", "Tela com bom tamanho" ],
+      "negativos_percebidos": [ "Extremamente lento para multitarefa ou jogos", "Câmeras muito limitadas, sofrem com pouca luz", "Tela com resolução apenas HD", "Sem NFC para pagamentos" ],
+      "notas_detalhadas": { "desempenho": 5.0, "camera_principal": 6.0, "bateria": 9.0, "tela": 7.0, "design": 7.5 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.6, "tecnologia": "PLS LCD", "resolucao": "1600 x 720", "taxa_atualizacao_hz": 90, "brilho_maximo_nits": 500, "protecao": null },
+      "desempenho": { "processador": "MediaTek Helio G85", "memoria_ram_gb": [4], "armazenamento_interno_gb": [128], "expansivel_microsd": true },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.8" }, "ultrawide": null, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 13, "abertura": "f/2.0" }, "recursos_video": "1080p@30fps" },
+      "bateria": { "capacidade_mah": 5000, "carregamento_rapido_watts": 15, "carregamento_sem_fio_watts": null, "carregamento_reverso": false },
+      "conectividade": { "rede": "4G", "nfc": false, "bluetooth_versao": "5.2", "wifi": "Wi-Fi 5", "porta_usb": "Type-C 2.0" },
+      "corpo_e_design": { "dimensoes_mm": "167.7 x 78 x 9.1", "peso_gramas": 201, "material_construcao": "Plástico", "resistencia_agua": null }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 (Go Edition)", "politica_atualizacao": "2 grandes atualizações de OS", "recursos_extras": ["Entrada para fone de ouvido"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 14,
+    "ativo": true,
+    "identificacao": { "marca": "Apple", "modelo": "iPhone SE (4ª Geração)", "nome_completo": "Apple iPhone SE (4ª Geração)", "ano_lancamento": 2024, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_14.png" },
+    "compra": { "faixa_preco_categoria": "Intermediário", "preco_medio_lancamento_brl": 4299.00, "links_afiliados": [ { "loja": "Apple Store BR", "url": "https://www.apple.com/br/" } ] },
+    "avaliacoes": {
+      "resumo_consultor": "O iPhone SE é a porta de entrada para o ecossistema Apple. Ele coloca um processador de top de linha em um corpo mais antigo e compacto, oferecendo desempenho incrível por um preço mais baixo.",
+      "perfil_ideal": "Quem quer um iPhone potente e compacto e não se importa com design antigo ou múltiplas câmeras.",
+      "avaliacao_geral": 8.3, "custo_beneficio": 8.0,
+      "positivos_percebidos": [ "Desempenho de flagship com chip da linha principal", "Compacto e fácil de usar com uma mão", "Receberá atualizações do iOS por muitos anos", "Qualidade de construção sólida" ],
+      "negativos_percebidos": [ "Design muito datado com bordas grandes", "Tela LCD pequena e de apenas 60Hz", "Bateria dura pouco para uso intenso", "Apenas uma câmera traseira" ],
+      "notas_detalhadas": { "desempenho": 9.9, "camera_principal": 8.2, "bateria": 7.0, "tela": 7.5, "design": 7.0 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.1, "tecnologia": "IPS LCD", "resolucao": "1792 x 828", "taxa_atualizacao_hz": 60, "brilho_maximo_nits": 625, "protecao": "Vidro reforçado" },
+      "desempenho": { "processador": "A17 Bionic", "memoria_ram_gb": [4], "armazenamento_interno_gb": [128, 256], "expansivel_microsd": false },
+      "cameras": { "principal": { "megapixels": 12, "abertura": "f/1.6" }, "ultrawide": null, "teleobjetiva_1": null, "teleobjetiva_2": null, "frontal": { "megapixels": 12, "abertura": "f/2.2" }, "recursos_video": "4K@60fps" },
+      "bateria": { "capacidade_mah": 2200, "carregamento_rapido_watts": 20, "carregamento_sem_fio_watts": 7.5, "carregamento_reverso": false },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.3", "wifi": "Wi-Fi 6", "porta_usb": "Type-C" },
+      "corpo_e_design": { "dimensoes_mm": "150.9 x 75.7 x 8.3", "peso_gramas": 194, "material_construcao": "Alumínio e Vidro", "resistencia_agua": "IP67" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "iOS 18", "politica_atualizacao": "Aproximadamente 6-7 anos de atualizações", "recursos_extras": ["Touch ID", "Design compacto"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  },
+  {
+    "id": 15,
+    "ativo": true,
+    "identificacao": { "marca": "Samsung", "modelo": "Galaxy S25+", "nome_completo": "Samsung Galaxy S25+", "ano_lancamento": 2025, "imagem_url": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-pokedex/main/assets/img/pokemons/poke_15.png" },
+    "compra": { "faixa_preco_categoria": "Premium", "preco_medio_lancamento_brl": 7999.00, "links_afiliados": [ { "loja": "Samsung Oficial", "url": "https://www.samsung.com/br/" } ] },
+    "avaliacoes": {
+      "resumo_consultor": "O S25+ é a escolha ideal para quem quer a experiência de um flagship da Samsung com tela grande, mas não precisa das câmeras de zoom extremo ou da S-Pen do modelo Ultra.",
+      "perfil_ideal": "Usuários que querem um top de linha com tela grande para mídia e produtividade.",
+      "avaliacao_geral": 9.4, "custo_beneficio": 8.2,
+      "positivos_percebidos": [ "Tela grande e de altíssima qualidade", "Desempenho de ponta", "Câmeras principal e ultrawide excelentes", "Design simétrico e elegante com bordas finas" ],
+      "negativos_percebidos": [ "Preço ainda é alto", "Sem a versatilidade de zoom do Ultra", "Carregamento de 45W" ],
+      "notas_detalhadas": { "desempenho": 9.9, "camera_principal": 9.5, "bateria": 9.0, "tela": 9.9, "design": 9.4 }
+    },
+    "especificacoes": {
+      "tela": { "tamanho_polegadas": 6.7, "tecnologia": "Dynamic AMOLED 3X", "resolucao": "2340 x 1080", "taxa_atualizacao_hz": 120, "brilho_maximo_nits": 2500, "protecao": "Gorilla Glass Armor 2" },
+      "desempenho": { "processador": "Exynos 2500", "memoria_ram_gb": [12], "armazenamento_interno_gb": [256, 512], "expansivel_microsd": false },
+      "cameras": { "principal": { "megapixels": 50, "abertura": "f/1.8" }, "ultrawide": { "megapixels": 12, "abertura": "f/2.2" }, "teleobjetiva_1": { "megapixels": 10, "abertura": "f/2.4", "zoom_optico": "3x" }, "teleobjetiva_2": null, "frontal": { "megapixels": 12, "abertura": "f/2.2" }, "recursos_video": "8K@30fps" },
+      "bateria": { "capacidade_mah": 4900, "carregamento_rapido_watts": 45, "carregamento_sem_fio_watts": 15, "carregamento_reverso": true },
+      "conectividade": { "rede": "5G", "nfc": true, "bluetooth_versao": "5.4", "wifi": "Wi-Fi 7", "porta_usb": "Type-C 3.2" },
+      "corpo_e_design": { "dimensoes_mm": "158.5 x 75.9 x 7.7", "peso_gramas": 196, "material_construcao": "Alumínio e Vidro", "resistencia_agua": "IP68" }
+    },
+    "software_e_recursos": { "sistema_operacional_lancamento": "Android 15 com One UI 7.1", "politica_atualizacao": "7 anos de atualizações de OS e segurança", "recursos_extras": ["Samsung DeX Wireless", "Galaxy AI"] },
+    "metadata": { "data_criacao": "2025-10-12", "data_ultima_atualizacao": "2025-10-12", "versao_registro": 1 }
+  }
+]
