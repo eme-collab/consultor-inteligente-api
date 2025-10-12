@@ -51,30 +51,76 @@ class ConsultorInteligente:
             return None
 
     def captar_intencao(self, query_usuario: str) -> Dict[str, Any]:
-        prompt = f"""Analise a consulta: "{query_usuario}". Extraia a intenção em um JSON com "faixa_preco_categoria" (["Entrada", "Intermediário", "Intermediário Premium", "Premium", "Super Premium"]) e "caracteristicas_foco" (lista com ["câmera", "bateria", "desempenho", "custo-benefício", "design", "tela"]). Retorne APENAS o JSON."""
-        response = self.model.generate_content(prompt)
+        """
+        ETAPA 1: Usa o Gemini para analisar a consulta do usuário e extrair
+        suas necessidades em um formato JSON estruturado.
+        """
+        prompt = f"""
+        Analise a consulta de um usuário para um consultor de celulares: "{query_usuario}"
+        Sua tarefa é extrair a intenção em um JSON com os seguintes campos:
+        - "faixa_preco_categoria": Inferir a categoria de preço MAIS ALTA que se encaixa no pedido do usuário. Escolha APENAS UMA das seguintes opções: ["Entrada", "Intermediário", "Intermediário Premium", "Premium", "Super Premium"]. O valor para este campo DEVE SER UMA ÚNICA STRING.
+        - "caracteristicas_foco": Uma lista de até 3 focos principais do usuário. Use termos-chave como ["câmera", "bateria", "desempenho", "custo-benefício", "design", "tela"].
+        Retorne APENAS o objeto JSON.
+        """
+        # Usamos uma temperatura baixa aqui para garantir uma resposta mais previsível e estruturada
+        generation_config = {"temperature": 0.1}
+        response = self.model.generate_content(prompt, generation_config=generation_config)
         return self._extrair_json_da_resposta(response.text) or {}
 
     def filtrar_celulares_localmente(self, intencao: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """
+        ETAPA 2: Filtra a base de dados em memória para encontrar os melhores
+        candidatos com base na intenção, sem custo de API.
+        """
         faixa_preco_desejada = intencao.get("faixa_preco_categoria")
         caracteristicas_foco = intencao.get("caracteristicas_foco", [])
-        candidatos = [c for c in self.database_celulares if c.get("ativo")]
+        
+        candidatos = []
+        
+        # <-- MUDANÇA AQUI: Lógica de filtragem de preço aprimorada -->
         if faixa_preco_desejada:
-            candidatos = [c for c in candidatos if c["compra"]["faixa_preco_categoria"] == faixa_preco_desejada]
-        if not caracteristicas_foco or not candidatos: return candidatos[:10]
+            # Verifica se a intenção retornou uma lista de categorias
+            if isinstance(faixa_preco_desejada, list):
+                candidatos = [
+                    cel for cel in self.database_celulares 
+                    if cel.get("ativo") and cel["compra"]["faixa_preco_categoria"] in faixa_preco_desejada
+                ]
+            # Mantém o comportamento antigo se for apenas uma string
+            else:
+                candidatos = [
+                    cel for cel in self.database_celulares 
+                    if cel.get("ativo") and cel["compra"]["faixa_preco_categoria"] == faixa_preco_desejada
+                ]
+        else:
+            # Se não especificou preço, considera todos
+            candidatos = [cel for cel in self.database_celulares if cel.get("ativo")]
+
+        if not caracteristicas_foco or not candidatos:
+            return candidatos[:10]
+
         def calcular_pontuacao(celular):
             pontuacao = 0
             for foco in caracteristicas_foco:
-                if foco == "câmera": pontuacao += celular["avaliacoes"]["notas_detalhadas"].get("camera_principal", 0)
-                elif foco == "bateria": pontuacao += celular["avaliacoes"]["notas_detalhadas"].get("bateria", 0)
-                elif foco == "desempenho": pontuacao += celular["avaliacoes"]["notas_detalhadas"].get("desempenho", 0)
-                elif foco == "custo-benefício": pontuacao += celular["avaliacoes"].get("custo_beneficio", 0)
-                elif foco == "tela": pontuacao += celular["avaliacoes"]["notas_detalhadas"].get("tela", 0)
-                elif foco == "design": pontuacao += celular["avaliacoes"]["notas_detalhadas"].get("design", 0)
+                if foco == "câmera":
+                    pontuacao += celular["avaliacoes"]["notas_detalhadas"].get("camera_principal", 0)
+                elif foco == "bateria":
+                    pontuacao += celular["avaliacoes"]["notas_detalhadas"].get("bateria", 0)
+                elif foco == "desempenho":
+                    pontuacao += celular["avaliacoes"]["notas_detalhadas"].get("desempenho", 0)
+                elif foco == "custo-benefício":
+                    pontuacao += celular["avaliacoes"].get("custo_beneficio", 0)
+                elif foco == "tela":
+                    pontuacao += celular["avaliacoes"]["notas_detalhadas"].get("tela", 0)
+                elif foco == "design":
+                    pontuacao += celular["avaliacoes"]["notas_detalhadas"].get("design", 0)
             return pontuacao
+
         candidatos.sort(key=calcular_pontuacao, reverse=True)
+        
         top_candidatos = candidatos[:7]
-        if len(top_candidatos) > 5: return random.sample(top_candidatos, 5)
+        if len(top_candidatos) > 5:
+            return random.sample(top_candidatos, 5)
+        
         return top_candidatos
 
     def classificar_e_recomendar(self, candidatos: List[Dict[str, Any]], intencao: Dict[str, Any]) -> List[Dict[str, Any]]:
